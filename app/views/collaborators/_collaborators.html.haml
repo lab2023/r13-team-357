@@ -1,0 +1,4 @@
+- @current_project.users.each do |user|
+  %p
+    = "#{user.email} - #{user.name}"
+    = link_to 'Delete', collaborator_path(@current_project, email: user.email), method: :delete, remote: true

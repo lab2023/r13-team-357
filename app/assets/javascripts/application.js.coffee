@@ -21,6 +21,10 @@
 #= require cocoon
 
 ready = ->
+  $("#collaborator_user_id").autocomplete
+      source: $('#collaborator_user_id').data('autocomplete-source')
+      autoFocus: true
+
   width = $(".project-list").width()
   size = $(".project-list").size()
   full_width = (width+15)*(size)
@@ -36,11 +40,6 @@ ready = ->
       $(this).parents(".cart:first").find(".cart-content").toggle()
 
     $(".project-list-item").disableSelection()
-  $(".search-query").autocomplete
-    source: $(".search-query").data("autocomplete-source")
-    messages:
-      noResults: null
-      results: ->
 
 $(document).ready(ready)
 $(document).on('page:load', ready)
