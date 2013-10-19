@@ -2,6 +2,7 @@ require 'application_responder'
 
 class ApplicationController < ActionController::Base
   before_filter :set_user_time_zone
+  before_filter :set_quest_user
 
 
   self.responder = ApplicationResponder
@@ -16,14 +17,16 @@ class ApplicationController < ActionController::Base
     Time.zone = current_user.time_zone if user_signed_in? && current_user.time_zone.present?
   end
 
-
-
   def devise_parameter_sanitizer
     if resource_class == User
       User::ParameterSanitizer.new(User, :user, params)
     else
       super # Use the default one
     end
+  end
+
+  def set_quest_user
+    @guest_user = User.where(email: 'info@lab2023.com').last
   end
 
 
