@@ -3,6 +3,7 @@ require 'application_responder'
 class ApplicationController < ActionController::Base
   before_filter :set_user_time_zone
   before_filter :set_quest_user
+  add_breadcrumb "Dashboard", :dashboard_index_path
 
 
   self.responder = ApplicationResponder
@@ -32,7 +33,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource_or_scope)
     if current_user
-      super
+      dashboard_index_path
     else
       hq_dashboard_index_path
     end
