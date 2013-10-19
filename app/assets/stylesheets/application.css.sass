@@ -13,6 +13,33 @@
 
 @import 'hierapolis'
 
-// Login logo fix
+
+.switcher
+  margin-left: -20px !important
+  a.dropdown-toggle
+    color: $base-dark-color !important
+  .dropdown-menu:after
+    right: 208px !important
+  .dropdown-menu
+    min-width: 233px !important
+    li.active
+      padding: 4px 10px 0 10px
+      color: $base-color
+      i
+        margin-right: 5px
+    > li.project > a
+      padding: 3px 11px
+      i
+        margin-right: 5px
+    li.project
+      a:hover
+        background-color: rgba(0,0,0,0)
+        color: $base-color
+    li.action
+      padding: 0 10px 5px 10px
+
+// Hierapolis overrides
 body.login .wrapper .brand h1 .logo-icon i[class*='icon-']
   margin-left: -2px !important
+#navbar .navbar-brand
+  margin-top: -3px !important
