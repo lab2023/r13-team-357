@@ -2,6 +2,29 @@
   %a.navbar-brand{:href => '#'}
     %i.icon-tasks
     =t 'app_title'
+  %ul.nav.navbar-nav.switcher
+    %li.dropdown
+      %a.dropdown-toggle{data: {toggle: 'dropdown'}, :href => '#'}
+        %i.icon-exchange
+        Switch
+        %span.caret
+      %ul.dropdown-menu
+        %li.active
+          %i.icon-circle
+          Lorem ipsum dolor sit amet
+        %li.divider
+        %li.project
+          %a{href: '#'}
+            %i.icon-circle-blank
+            Consectetur adipiscing eli
+        %li.project
+          %a{href: '#'}
+            %i.icon-circle-blank
+            Consectetur adipiscing eli
+        %li.divider
+        %li.action
+          %a.btn.btn-xs.btn-success{href: '#'}
+            Add New Project
   %ul.nav.navbar-nav.pull-right
     %li.dropdown.user
       =link_to edit_user_registration_path do
