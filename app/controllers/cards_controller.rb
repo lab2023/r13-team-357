@@ -26,6 +26,7 @@ class CardsController < ApplicationController
 
   def create
     @card = Card.new(card_params)
+    @card.owner_id = current_user.id
     @card.save
     respond_to do |format|
       format.js
@@ -56,6 +57,6 @@ class CardsController < ApplicationController
   end
 
   def card_params
-    params.require(:card).permit(:assignment_id, :body, :checklist_done_count, :checklist_total_count, :comment_count, :document_count, :done, :due_date, :list_id, :owner_id, :private, :sort, :title)
+    params.require(:card).permit(:assignment_id, :body, :done, :due_date, :list_id, :private, :sort, :title)
   end
 end
