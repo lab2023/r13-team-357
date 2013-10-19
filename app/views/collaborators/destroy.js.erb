@@ -1,5 +1,5 @@
-$("#collaborators").html("<%= escape_javascript( render(:partial => "collaborators") ) %>");
-$("#collaborator_form").html("<%= escape_javascript( render(:partial => "form") ) %>");
+$("#collaborators").html("<%= escape_javascript( render(partial: 'collaborators', collection:  @current_project.users, as: :user) ) %>");
+$("#collaborator_form").html("<%= escape_javascript( render(partial: 'form') ) %>");
 
 
 $("#collaborator_user_id").autocomplete({

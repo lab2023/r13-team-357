@@ -13,6 +13,30 @@
 
 @import 'hierapolis'
 
+ul.ui-autocomplete
+  position: absolute
+  width: 400px
+  margin: 0
+  padding: 0
+  top: 20px
+  list-style: none
+  border: solid 1px $silver
+  +border-radius(5px)
+  cursor: default
+  li
+    background-color: $clouds
+    +border-radius(5px)
+    border-top: solid 1px #ddd
+    margin: 0
+    padding: 2px
+    a
+      color: #000
+      display: block
+      padding: 3px
+    a.ui-state-hover, a.ui-state-active
+      background-color: orange
+      color: #ffffff
+
 .add_fields, .remove_fields
   @extend .btn
 .add_fields
