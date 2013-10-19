@@ -32,13 +32,17 @@ ready = ->
 
   $ ->
     $(".vertical-scroll").sortable connectWith: ".vertical-scroll"
+    $(".panel-default").addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all").find(".panel-heading").addClass("ui-widget-header ui-corner-all").prepend("<span class='ui-icon ui-icon-minusthick'></span>").end().find ".panel-body"
+    $(".panel-heading .ui-icon").click ->
+      $(this).toggleClass("ui-icon-minusthick").toggleClass "ui-icon-plusthick"
+      $(this).parents(".panel-default:first").find(".panel-body").toggle()
+    $(".vertical-scroll").disableSelection()
   $ ->
     $(".project-list-item").sortable connectWith: ".project-list-item"
-    $(".cart").addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all").find(".cart-header").addClass("ui-widget-header ui-corner-all").prepend("<span class='ui-icon ui-icon-minusthick'></span>").end().find ".cart-content"
-    $(".cart-header .ui-icon").click ->
+    $(".card").addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all").find(".card-header").addClass("ui-widget-header ui-corner-all").prepend("<span class='ui-icon ui-icon-minusthick'></span>").end().find ".card-content"
+    $(".card-header .ui-icon").click ->
       $(this).toggleClass("ui-icon-minusthick").toggleClass "ui-icon-plusthick"
-      $(this).parents(".cart:first").find(".cart-content").toggle()
-
+      $(this).parents(".card:first").find(".card-content").toggle()
     $(".project-list-item").disableSelection()
 
 $(document).ready(ready)

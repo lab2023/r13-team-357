@@ -2,3 +2,5 @@ email:
   noreply: noreply@ganban.com
   mandrill_username: secret-token
   mandrill_api_key: secret-token
+
+default_lists: [ 'To-do', 'In-progress', 'Done' ]

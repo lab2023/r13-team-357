@@ -13,6 +13,14 @@
 
 @import 'hierapolis'
 
+.add_fields, .remove_fields
+  @extend .btn
+.add_fields
+  @extend .btn-default
+.remove_fields
+  @extend .btn-danger
+  float: right
+
 .switcher
   margin-left: -20px !important
   a.dropdown-toggle
@@ -38,12 +46,16 @@
       padding: 0 10px 5px 10px
 
 // Hierapolis overrides
+.sprite-image, #beaker
+  background-image: url('sprite.png')
 body.login .wrapper .brand h1 .logo-icon i[class*='icon-']
   margin-left: -2px !important
 #navbar .navbar-brand
   margin-top: -3px !important
 .vertical-scroll
-  overflow-y: scroll
+  overflow: scroll
+  min-height: 600px
+
 .project-list
   width: 300px !important
   float: left
@@ -51,14 +63,41 @@ body.login .wrapper .brand h1 .logo-icon i[class*='icon-']
 .project-list-item
   width: 300px !important
   float: left
-  margin-right: 10px
   max-height: 500px
-  overflow: scroll
+  overflow-y: scroll
   .card
     width: 100%
-    height: 50px
+    height: 75px
     margin-bottom: 5px
     background-color: gray
+    border-radius: 5px
+    background-color: #f3f3f3
+    padding: 5px
+  .icon-list
+    width: 30px
+    height: 30px
+    background-color: 50px
+    display: inline-block
+
+  .user-icon
+    @extend .icon-list
+    float: right
+    margin-right: 10px
+.ui-sortable-placeholder
+  border: 1px dotted black
+  visibility: visible !important
+  height: 50px !important
+.ui-sortable-placeholder *
+  visibility: hidden
+
+.project-list-item::-webkit-scrollbar
+  display: none
+.vertical-scroll::-webkit-scrollbar
+  display: none
+.project-list-item::-moz-scrollbar
+  display: none
+
+
 
 
 

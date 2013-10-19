@@ -1,3 +1,7 @@
 .nested-fields
-  = f.input :name
-  = link_to_remove_association "Remove List", f
+  .row
+    .col-md-11
+      = f.input :name, label: false, placeholder: 'List name', value: 'list_item'
+    .col-md-1
+      = link_to_remove_association f do
+        %i.icon-remove-sign
