@@ -56,8 +56,6 @@ class ListsController < ApplicationController
       list.save
     end
 
-
-
     respond_to do |format|
       format.js
     end

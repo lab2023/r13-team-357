@@ -1,5 +1,5 @@
 - if card.id.present?
-  .card{id: "card-#{card.id}"}
+  .card{id: "#{card.id}-card"}
     = link_to '×', card_path(card), method: :delete, class: 'close', data: { toggle: 'tooltip' }, title: 'Remove Card', remote: true, confirm: 'Are you sure?'
     %p.title
       =truncate card.title

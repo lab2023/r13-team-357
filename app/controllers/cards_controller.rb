@@ -47,7 +47,29 @@ class CardsController < ApplicationController
   end
 
   def move
+    @current_list = List.find(params[:list])
+    @current_card = Card.find(params[:id])
+    @current_card.sort = 0
+    @current_card.list = @current_list
+    @current_card.save
+    @cards = @current_list.cards
+    sort = Array.new
+    params[:sort].each do |hash|
+      sort << hash.to_i
+    end
+    @cards.each_with_index do |card,index|
+      card.sort = index*100
+      card.save
+    end
 
+    @cards.each do |card|
+      card.sort = sort.index(card.id)+1
+      card.save
+    end
+
+    respond_to do |format|
+      format.js
+    end
   end
 
   private

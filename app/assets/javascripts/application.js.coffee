@@ -54,30 +54,20 @@ $(document).ready ->
   $ ->
     $(".project-list-item").sortable
       receive: (event, ui) ->
-        document.ui = ui
-        document.ths = $(this)
         item = ui.item.attr('id')
         list = $(this).parent().attr('id')
         sort = $(this).sortable('toArray')
-        index = sort.indexOf(item)+1
-        console.log 'İtem id = ' + item
-        console.log 'list id = ' + list
-        console.log 'Index = ' + index
-
-
         URL = "/cards/" + item + '/move'
         card =
           id: item
           list: list
-          sort: index
-
+          sort: sort
         $.ajax
           url: URL
           type: "PUT"
           data: JSON.stringify(card)
           contentType: "application/json"
           success: (result) ->
-            alert "success?"
       connectWith: ".project-list-item"
     $(".card").addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all").find(".card-header").addClass("ui-widget-header ui-corner-all").prepend("<span class='ui-icon ui-icon-minusthick'></span>").end().find ".card-content"
     $(".card-header .ui-icon").click ->
