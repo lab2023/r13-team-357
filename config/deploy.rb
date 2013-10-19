@@ -11,7 +11,7 @@ load 'config/deploy/recipes/symlinks'
 load 'config/deploy/recipes/unicorn'
 load 'config/deploy/recipes/assets'
 load 'config/deploy/recipes/postgresql'
-load 'config/deploy/recipes/whenever'
+
 load 'config/deploy/recipes/monit'
 
 set :stages, %w(staging production)
