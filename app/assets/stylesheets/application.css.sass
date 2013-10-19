@@ -14,6 +14,14 @@
 
 @import 'hierapolis'
 
+.add_fields, .remove_fields
+  @extend .btn
+.add_fields
+  @extend .btn-default
+.remove_fields
+  @extend .btn-danger
+  float: right
+
 .switcher
   margin-left: -20px !important
   a.dropdown-toggle
