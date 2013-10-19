@@ -2,7 +2,7 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :user_ids, :input_html => { multiple: false, data: {autocomplete_source: auto_users_projects_path}, value: '', id: 'collaborator_user_id' }, as: :string
+    = f.input :user_ids, hint: 'Search name or email. Try Onur, Tayfun, Muhammet, Hamit...', :input_html => { multiple: false, data: {autocomplete_source: auto_users_projects_path}, value: '', id: 'collaborator_user_id' }, as: :string
 
   .form-actions
     = f.button :submit, 'Add', class: 'btn btn-default'
