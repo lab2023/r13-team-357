@@ -3,7 +3,7 @@
     %i.icon-pencil
     = t('action_button.edit')
 .vertical-scroll{style: "width: #{@project.lists.count*315 + 650}px"}
-  - @project.lists.each do |list|
+  - @lists.each do |list|
     .panel.panel-default.project-list
       .panel-heading
         %strong= list.name
