@@ -1,36 +1,13 @@
 #navbar.navbar.navbar-default
   %a.navbar-brand{:href => '#'}
-    %i.icon-beer
-    Hierapolis
+    %i.icon-tasks
+    =t 'app_title'
   %ul.nav.navbar-nav.pull-right
-    %li.dropdown
-      %a.dropdown-toggle{data: {toggle: 'dropdown'}, :href => '#'}
-        %i.icon-envelope
-        Messages
-        %span.badge 5
-        %b.caret
-      %ul.dropdown-menu
-        %li
-          %a{:href => '#'} New message
-        %li
-          %a{:href => '#'} Inbox
-        %li
-          %a{:href => '#'} Out box
-        %li
-          %a{:href => '#'} Trash
-    %li
-      %a{href: '#'}
-        %i.icon-cog
-        Settings
     %li.dropdown.user
-      %a.dropdown-toggle{'data-toggle' => 'dropdown', :href => '#'}
-        %i.icon-user
-        %strong John DOE
-        = image_tag avatar_url(current_user)
-        %b.caret
-      %ul.dropdown-menu
-        %li
-          %a{:href => edit_user_registration_path} Edit Profile
-        %li.divider
-        %li
-          =link_to 'Sign out', destroy_user_session_path,  method: :delete
+      =link_to edit_user_registration_path do
+        =image_tag avatar_url(current_user), class: 'img-circle'
+        %strong=current_user.name
+    %li
+      =link_to destroy_user_session_path,  method: :delete do
+        %i.icon-off
+        Sign out

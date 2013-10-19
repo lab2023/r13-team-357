@@ -4,23 +4,24 @@
   %li.launcher
     %i.icon-dashboard
     =link_to 'Dashboard', dashboard_index_path
+  %li.launcher
+    %i.icon-suitcase
+    %a{href: '#'} Projects
+  %li.launcher
+    %i.icon-group
+    %a{href: '#'} Collaborators
   %li.launcher.dropdown.hover
-    %i.icon-flag
-    %a{href: '#'} Reports
+    %i.icon-envelope
+    %a{href: '#'} Messages
     %ul.dropdown-menu
-      %li.dropdown-header Launcher description
       %li
-        %a{:href => '#'} Action
+        %a{:href => '#'} New message
       %li
-        %a{:href => '#'} Another action
+        %a{:href => '#'} Inbox
       %li
-        %a{:href => '#'} Something else here
-  %li.launcher
-    %i.icon-bookmark
-    %a{href: '#'} Bookmarks
-  %li.launcher
-    %i.icon-cloud
-    %a{href: '#'} Backup
+        %a{:href => '#'} Out box
+      %li
+        %a{:href => '#'} Trash
   %li.launcher
     %i.icon-bug
     %a{href: '#'} Feedback

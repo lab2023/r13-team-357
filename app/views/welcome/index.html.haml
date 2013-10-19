@@ -8,14 +8,15 @@
       %hr/
 
       - if current_user
-        = link_to 'Sign out', destroy_user_session_path, class: 'btn btn-large', method: :delete
         .row-fluid.marketing
           %p
             %strong Name:
             = current_user.name
-          %p
+            %br/
             %strong Email:
             = current_user.email
+        = link_to 'Ganban Dashboard', dashboard_index_path, class: 'btn btn-lg btn-primary'
+        = link_to 'Sign out', destroy_user_session_path, class: 'btn btn-lg btn-default', method: :delete
       - else
         .sign-buttons
           = link_to 'Create your Kanban now!', new_user_registration_path, class: 'btn btn-lg btn-success'
