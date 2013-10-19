@@ -1,29 +1,30 @@
 #navbar.navbar.navbar-default
-  %a.navbar-brand{:href => '#'}
-    %i.icon-tasks
-    =t @current_project.name
-  %ul.nav.navbar-nav.switcher
-    %li.dropdown
-      %a.dropdown-toggle{data: {toggle: 'dropdown'}, :href => '#'}
-        %i.icon-exchange
-        Switch
-        %span.caret
-      %ul.dropdown-menu
-        %li.active
-          %i.icon-circle
-          = @current_project.name
-        %li.divider
-        - current_user.projects.each do |project|
-          - unless project.id == @current_project.id || project.id.nil?
-            %li.project
-              = link_to current_projects_path(project_id: project.id), method: :post do
-                %i.icon-circle-blank
-                = project.name
+  - if @current_project.present?
+    %a.navbar-brand{:href => '#'}
+      %i.icon-tasks
+      =t @current_project.name
+    %ul.nav.navbar-nav.switcher
+      %li.dropdown
+        %a.dropdown-toggle{data: {toggle: 'dropdown'}, :href => '#'}
+          %i.icon-exchange
+          Switch
+          %span.caret
+        %ul.dropdown-menu
+          %li.active
+            %i.icon-circle
+            = @current_project.name
+          %li.divider
+          - current_user.projects.each do |project|
+            - unless project.id == @current_project.id || project.id.nil?
+              %li.project
+                = link_to current_projects_path(project_id: project.id), method: :post do
+                  %i.icon-circle-blank
+                  = project.name
 
-        %li.divider
-        %li.action
-          %a.btn.btn-xs.btn-success{href: new_project_path}
-            Add New Project
+          %li.divider
+          %li.action
+            %a.btn.btn-xs.btn-success{href: new_project_path}
+              Add New Project
   %ul.nav.navbar-nav.pull-right
     %li.dropdown.user
       =link_to edit_user_registration_path do

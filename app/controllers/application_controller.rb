@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :set_user_time_zone
   before_action :set_quest_user
   before_action :get_version
-  before_action :set_current_project
+  before_action :set_current_project, :if => :user_signed_in?
   add_breadcrumb "Dashboard", :dashboard_index_path
 
   self.responder = ApplicationResponder
@@ -58,7 +58,8 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource_or_scope)
     if current_user
-      dashboard_index_path
+      current_user.projects.size > 0 ? dashboard_index_path : new_project_path
+
     else
       hq_dashboard_index_path
     end
