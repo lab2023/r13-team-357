@@ -2,15 +2,28 @@
   = link_to edit_project_path(@project ), class: 'btn btn-default' do
     %i.icon-pencil
     = t('action_button.edit')
-.vertical-scroll{style: "width: #{315*6}px"}
+.vertical-scroll{style: "width: #{@project.lists.count*315 + 650}px"}
+  - @project.lists.each do |list|
+    .panel.panel-default.project-list
+      .panel-heading
+        %i.icon-edit.icon-large
+        = list.name
+      .panel-body.project-list-item
+        - list.cards.each do |card|
+          .card
+            .card-header
+              = card.title
+            .card-body
+
+
   .panel.panel-default.project-list
     .panel-heading
       %i.icon-edit.icon-large
-      Form Default
+      Lorem ipsum
     .panel-body.project-list-item
       .card
         .card-header
-          Developer , Müşteri Tabloları ve Authorization
+          Dolor Sit Amet
         .card-body
           .icon-list
             1
@@ -20,9 +33,14 @@
             3
           .user-icon
             user
+  .panel.panel-default.project-list
+    .panel-heading
+      %i.icon-edit.icon-large
+      Lorem ipsum
+    .panel-body.project-list-item
       .card
         .card-header
-          Developer , Müşteri Tabloları ve Authorization
+          Dolor Sit Amet
         .card-body
           .icon-list
             1
@@ -32,33 +50,3 @@
             3
           .user-icon
             user
-
-
-  .panel.panel-default.project-list
-    .panel-heading
-      %i.icon-edit.icon-large
-      Form Default
-    .panel-body.project-list-item
-  .panel.panel-default.project-list
-    .panel-heading
-      %i.icon-edit.icon-large
-      Form Default
-    .panel-body.project-list-item
-
-  .panel.panel-default.project-list
-    .panel-heading
-      %i.icon-edit.icon-large
-      Form Default
-    .panel-body.project-list-item
-
-  .panel.panel-default.project-list
-    .panel-heading
-      %i.icon-edit.icon-large
-      Form Default
-    .panel-body.project-list-item
-
-  .panel.panel-default.project-list
-    .panel-heading
-      %i.icon-edit.icon-large
-      Form Default
-    .panel-body.project-list-item
