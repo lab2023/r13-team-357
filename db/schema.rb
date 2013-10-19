@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131019132612) do
+ActiveRecord::Schema.define(version: 20131019142932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,10 +42,10 @@ ActiveRecord::Schema.define(version: 20131019132612) do
     t.text     "body"
     t.date     "due_date"
     t.boolean  "done"
-    t.integer  "comment_count"
-    t.integer  "document_count"
-    t.integer  "checklist_total_count"
-    t.integer  "checklist_done_count"
+    t.integer  "comment_count",         default: 0
+    t.integer  "document_count",        default: 0
+    t.integer  "checklist_total_count", default: 0
+    t.integer  "checklist_done_count",  default: 0
     t.boolean  "private"
     t.integer  "sort"
     t.datetime "created_at"
