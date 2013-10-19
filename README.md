@@ -6,7 +6,7 @@
 
 Ganban is a open source web app.
 
-**NOTE: We can't accept your push request until Rails Rumble 2013 will finished.**
+**NOTE: We can't merge your pull request until Rails Rumble 2013 will finished.**
 
 **Kanban (かんばん(看板)?)** (literally signboard or billboard) is a scheduling system for lean and just-in-time (JIT)
 production.Kanban is a system to control the logistical chain from a production point of view, and is not an
