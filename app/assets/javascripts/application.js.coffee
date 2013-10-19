@@ -20,7 +20,7 @@
 #= require hierapolis
 #= require cocoon
 
-$(document).ready ->
+ready = ->
   width = $(".project-list").width()
   size = $(".project-list").size()
   full_width = (width+15)*(size)
@@ -41,3 +41,6 @@ $(document).ready ->
     messages:
       noResults: null
       results: ->
+
+$(document).ready(ready)
+$(document).on('page:load', ready)
