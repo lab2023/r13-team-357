@@ -30,6 +30,8 @@ module Ganban
 
     config.to_prepare do
       Devise::SessionsController.layout 'login'
+      Devise::PasswordsController.layout 'login'
+      Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? 'application' : 'login' }
       #Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "application" : "your_layout_name" }
       #Devise::ConfirmationsController.layout "your_layout_name"
       #Devise::UnlocksController.layout "your_layout_name"

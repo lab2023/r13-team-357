@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :set_user_time_zone
   before_action :set_quest_user
+  before_action :get_version
   add_breadcrumb "Dashboard", :dashboard_index_path
 
   self.responder = ApplicationResponder
@@ -30,6 +31,12 @@ class ApplicationController < ActionController::Base
     @guest_user = User.where(email: 'info@lab2023.com').last
   end
 
+  def get_version
+    IO.foreach('public/version.txt') do |line|
+      @version = line
+    end
+  end
+
 
   def after_sign_in_path_for(resource_or_scope)
     if current_user
@@ -38,4 +45,5 @@ class ApplicationController < ActionController::Base
       hq_dashboard_index_path
     end
   end
+
 end

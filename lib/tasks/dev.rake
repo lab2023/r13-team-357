@@ -15,7 +15,7 @@ namespace :dev do
 
   task :user => [:environment] do
     User.create!(email: 'muhammet.dilek@lab2023.com',     password: '12341234', password_confirmation: '12341234', name: 'Muhammet Dilek')
-    User.create!(email: 'onur.oozgur.ozkan@lab2023.com',  password: '12341234', password_confirmation: '12341234', name: 'Onur Özgür Ozkan')
+    User.create!(email: 'onur.ozgur.ozkan@lab2023.com',   password: '12341234', password_confirmation: '12341234', name: 'Onur Özgür Ozkan')
     User.create!(email: 'tayfun.ozis.erikan@lab2023.com', password: '12341234', password_confirmation: '12341234', name: 'Tayfun Ozis Erikan')
     User.create!(email: 'hamit.turku.kaya@lab2023.com',   password: '12341234', password_confirmation: '12341234', name: 'Hamit Türkü Kaya')
   end

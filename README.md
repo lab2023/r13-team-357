@@ -11,6 +11,13 @@ production.Kanban is a system to control the logistical chain from a production 
 inventory control system. Kanban was developed by Taiichi Ohno, at Toyota, to find a system to improve and maintain
 a high level of production. Kanban is one method through which JIT is achieved.
 
+## Links
+
+* Production Server [http://ganban.r13.railsrumble.com/](http://ganban.r13.railsrumble.com/)
+* Staging Server [http://stage-ganban.lab2023.com/](http://stage-ganban.lab2023.com/)
+* [Blog](http://ganban.tumblr.com/)
+* [Rails Rumble Page](http://railsrumble.com/entries/357-ganban)
+
 ## Requirements
 
 Before generating your application, you will need:
@@ -36,6 +43,21 @@ We use
 * [Gitflow](https://github.com/nvie/gitflow)
 * [Huboard Kanban](http://kanban.lab2023.com)
 * [Models Blueprint](http://dbpatterns.com/documents/525f174c9785db258965a729/)
+
+We make a rake `dev:setup` it will create dummy data for development.
+
+**Users**
+
+muhammet.dilek@lab2023.com,     password: '12341234', name: 'Muhammet Dilek'
+onur.ozgur.ozkan@lab2023.com,   password: '12341234', name: 'Onur Özgür Ozkan'
+tayfun.ozis.erikan@lab2023.com, password: '12341234', name: 'Tayfun Ozis Erikan'
+hamit.turku.kaya@lab2023.com,   password: '12341234', name: 'Hamit Türkü Kaya'
+
+**Admin**
+
+Login : `/hq/login`
+admin@ganban.com, password: '12341234'
+
 
 Once you've made your great commits:
 

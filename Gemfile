@@ -52,3 +52,8 @@ group :development, :test do
   gem 'shoulda-context', '~> 1.1.5'
   gem 'factory_girl_rails', '~> 4.0'
 end
+
+gem 'capistrano', '~> 2.15.5'
+gem 'capistrano-ext', '~> 1.2.1'
+gem 'unicorn', '~> 4.6.3'
+gem 'whenever'
