@@ -5,5 +5,14 @@ class Card < ActiveRecord::Base
 
   validates :title, presence: true
   validates :list_id, presence: true
+  validates :sort, uniqueness: {scope: :list_id}
+
+  before_create :set_sort
+
+  private
+  def set_sort
+    last_card = self.list.cards.order('sort ASC').last
+    self.sort = last_card.present? ? last_card.sort + 1 : 1
+  end
 
 end
