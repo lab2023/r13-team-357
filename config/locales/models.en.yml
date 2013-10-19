@@ -1,4 +1,8 @@
 en:
   activerecord:
     models:
-      projects: Projects
+      project: Projects
+      list: List
+    attributes:
+      project:
+        name: Name

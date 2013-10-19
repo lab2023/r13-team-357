@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :set_user_time_zone
   before_action :set_quest_user
   before_action :get_version
+  before_action :set_current_project, :if => :user_signed_in?
   add_breadcrumb "Dashboard", :dashboard_index_path
 
   self.responder = ApplicationResponder
@@ -14,6 +15,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+
   protected
   def set_user_time_zone
     Time.zone = current_user.time_zone if user_signed_in? && current_user.time_zone.present?
@@ -38,10 +40,26 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def set_current_project
+    @current_project = set_current_project_from_session || current_user.projects.first
+    session[:project_id] = @current_project.id if @current_project.present?
+  end
+
+  def set_current_project_from_session
+    if session[:project_id]
+      begin
+        current_user.projects.find(session[:project_id])
+      rescue
+        session[:project_id] = nil
+      end
+    end
+  end
+
 
   def after_sign_in_path_for(resource_or_scope)
     if current_user
-      dashboard_index_path
+      current_user.projects.size > 0 ? dashboard_index_path : new_project_path
+
     else
       hq_dashboard_index_path
     end

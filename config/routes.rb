@@ -1,4 +1,8 @@
 Ganban::Application.routes.draw do
+  resources :lists
+
+  resources :current_projects, only: [:create]
+
   resources :projects do
     get :users, on: :member
     get :auto_users, on: :collection

@@ -1,7 +1,7 @@
 # encoding: UTF-8
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
-  add_breadcrumb I18n.t('activerecord.models.projects'), :projects_path
+  add_breadcrumb I18n.t('activerecord.models.project'), :projects_path
   def index
     @search = current_user.projects.search(params[:q])
      @projects = @search.result(:distinct => true).paginate(:page => params[:page])
@@ -55,6 +55,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:name)
+    params.require(:project).permit(:name, :description, lists_attributes: [:id, :name, :_destroy])
   end
 end
