@@ -7,6 +7,7 @@ namespace :symlinks do
   desc 'settings.yml symlink'
   task :settings do
     run "ln -nfs #{shared_path}/config/settings.yml #{release_path}/config/settings.yml"
+    run "ln -nfs #{shared_path}/config/settings/#{rails_env}.yml #{release_path}/config/settings/#{rails_env}.yml"
   end
 
   after 'deploy:finalize_update', 'symlinks:database'
