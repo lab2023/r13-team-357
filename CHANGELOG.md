@@ -1,5 +1,7 @@
 
 #### [Current]
+ * [f38ad23](../../commit/f38ad23) - __(hamitturkukaya)__ [#41](../../issues/41) Turbolinks disabled in welcome layout
+ * [b8c9c57](../../commit/b8c9c57) - __(Muhammet DİLEK)__ bump version 0.2.0
  * [4493c03](../../commit/4493c03) - __(Muhammet DİLEK)__ settings symlink added
  * [fe4d649](../../commit/fe4d649) - __(hamitturkukaya)__ [#35](../../issues/35) Triggerin multiple event error fixed(turbolinks removed)
  * [4d86e7a](../../commit/4d86e7a) - __(hamitturkukaya)__ [#35](../../issues/35) Triggerin multiple event error fixed
