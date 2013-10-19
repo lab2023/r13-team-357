@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def title(page_title)
+    content_for(:title) { page_title }
+  end
+
   def avatar_url(user)
     if user
       gravatar_id = Digest::MD5::hexdigest(user.email).downcase
