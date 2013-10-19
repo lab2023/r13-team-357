@@ -1,11 +1,11 @@
 # encoding: UTF-8
 class ListsController < ApplicationController
   before_action :set_list, only: [:show, :edit, :update, :destroy]
-  add_breadcrumb I18n.t('activerecord.models.lists'), :lists_path
+  add_breadcrumb I18n.t('activerecord.models.list'), :lists_path
   def index
     @search = List.search(params[:q])
-     @lists = @search.result(:distinct => true).paginate(:page => params[:page])
-     respond_with(@lists)
+    @lists = @search.result(:distinct => true).paginate(:page => params[:page])
+    respond_with(@lists)
   end
 
   def show

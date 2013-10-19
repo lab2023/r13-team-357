@@ -36,6 +36,7 @@ gem 'select2-rails'
 gem 'hierapolis-rails', '~> 0.4.0'
 gem 'breadcrumbs_on_rails', '~> 2.3.0'
 gem 'blankable', '~> 0.2.0'
+gem 'cocoon'
 
 group :doc do
   gem 'sdoc', require: false

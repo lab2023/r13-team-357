@@ -4,7 +4,7 @@
     = t('action_button.new', resource_name: List.model_name.human)
 
 .panel.panel-default.grid
-  =blankable(@lists)
+  = blankable(@lists)
   .panel-footer
     .pagination.pagination-sm
       = will_paginate @lists, renderer: BootstrapPagination::Rails, bootstrap: 3

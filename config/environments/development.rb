@@ -29,7 +29,5 @@ Ganban::Application.configure do
 
   # Mail Setting
   config.action_mailer.default_url_options = { :host => 'ganban.dev' }
-
-
   config.action_mailer.delivery_method = :letter_opener
 end
