@@ -30,7 +30,9 @@ class ApplicationController < ActionController::Base
   end
 
   def set_quest_user
-    @guest_user = User.where(email: 'info@lab2023.com').last
+    unless current_user
+      @guest_user = User.where(email: 'info@lab2023.com').last
+    end
   end
 
   def get_version

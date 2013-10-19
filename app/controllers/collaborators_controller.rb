@@ -1,14 +1,32 @@
 class CollaboratorsController < ApplicationController
 
   def index
-    @project = current_user.projects.find(params[:project_id])
-    @project_user = ProjectsUser.new
+    @collaborators = @current_project.users
   end
 
   def create
-    @project_user = ProjectsUser.create(collaboration_params)
-    @project = @project_user.project
-    respond_with(@project, location: users_project_path(@project))
+    value = params[:project][:user_ids]
+    email = value.split('-').last
+    Rails.logger.info email.strip
+    user = User.where(email: email.strip).last
+    unless @current_project.users.include?(user)
+      @current_project.users << user
+    end
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def destroy
+    email = params[:email]
+    user = @current_project.users.where(email: email).last
+    unless user == @current_project.owner
+      @current_project.users.delete(user)
+    end
+    respond_to do |format|
+      format.js
+    end
   end
 
   private

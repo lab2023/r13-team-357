@@ -20,7 +20,7 @@
         .sign-buttons
           = link_to 'Create your Kanban now!', new_user_registration_path, class: 'btn btn-lg btn-success'
           = link_to 'Sign in', new_user_session_path, class: 'btn btn-lg btn-primary'
-        = link_to raw('You can sign in as guest user from here<br/>(if you are in Rails Rumble Team)'), agent_sessions_path(user_id: @guest_user.id), method: :post, class: 'sml-link'
+        = link_to "You can sign in as guest user from here<br/>(if you are in Rails Rumble Team)".html_safe, agent_sessions_path(user_id: @guest_user.id), method: :post, class: 'sml-link'
     .col-md-5
       =image_tag 'http://placehold.it/400x300&text=Screencast video', id: 'video'
 

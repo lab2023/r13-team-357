@@ -7,6 +7,7 @@ en:
     attributes:
       project:
         name: Name
+        user_ids: Collaborator
       card:
         owner_id: Creater
         assignment_id: Assignee
