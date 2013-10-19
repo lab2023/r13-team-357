@@ -1,0 +1,13 @@
+#navbar.navbar.navbar-default
+  %a.navbar-brand{:href => '#'}
+    %i.icon-tasks
+    =t 'app_title'
+  %ul.nav.navbar-nav.pull-right
+    %li.dropdown.user
+      =link_to edit_user_registration_path do
+        =image_tag avatar_url(current_user), class: 'img-circle'
+        %strong=current_user.name
+    %li
+      =link_to destroy_user_session_path,  method: :delete do
+        %i.icon-off
+        Sign out

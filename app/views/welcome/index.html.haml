@@ -1,0 +1,38 @@
+- title t 'welcome'
+
+.jumbotron.text-center
+  .row
+    .col-md-7
+      %h1 Ganban is a simple Kanban application
+
+      %hr/
+
+      - if current_user
+        .row-fluid.marketing
+          %p
+            %strong Name:
+            = current_user.name
+            %br/
+            %strong Email:
+            = current_user.email
+        = link_to 'Ganban Dashboard', dashboard_index_path, class: 'btn btn-lg btn-primary'
+      - else
+        .sign-buttons
+          = link_to 'Create your Kanban now!', new_user_registration_path, class: 'btn btn-lg btn-success'
+          = link_to 'Sign in', new_user_session_path, class: 'btn btn-lg btn-primary'
+        = link_to raw('You can sign in as guest user from here<br/>(if you are in Rails Rumble Team)'), agent_sessions_path(user_id: @guest_user.id), method: :post, class: 'sml-link'
+    .col-md-5
+      =image_tag 'http://placehold.it/400x300&text=Screencast video', id: 'video'
+
+.row
+  .col-md-10.col-md-offset-1
+    %p
+      %h3 What is Kanban?
+      %strong Kanban (かんばん(看板)?) (literally signboard or billboard)
+      is a scheduling system for lean and just-in-time (JIT)
+      production.Kanban is a system to control the logistical chain from a production point of view,
+      and is not an inventory control system. Kanban was developed by Taiichi Ohno, at Toyota,
+      to find a system to improve and maintain a high level of production.
+      Kanban is one method through which JIT is achieved.
+
+
