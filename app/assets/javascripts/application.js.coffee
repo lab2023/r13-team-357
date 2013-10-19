@@ -27,14 +27,31 @@ $(document).ready ->
   size = $(".project-list").size()
   full_width = (width+15)*(size)
   $('.vertical-scroll').width(full_width)
-
+  #List drag & drop
   $ ->
-    $(".vertical-scroll").sortable connectWith: ".vertical-scroll"
+    $(".vertical-scroll").sortable
+      update: (event, ui) ->
+        item = ui.item.attr('id')
+        sort = $(".vertical-scroll").sortable('toArray')
+        index = sort.indexOf(item)+1
+        URL = "/lists/" + item
+        list =
+          id: item
+          sort: index
+        $.ajax
+          url: URL
+          type: "PUT"
+          data: JSON.stringify(list)
+          contentType: "application/json"
+          success: (result) ->
+            alert "success?"
+      connectWith: ".vertical-scroll"
     $(".panel-default").addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all").find(".panel-heading").addClass("ui-widget-header ui-corner-all").prepend("<span class='ui-icon ui-icon-minusthick'></span>").end().find ".panel-body"
     $(".panel-heading .ui-icon").click ->
       $(this).toggleClass("ui-icon-minusthick").toggleClass "ui-icon-plusthick"
       $(this).parents(".panel-default:first").find(".panel-body").toggle()
     $(".vertical-scroll").disableSelection()
+  #Card drag & drop
   $ ->
     $(".project-list-item").sortable connectWith: ".project-list-item"
     $(".card").addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all").find(".card-header").addClass("ui-widget-header ui-corner-all").prepend("<span class='ui-icon ui-icon-minusthick'></span>").end().find ".card-content"

@@ -11,7 +11,7 @@ class ProjectsController < ApplicationController
   def show
     add_breadcrumb @project.name, project_path(@project)
     @lists = List.where(:project_id => @project.id).order('sort asc')
-    respond_with(@project)
+    respond_with(@lists)
   end
 
   def new
