@@ -21,5 +21,7 @@
 
 en:
   hello: "Hello world"
+  search: Search with name or email
   welcome: "Welcome"
   app_title: "Ganban"
+
