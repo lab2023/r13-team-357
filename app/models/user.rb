@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :projects, foreign_key: 'owner_id'
+  #has_many :projects, foreign_key: 'owner_id'
+  has_many :own_projects, class_name: 'Project', foreign_key: 'owner_id'
   has_and_belongs_to_many :projects
 end
