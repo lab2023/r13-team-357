@@ -35,6 +35,7 @@ We use
 * [SemVer](http://semver.org/)
 * [Gitflow](https://github.com/nvie/gitflow)
 * [Huboard Kanban](http://kanban.lab2023.com)
+* [Models Blueprint](http://dbpatterns.com/documents/525f174c9785db258965a729/)
 
 Once you've made your great commits:
 
