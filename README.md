@@ -1,8 +1,6 @@
 # Ganban
 
-[![Gem Version](https://badge.fury.io/rb/r13-team-357.png)](http://badge.fury.io/rb/r13-team-357)
-[![Code Climate](https://github.com/railsrumble/r13-team-357.png)](https://codeclimate.com/github/railsrumble/r13-team-357)
-[![Dependency Status](https://gemnasium.com/railsrumble/r13-team-357.png)](https://gemnasium.com/railsrumble/r13-team-357)
+[![Code Climate](https://codeclimate.com/github/railsrumble/r13-team-357.png)](https://codeclimate.com/github/railsrumble/r13-team-357)
 
 Ganban is a open source web app.
 
@@ -37,6 +35,7 @@ We use
 * [SemVer](http://semver.org/)
 * [Gitflow](https://github.com/nvie/gitflow)
 * [Huboard Kanban](http://kanban.lab2023.com)
+* [Models Blueprint](http://dbpatterns.com/documents/525f174c9785db258965a729/)
 
 Once you've made your great commits:
 
