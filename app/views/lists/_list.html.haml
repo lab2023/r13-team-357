@@ -1,0 +1,35 @@
+.panel-heading
+  %i.icon-table.icon-large
+  = t('tt.index', resource_name: List.model_name.human)
+  .panel-tools
+    .btn-group
+      %a.btn{href: '#'}
+        %i.icon-wrench
+        Settings
+      %a.btn{href: '#'}
+        %i.icon-filter
+        Filters
+      %a.btn{href: lists_path, data: {toggle: 'toolbar-tooltip'}, title: 'Reload'}
+        %i.icon-refresh
+    .badge= @lists.total_entries
+.panel-body.filters
+  = render 'filters'
+%table.table
+  %thead
+    %tr
+      %th #
+      %th= t('activerecord.attributes.project.name')
+      %th.actions
+        Actions
+  %tbody
+    - @lists.each do |list|
+      %tr
+        %td= list.id
+        %td= list.name
+        %td.action
+          = link_to(list, class: 'btn btn-success', toogle: 'tooltip', title: t('tooltips.zoom')) do
+            %i.icon-zoom-in
+          = link_to(edit_list_path(list) , class: 'btn btn-info') do
+            %i.icon-edit
+          = link_to(list, class: 'btn btn-danger', method: :delete) do
+            %i.icon-trash

@@ -14,12 +14,11 @@
     %meta(name='apple-mobile-web-app-capable' content='yes')
     %meta(name='apple-mobile-web-app-status-bar-style' content='translucent-black')
 
-    %link(rel="shortcut icon" href="/assets/favicon.ico")
+    %link(rel="shortcut icon" href="/assets/favicon.png")
 
     / Stylesheets (Don't change include order)
     = stylesheet_link_tag '//netdna.bootstrapcdn.com/font-awesome/3.2.0/css/font-awesome.min.css',
-                          'welcome',
-                          'data-turbolinks-track' => true
+                          'welcome'
     = yield :head
 
   %body
@@ -28,8 +27,8 @@
         %i.icon-tasks
         Ganban
       %ul.nav.navbar-nav.pull-right
-        %li= link_to 'GitHub Repo', 'https://github.com/railsrumble/r13-team-357'
-        %li= link_to 'Blog', 'http://ganban.tumblr.com/'
+        %li= link_to 'GitHub Repo', 'https://github.com/railsrumble/r13-team-357', :target => '_blank'
+        %li= link_to 'Blog', 'http://ganban.tumblr.com/', :target => '_blank'
 
     .container
       = yield
@@ -41,6 +40,6 @@
           %li= link_to 'Blog', 'http://ganban.tumblr.com/', :target => '_blank'
         .pull-right
           %ul.nav.navbar-nav
-            %li= link_to @version, '/version.txt'
+            %li= link_to @version, 'https://github.com/railsrumble/r13-team-357/blob/develop/CHANGELOG.md', target: '_blank'
 
-    = javascript_include_tag 'welcome', 'data-turbolinks-track' => true
+    = javascript_include_tag 'welcome'

@@ -12,6 +12,33 @@
 #
 #= require jquery
 #= require jquery_ujs
-#= require turbolinks
+#= require jquery.ui.autocomplete
+#= require jquery.ui.sortable
 #= require bootstrap
 #= require hierapolis
+#= require cocoon
+
+$(document).ready ->
+  $("#collaborator_user_id").autocomplete
+      source: $('#collaborator_user_id').data('autocomplete-source')
+      autoFocus: true
+
+  width = $(".project-list").width()
+  size = $(".project-list").size()
+  full_width = (width+15)*(size)
+  $('.vertical-scroll').width(full_width)
+
+  $ ->
+    $(".vertical-scroll").sortable connectWith: ".vertical-scroll"
+    $(".panel-default").addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all").find(".panel-heading").addClass("ui-widget-header ui-corner-all").prepend("<span class='ui-icon ui-icon-minusthick'></span>").end().find ".panel-body"
+    $(".panel-heading .ui-icon").click ->
+      $(this).toggleClass("ui-icon-minusthick").toggleClass "ui-icon-plusthick"
+      $(this).parents(".panel-default:first").find(".panel-body").toggle()
+    $(".vertical-scroll").disableSelection()
+  $ ->
+    $(".project-list-item").sortable connectWith: ".project-list-item"
+    $(".card").addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all").find(".card-header").addClass("ui-widget-header ui-corner-all").prepend("<span class='ui-icon ui-icon-minusthick'></span>").end().find ".card-content"
+    $(".card-header .ui-icon").click ->
+      $(this).toggleClass("ui-icon-minusthick").toggleClass "ui-icon-plusthick"
+      $(this).parents(".card:first").find(".card-content").toggle()
+    $(".project-list-item").disableSelection()

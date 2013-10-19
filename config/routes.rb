@@ -1,4 +1,17 @@
 Ganban::Application.routes.draw do
+  resources :cards
+
+  resources :lists
+
+  resources :current_projects, only: [:create]
+
+  resources :projects do
+    get :users, on: :member
+    get :auto_users, on: :collection
+  end
+
+  resources :collaborators, only: [:index, :create, :destroy]
+
   devise_for :admins, controllers: {sessions: 'hq/sessions'}, path: 'hq',
              path_names: {sign_in: 'login', sign_out: 'logout', password: 'secret',
                           confirmation: 'verification'}

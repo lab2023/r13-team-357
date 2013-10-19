@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131019052000) do
+ActiveRecord::Schema.define(version: 20131019142932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,54 @@ ActiveRecord::Schema.define(version: 20131019052000) do
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
+
+  create_table "cards", force: true do |t|
+    t.integer  "owner_id"
+    t.integer  "assignment_id"
+    t.integer  "list_id"
+    t.string   "title"
+    t.text     "body"
+    t.date     "due_date"
+    t.boolean  "done"
+    t.integer  "comment_count",         default: 0
+    t.integer  "document_count",        default: 0
+    t.integer  "checklist_total_count", default: 0
+    t.integer  "checklist_done_count",  default: 0
+    t.boolean  "private"
+    t.integer  "sort"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "cards", ["list_id"], name: "index_cards_on_list_id", using: :btree
+
+  create_table "lists", force: true do |t|
+    t.string   "name"
+    t.integer  "sort"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "lists", ["project_id"], name: "index_lists_on_project_id", using: :btree
+
+  create_table "projects", force: true do |t|
+    t.string   "name"
+    t.boolean  "archive"
+    t.integer  "owner_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "description"
+  end
+
+  add_index "projects", ["owner_id"], name: "index_projects_on_owner_id", using: :btree
+
+  create_table "projects_users", id: false, force: true do |t|
+    t.integer "project_id"
+    t.integer "user_id"
+  end
+
+  add_index "projects_users", ["user_id", "project_id"], name: "index_projects_users_on_user_id_and_project_id", unique: true, using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

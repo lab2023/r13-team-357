@@ -1,0 +1,22 @@
+%tr
+  %td= card.id
+  %td= card.owner_id
+  %td= card.assignment_id
+  %td= card.list
+  %td= card.title
+  %td= card.body
+  %td= card.due_date
+  %td= card.done
+  %td= card.comment_count
+  %td= card.document_count
+  %td= card.checklist_total_count
+  %td= card.checklist_done_count
+  %td= card.private
+  %td= card.sort
+  %td.action
+    = link_to(card, class: 'btn btn-success', toogle: 'tooltip', title: t('tooltips.zoom')) do
+      %i.icon-zoom-in
+    = link_to(edit_card_path(card) , class: 'btn btn-info') do
+      %i.icon-edit
+    = link_to(card, class: 'btn btn-danger', method: :delete) do
+      %i.icon-trash

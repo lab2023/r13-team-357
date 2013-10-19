@@ -6,6 +6,7 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails', '~> 3.0.4'
+gem 'jquery-ui-rails'
 gem 'turbolinks', '~> 1.3.0'
 gem 'haml', '~> 4.0.2'
 gem 'haml-rails'
@@ -28,12 +29,14 @@ gem 'annotate', '>=2.5.0'
 gem 'recipient_interceptor', '~> 0.1.2'
 gem 'rails-i18n', '~> 4.0.0'
 gem 'ransack'
-
+#gem 'jquery-turbolinks'
+gem 'select2-rails'
 # gem 'rails-observers'
 
 gem 'hierapolis-rails', '~> 0.4.0'
 gem 'breadcrumbs_on_rails', '~> 2.3.0'
 gem 'blankable', '~> 0.2.0'
+gem 'cocoon'
 
 group :doc do
   gem 'sdoc', require: false

@@ -1,0 +1,10 @@
+.table-header.row
+  .col-lg-9
+    TODO: Add filters here
+  .col-lg-3
+    = search_form_for @search, builder: SimpleForm::FormBuilder do |f|
+      .input-group
+        = f.input_field :owner_id_or_assignment_id_or_list_or_title_or_body_or_due_date_or_done_or_comment_count_or_document_count_or_checklist_total_count_or_checklist_done_count_or_private_or_sort_cont, label: false, input_html: {class: 'form-control'}, placeholder: 'Quick search...'
+        %span.input-group-btn
+          = button_tag( class: 'btn') do
+            %i.icon-search

@@ -13,6 +13,109 @@
 
 @import 'hierapolis'
 
-// Login logo fix
+.add_fields, .remove_fields
+  @extend .btn
+.add_fields
+  @extend .btn-default
+.remove_fields
+  @extend .btn-danger
+  float: right
+
+.switcher
+  margin-left: -20px !important
+  a.dropdown-toggle
+    color: $base-dark-color !important
+  .dropdown-menu:after
+    right: 208px !important
+  .dropdown-menu
+    min-width: 233px !important
+    li.active
+      padding: 4px 10px 0 10px
+      color: $base-color
+      i
+        margin-right: 5px
+    > li.project > a
+      padding: 3px 11px
+      i
+        margin-right: 5px
+    li.project
+      a:hover
+        background-color: rgba(0,0,0,0)
+        color: $base-color
+    li.action
+      padding: 0 10px 5px 10px
+
+// Hierapolis overrides
+.sprite-image, #beaker
+  background-image: url('sprite.png')
 body.login .wrapper .brand h1 .logo-icon i[class*='icon-']
   margin-left: -2px !important
+#navbar .navbar-brand
+  margin-top: -3px !important
+
+// Project and cards
+.vertical-scroll
+  overflow: scroll
+
+.project-list
+  width: 300px !important
+  float: left
+  margin-right: 10px
+
+  form.add-card-form
+    display: none
+    textarea
+      width: 220px
+      height: 75px
+    .actions
+      width: 48px
+      text-align: right
+      button
+        margin-bottom: 6px
+        display: inline-block
+        width: 33px
+        padding:
+          top: 7px
+          left: 7px
+        i.icon-remove-sign
+          color: $silver
+
+.project-list-item
+  width: 300px !important
+  float: left
+  max-height: 500px
+  overflow-y: scroll
+  .card
+    width: 100%
+    height: 75px
+    margin-bottom: 5px
+    background-color: gray
+    border-radius: 5px
+    background-color: #f3f3f3
+    padding: 5px
+  .icon-list
+    width: 30px
+    height: 30px
+    background-color: 50px
+    display: inline-block
+
+  .user-icon
+    @extend .icon-list
+    float: right
+    margin-right: 10px
+.ui-sortable-placeholder
+  border: 1px dotted black
+  visibility: visible !important
+  height: 50px !important
+
+.project-list-item::-webkit-scrollbar
+  display: none
+.vertical-scroll::-webkit-scrollbar
+  display: none
+.project-list-item::-moz-scrollbar
+  display: none
+
+
+
+
+

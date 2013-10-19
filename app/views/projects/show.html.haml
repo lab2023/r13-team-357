@@ -1,0 +1,47 @@
+- content_for :toolbar do
+  = link_to edit_project_path(@project ), class: 'btn btn-default' do
+    %i.icon-pencil
+    = t('action_button.edit')
+.vertical-scroll{style: "width: #{@project.lists.count*315 + 650}px"}
+  - @project.lists.each do |list|
+    .panel.panel-default.project-list
+      .panel-heading
+        %strong= list.name
+      .panel-body.project-list-item
+        - list.cards.each do |card|
+          .card
+            .card-header
+              = card.title
+            .card-body
+
+
+  .panel.panel-default.project-list
+    .panel-heading
+      %strong Lorem ipsum
+      .panel-tools
+        .btn-group
+          %a.btn.add-card-btn{href: '#', data: {target: 'add-card-form-1'}}
+            %i.icon-plus
+            Add a card
+      %form.add-card-form{rel: 'add-card-form-1'}
+        %textarea.pull-left.form-control{placeholder: 'Enter email', type: 'email'}
+        .actions.pull-right
+          %button.btn.btn-success{type: 'submit'}
+            %i.icon-check-sign.icon-large
+          %button.btn.btn-default
+            %i.icon-remove-sign.icon-large
+      .clearfix
+
+    .panel-body.project-list-item
+      .card
+        .card-header
+          Dolor Sit Amet
+        .card-body
+          .icon-list
+            1
+          .icon-list
+            2
+          .icon-list
+            3
+          .user-icon
+            user

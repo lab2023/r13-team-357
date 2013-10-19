@@ -1,0 +1,8 @@
+$("#collaborators").html("<%= escape_javascript( render(:partial => "collaborators") ) %>");
+$("#collaborator_form").html("<%= escape_javascript( render(:partial => "form") ) %>");
+
+
+$("#collaborator_user_id").autocomplete({
+    source: $('#collaborator_user_id').data('autocomplete-source'),
+    autoFocus: true
+});

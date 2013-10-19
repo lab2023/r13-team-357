@@ -97,18 +97,21 @@ Ganban::Application.configure do
   # Mail Setting
   config.action_mailer.default_url_options = { :host => 'ganban.com' }
 
-
   config.action_mailer.delivery_method = :smtp
-config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.smtp_settings = Settings.smtp.mandrill
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.smtp_settings = {
+      :address  => 'smtp.mandrillapp.com',
+      :port      => 587,
+      :user_name => Settings.email.mandrill_username,
+      :password  => Settings.email.mandrill_api_key,
+      :authentication => 'login'
+  }
 
-
-  
   config.middleware.use ExceptionNotification::Rack,
     :email => {
-      :email_prefix => "[Whatever] ",
-      :sender_address => %{"notifier" <notifier@example.com>},
-      :exception_recipients => %w{exceptions@example.com}
+      :email_prefix => "[Exception ] ",
+      :sender_address => %{"notifier" <notifier@ganban.com>},
+      :exception_recipients => %w{exceptions@ganban.com}
     }
 
 end
