@@ -13,7 +13,8 @@ a high level of production. Kanban is one method through which JIT is achieved.
 
 ## Links
 
-* [http://ganban.r13.railsrumble.com/](http://ganban.r13.railsrumble.com/)
+* Production Server [http://ganban.r13.railsrumble.com/](http://ganban.r13.railsrumble.com/)
+* Staging Server [http://stage-ganban.lab2023.com/](http://stage-ganban.lab2023.com/)
 * [Blog](http://ganban.tumblr.com/)
 * [Rails Rumble Page](http://railsrumble.com/entries/357-ganban)
 
