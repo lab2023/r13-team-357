@@ -1,2 +1,2 @@
-$("#list-<%= @card.list_id %>").html("<%= escape_javascript( render @card.list.cards ) %>");
+$("#list-<%= @card.list_id %>").html("<%= escape_javascript( render @card.list.cards.order('sort asc') ) %>");
 $("#list-<%= @card.list_id %>-title-input").val('');
