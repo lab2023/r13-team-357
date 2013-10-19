@@ -1,2 +1,4 @@
 email:
-  noreply: noreply@appname.org
+  noreply: noreply@ganban.com
+  mandrill_username: secret-token
+  mandrill_api_key: secret-token
