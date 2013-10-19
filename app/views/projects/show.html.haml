@@ -1,7 +1,9 @@
 - content_for :toolbar do
+  - @project.users.each do |user|
+    = image_tag avatar_url(user), class: 'img-circle ', width: '40px', data: { toggle: 'tooltip' }, title: user.name
+
   = link_to edit_project_path(@project ), class: 'btn btn-default' do
     %i.icon-pencil
     = t('action_button.edit')
-
 .vertical-scroll{style: "width: #{@project.lists.count*315 + 650}px"}
   =render @project.lists
