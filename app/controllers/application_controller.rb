@@ -1,10 +1,10 @@
 require 'application_responder'
 
 class ApplicationController < ActionController::Base
-  before_filter :set_user_time_zone
-  before_filter :set_quest_user
+  before_action :authenticate_user!
+  before_action :set_user_time_zone
+  before_action :set_quest_user
   add_breadcrumb "Dashboard", :dashboard_index_path
-
 
   self.responder = ApplicationResponder
   respond_to :html, :json

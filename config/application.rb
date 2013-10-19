@@ -28,5 +28,13 @@ module Ganban
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
     config.sass.preferred_syntax = :sass
 
+    config.to_prepare do
+      Devise::SessionsController.layout 'login'
+      #Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "application" : "your_layout_name" }
+      #Devise::ConfirmationsController.layout "your_layout_name"
+      #Devise::UnlocksController.layout "your_layout_name"
+      #Devise::PasswordsController.layout "your_layout_name"
+    end
+
   end
 end
