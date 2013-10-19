@@ -39,5 +39,8 @@
         %ul.nav.navbar-nav
           %li= link_to 'GitHub Repo', 'https://github.com/railsrumble/r13-team-357'
           %li= link_to 'Blog', 'http://ganban.tumblr.com/'
+        .pull-right
+          %ul.nav.navbar-nav
+            %li= link_to @version, '/version.txt'
 
     = javascript_include_tag 'welcome', 'data-turbolinks-track' => true
