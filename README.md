@@ -11,6 +11,12 @@ production.Kanban is a system to control the logistical chain from a production 
 inventory control system. Kanban was developed by Taiichi Ohno, at Toyota, to find a system to improve and maintain
 a high level of production. Kanban is one method through which JIT is achieved.
 
+## Links
+
+* [http://ganban.r13.railsrumble.com/](http://ganban.r13.railsrumble.com/)
+* [Blog](http://ganban.tumblr.com/)
+* [Rails Rumble Page](http://railsrumble.com/entries/357-ganban)
+
 ## Requirements
 
 Before generating your application, you will need:
