@@ -19,10 +19,8 @@
 #= require hierapolis
 
 $(document).ready ->
-
-#  $("#search_users").val('')
-#  $(".search-query").autocomplete
-#  source: $(".search-query").data("autocomplete-source")
-#  messages:
-#  noResults: null
-#  results: ->
+  $(".search-query").autocomplete
+    source: $(".search-query").data("autocomplete-source")
+    messages:
+      noResults: null
+      results: ->
