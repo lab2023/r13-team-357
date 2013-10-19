@@ -7,7 +7,12 @@ class AgentSessionsController < ApplicationController
     user = User.find(params[:user_id])
     if user && user.email == 'info@lab2023.com'
       sign_in user, :bypass => true
-      redirect_to dashboard_index_path
+      if user.projects.present?
+        redirect_to project_path user.projects.last
+      else
+        redirect_to new_project_path
+      end
+
     else
       flash[:notice] = "Wrong account info !!!"
       redirect_to new_user_session_path
