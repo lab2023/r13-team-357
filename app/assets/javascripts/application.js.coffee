@@ -11,16 +11,14 @@
 # GO AFTER THE REQUIRES BELOW.
 #
 #= require jquery
-
 #= require jquery_ujs
 #= require jquery.ui.autocomplete
 #= require jquery.ui.sortable
-#= require turbolinks
 #= require bootstrap
 #= require hierapolis
 #= require cocoon
 
-ready = ->
+$(document).ready ->
   $("#collaborator_user_id").autocomplete
       source: $('#collaborator_user_id').data('autocomplete-source')
       autoFocus: true
@@ -44,6 +42,3 @@ ready = ->
       $(this).toggleClass("ui-icon-minusthick").toggleClass "ui-icon-plusthick"
       $(this).parents(".card:first").find(".card-content").toggle()
     $(".project-list-item").disableSelection()
-
-$(document).ready(ready)
-$(document).on('page:load', ready)

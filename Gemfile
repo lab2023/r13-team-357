@@ -29,7 +29,7 @@ gem 'annotate', '>=2.5.0'
 gem 'recipient_interceptor', '~> 0.1.2'
 gem 'rails-i18n', '~> 4.0.0'
 gem 'ransack'
-gem 'jquery-turbolinks'
+#gem 'jquery-turbolinks'
 gem 'select2-rails'
 # gem 'rails-observers'
 

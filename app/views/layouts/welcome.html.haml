@@ -18,8 +18,7 @@
 
     / Stylesheets (Don't change include order)
     = stylesheet_link_tag '//netdna.bootstrapcdn.com/font-awesome/3.2.0/css/font-awesome.min.css',
-                          'welcome',
-                          'data-turbolinks-track' => true
+                          'welcome'
     = yield :head
 
   %body
@@ -43,4 +42,4 @@
           %ul.nav.navbar-nav
             %li= link_to @version, 'https://github.com/railsrumble/r13-team-357/blob/develop/CHANGELOG.md', target: '_blank'
 
-    = javascript_include_tag 'welcome', 'data-turbolinks-track' => true
+    = javascript_include_tag 'welcome'
