@@ -34,7 +34,7 @@ $(document).ready ->
         item = ui.item.attr('id')
         sort = $(".vertical-scroll").sortable('toArray')
         index = sort.indexOf(item)+1
-        URL = "/lists/" + item
+        URL = "/lists/" + item + '/move'
         list =
           id: item
           sort: index
