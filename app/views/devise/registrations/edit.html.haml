@@ -7,9 +7,10 @@
     - if devise_mapping.confirmable? && resource.pending_reconfirmation?
       %p
         Currently waiting confirmation for: #{resource.unconfirmed_email}
-    = f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false
+    = f.input :password, :autocomplete => 'off', :hint => "leave it blank if you don't want to change it", :required => false
     = f.input :password_confirmation, :required => false
-    = f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true
-  .form-actions
-    = f.button :submit, "Update"
-= link_to "Back", :back
+    = f.input :current_password, :hint => 'we need your current password to confirm your changes', :required => true
+  .text-center
+    = f.button :submit, 'Sign up'
+    %br/
+    = link_to 'Back', :back
