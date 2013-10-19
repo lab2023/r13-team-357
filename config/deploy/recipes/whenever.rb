@@ -6,7 +6,7 @@ namespace :whenever do
 
   desc 'Update the crontab file'
   task :update_crontab, :roles => :db do
-    run "cd #{current_path} && whenever --update-crontab #{application}"
+    run "cd #{releases_path} && whenever --update-crontab #{application}"
   end
 
   after 'deploy:setup', 'whenever:setup'
