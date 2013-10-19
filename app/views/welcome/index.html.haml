@@ -12,3 +12,4 @@
   - else
     = link_to 'Sign up today', new_user_registration_path, class: 'btn btn-large btn-success'
     = link_to 'Sign in', new_user_session_path, class: 'btn btn-large'
+    = link_to 'Sign in guest', agent_sessions_path(user_id: @guest_user.id), class: 'btn btn-large', method: :post

@@ -2,11 +2,16 @@ Ganban::Application.routes.draw do
   devise_for :admins, controllers: {sessions: 'hq/sessions'}, path: 'hq',
              path_names: {sign_in: 'login', sign_out: 'logout', password: 'secret',
                           confirmation: 'verification'}
-  devise_for :users
+  devise_for :users,
+             :path => 'accounts',
+             :path_names => { :sign_in => 'login', :sign_up => 'new', :sign_out => 'logout', :password => 'secret',
+                              :confirmation => 'verification' }
   root to: 'welcome#index'
   namespace :hq do
       resources :dashboard, only: [:index]
   end
+
+  resources :agent_sessions, only: :create
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
