@@ -9,7 +9,6 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require jquery.ui.autocomplete
  *= require_tree .
 
 @import 'hierapolis'
@@ -53,14 +52,34 @@ body.login .wrapper .brand h1 .logo-icon i[class*='icon-']
   margin-left: -2px !important
 #navbar .navbar-brand
   margin-top: -3px !important
+
+// Project and cards
 .vertical-scroll
   overflow: scroll
-  min-height: 600px
 
 .project-list
   width: 300px !important
   float: left
   margin-right: 10px
+
+  form.add-card-form
+    display: none
+    textarea
+      width: 220px
+      height: 75px
+    .actions
+      width: 48px
+      text-align: right
+      button
+        margin-bottom: 6px
+        display: inline-block
+        width: 33px
+        padding:
+          top: 7px
+          left: 7px
+        i.icon-remove-sign
+          color: $silver
+
 .project-list-item
   width: 300px !important
   float: left
@@ -88,8 +107,6 @@ body.login .wrapper .brand h1 .logo-icon i[class*='icon-']
   border: 1px dotted black
   visibility: visible !important
   height: 50px !important
-.ui-sortable-placeholder *
-  visibility: hidden
 
 .project-list-item::-webkit-scrollbar
   display: none
@@ -97,6 +114,8 @@ body.login .wrapper .brand h1 .logo-icon i[class*='icon-']
   display: none
 .project-list-item::-moz-scrollbar
   display: none
+
+
 
 
 
