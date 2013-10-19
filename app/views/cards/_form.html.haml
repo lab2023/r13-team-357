@@ -1,0 +1,20 @@
+.panel.panel-default
+  .panel-heading
+    %i.icon-edit.icon-large
+    = yield :form_title
+  .panel-body
+    = simple_form_for(@card) do |f|
+      = f.error_notification
+
+      .form-inputs
+        = f.input :assignment_id
+        = f.association :list
+        = f.input :title
+        = f.input :body
+        = f.input :due_date
+        = f.input :done
+        = f.input :private
+
+      .form-actions
+        = f.button :submit, class: 'btn btn-default'
+        = link_to t('cancel'), cards_path, class: 'btn'

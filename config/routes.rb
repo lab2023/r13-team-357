@@ -1,4 +1,6 @@
 Ganban::Application.routes.draw do
+  resources :cards
+
   resources :lists
 
   resources :current_projects, only: [:create]

@@ -1,0 +1,10 @@
+- content_for :toolbar do
+  = link_to new_card_path, class: 'btn btn-default' do
+    %i.icon-plus
+    = t('action_button.new', resource_name: Card.model_name.human)
+
+.panel.panel-default.grid
+  =blankable(@cards)
+  .panel-footer
+    .pagination.pagination-sm
+      = will_paginate @cards, renderer: BootstrapPagination::Rails, bootstrap: 3

@@ -1,0 +1,37 @@
+.panel-heading
+  %i.icon-table.icon-large
+  = t('tt.index', resource_name: Card.model_name.human)
+  .panel-tools
+    .btn-group
+      %a.btn{href: '#'}
+        %i.icon-wrench
+        Settings
+      %a.btn{href: '#'}
+        %i.icon-filter
+        Filters
+      %a.btn{href: cards_path, data: {toggle: 'toolbar-tooltip'}, title: 'Reload'}
+        %i.icon-refresh
+    .badge= @cards.total_entries
+.panel-body.filters
+  = render 'filters'
+%table.table
+  %thead
+    %tr
+      %th #
+      %th= sort_link(@search, :owner_id, t('activerecord.attributes.card.owner_id'))
+      %th= sort_link(@search, :assignment_id, t('activerecord.attributes.card.assignment_id'))
+      %th= sort_link(@search, :list, t('activerecord.attributes.card.list'))
+      %th= sort_link(@search, :title, t('activerecord.attributes.card.title'))
+      %th= sort_link(@search, :body, t('activerecord.attributes.card.body'))
+      %th= sort_link(@search, :due_date, t('activerecord.attributes.card.due_date'))
+      %th= sort_link(@search, :done, t('activerecord.attributes.card.done'))
+      %th= sort_link(@search, :comment_count, t('activerecord.attributes.card.comment_count'))
+      %th= sort_link(@search, :document_count, t('activerecord.attributes.card.document_count'))
+      %th= sort_link(@search, :checklist_total_count, t('activerecord.attributes.card.checklist_total_count'))
+      %th= sort_link(@search, :checklist_done_count, t('activerecord.attributes.card.checklist_done_count'))
+      %th= sort_link(@search, :private, t('activerecord.attributes.card.private'))
+      %th= sort_link(@search, :sort, t('activerecord.attributes.card.sort'))
+      %th.actions
+        Actions
+  %tbody
+    = render @cards
