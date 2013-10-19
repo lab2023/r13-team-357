@@ -1,0 +1,13 @@
+- content_for :toolbar do
+  = link_to edit_list_path(@list ), class: 'btn btn-default' do
+    %i.icon-pencil
+    = t('action_button.edit')
+.panel.panel-default
+  .panel-heading
+    %i.icon-edit.icon-large
+    = t('tt.show', resource_name: List.model_name.human)
+  .panel-body
+    = show_for @list do |s|
+      = s.attribute :name
+      = s.attribute :sort
+      = s.association :project
