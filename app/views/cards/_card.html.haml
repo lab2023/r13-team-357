@@ -1,4 +1,5 @@
 .card
+  %a.close{type: 'button', data: {toggle: 'tooltip'}, title: 'Remove card'} ×
   %p.title
     =truncate card.title
   .stats{class: card.assigned.present? ? 'default' : 'extended'}

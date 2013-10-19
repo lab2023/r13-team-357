@@ -40,6 +40,10 @@ class CardsController < ApplicationController
     respond_with(@card)
   end
 
+  def move
+
+  end
+
   private
 
   def set_card
