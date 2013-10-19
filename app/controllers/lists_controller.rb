@@ -41,16 +41,22 @@ class ListsController < ApplicationController
   end
 
   def move
-    @current_list = List.find(params[:id])
-    collection = List.where('sort < ? AND sort >= ?', @current_list.sort, params[:sort]).order('sort desc')
-    @current_list.sort = 0
-    @current_list.save
-    collection.each do |list|
-      list.sort += 1
+    @current_list = @current_project.lists
+    sort = Array.new
+    params[:sort].each do |hash|
+      sort << hash.to_i
+    end
+    @current_list.each_with_index do |list,index|
+      list.sort = index*100
       list.save
     end
-    @current_list.sort = params[:sort]
-    @current_list.save
+
+    @current_list.each do |list|
+      list.sort = sort.index(list.id)+1
+      list.save
+    end
+
+
 
     respond_to do |format|
       format.js

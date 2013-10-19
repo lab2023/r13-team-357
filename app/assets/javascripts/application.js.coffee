@@ -33,18 +33,17 @@ $(document).ready ->
       update: (event, ui) ->
         item = ui.item.attr('id')
         sort = $(".vertical-scroll").sortable('toArray')
-        index = sort.indexOf(item)+1
         URL = "/lists/" + item + '/move'
         list =
           id: item
-          sort: index
+          sort: sort
         $.ajax
           url: URL
           type: "PUT"
           data: JSON.stringify(list)
           contentType: "application/json"
           success: (result) ->
-            alert "success?"
+
       connectWith: ".vertical-scroll"
     $(".panel-default").addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all").find(".panel-heading").addClass("ui-widget-header ui-corner-all").prepend("<span class='ui-icon ui-icon-minusthick'></span>").end().find ".panel-body"
     $(".panel-heading .ui-icon").click ->
