@@ -6,19 +6,11 @@
         %a.btn.add-card-btn{href: '#', data: {target: 'add-card-form-1'}}
           %i.icon-plus
           Add a card
-    %form.add-card-form{rel: 'add-card-form-1'}
-      %textarea.pull-left.form-control{placeholder: 'Type card details...', type: 'email'}
-      .actions.pull-right
-        %button.btn.btn-success{type: 'submit'}
-          %i.icon-check-sign.icon-large
-        %button.btn.btn-default
-          %i.icon-remove-sign.icon-large
-
-    #card_new_form
     = simple_form_for list.cards.new, remote: true do |f|
       = f.input :list_id, input_html: {value: list.id}, as: :hidden
-      = f.input :title, input_html: {id: "list-#{list.id}-title-input"}
-      = f.submit
+      = f.input :title, input_html: {id: "list-#{list.id}-title-input"}, as: :text, label: false, placeholder: 'Type card details...'
+      = f.submit 'Create', class: 'btn btn-success'
+      %a{href: '#'} Cancel
 
     .clearfix
   .panel-body.project-list-item{id: "list-#{list.id}"}
