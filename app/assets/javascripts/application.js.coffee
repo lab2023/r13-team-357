@@ -17,6 +17,7 @@
 #= require turbolinks
 #= require bootstrap
 #= require hierapolis
+#= require cocoon
 
 $(document).ready ->
   $(".search-query").autocomplete
