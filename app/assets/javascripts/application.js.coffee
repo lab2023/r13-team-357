@@ -11,7 +11,18 @@
 # GO AFTER THE REQUIRES BELOW.
 #
 #= require jquery
+#= require jquery.turbolinks
 #= require jquery_ujs
+#= require jquery.ui.autocomplete
 #= require turbolinks
 #= require bootstrap
 #= require hierapolis
+
+$(document).ready ->
+
+#  $("#search_users").val('')
+#  $(".search-query").autocomplete
+#  source: $(".search-query").data("autocomplete-source")
+#  messages:
+#  noResults: null
+#  results: ->

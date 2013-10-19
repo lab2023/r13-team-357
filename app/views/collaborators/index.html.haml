@@ -1,0 +1,8 @@
+
+.panel.panel-default
+  .panel-heading
+    %i.icon-edit.icon-large
+    = yield :form_title
+  .panel-body
+    %form
+      %input{id: 'user_id', name: 'user_id', type: :string}

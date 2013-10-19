@@ -26,8 +26,9 @@ class ProjectsController < ApplicationController
 
   def create
     @project = current_user.projects.new(project_params)
-    @project.user = current_user
+    @project.owner = current_user
     @project.save
+    @project.users << current_user
     respond_with(@project)
   end
 
@@ -39,6 +40,12 @@ class ProjectsController < ApplicationController
   def destroy
     @project.destroy
     respond_with(@project)
+  end
+
+  def auto_users
+    search = User.search(:name_or_email_start => params[:term])
+    users = search.result(:distinct => true).limit(10)
+    render :json => users.map {|p| Hash[id: p.id, label: p.name, name: p.id]}
   end
 
   private
