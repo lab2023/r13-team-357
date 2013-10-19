@@ -5,5 +5,6 @@
   = link_to edit_project_path(@project ), class: 'btn btn-default' do
     %i.icon-pencil
     = t('action_button.edit')
-.vertical-scroll{style: "width: #{@project.lists.count*315 + 650}px"}
-  =render @project.lists
+
+.vertical-scroll{style: "width: #{@lists.count*315}px"}
+  =render @lists
