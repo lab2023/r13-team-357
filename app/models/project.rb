@@ -4,4 +4,6 @@ class Project < ActiveRecord::Base
   accepts_nested_attributes_for :users
 
   scope :by_owner, lambda { |owner_id| where(owner_id: owner_id) unless owner_id.nil? }
+
+  validates_presence_of :name
 end
