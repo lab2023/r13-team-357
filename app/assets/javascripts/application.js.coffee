@@ -19,6 +19,11 @@
 #= require hierapolis
 
 $(document).ready ->
+  width = $(".project-list").width()
+  size = $(".project-list").size()
+  full_width = (width+15)*(size)
+  $('.vertical-scroll').width(full_width)
+
   $(".search-query").autocomplete
     source: $(".search-query").data("autocomplete-source")
     messages:
