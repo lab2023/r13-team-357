@@ -1,8 +1,6 @@
 # Ganban
 
-[![Gem Version](https://badge.fury.io/rb/r13-team-357.png)](http://badge.fury.io/rb/r13-team-357)
-[![Code Climate](https://github.com/railsrumble/r13-team-357.png)](https://codeclimate.com/github/railsrumble/r13-team-357)
-[![Dependency Status](https://gemnasium.com/railsrumble/r13-team-357.png)](https://gemnasium.com/railsrumble/r13-team-357)
+[![Code Climate](https://codeclimate.com/github/railsrumble/r13-team-357.png)](https://codeclimate.com/github/railsrumble/r13-team-357)
 
 Ganban is a open source web app.
 
