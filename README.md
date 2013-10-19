@@ -43,6 +43,21 @@ We use
 * [Huboard Kanban](http://kanban.lab2023.com)
 * [Models Blueprint](http://dbpatterns.com/documents/525f174c9785db258965a729/)
 
+We make a rake `dev:setup` it will create dummy data for development.
+
+**Users**
+
+muhammet.dilek@lab2023.com,     password: '12341234', name: 'Muhammet Dilek'
+onur.oozgur.ozkan@lab2023.com,  password: '12341234', name: 'Onur Özgür Ozkan'
+tayfun.ozis.erikan@lab2023.com, password: '12341234', name: 'Tayfun Ozis Erikan'
+hamit.turku.kaya@lab2023.com,   password: '12341234', name: 'Hamit Türkü Kaya'
+
+**Admin**
+
+Login : `/hq/login`
+admin@ganban.com, password: '12341234'
+
+
 Once you've made your great commits:
 
 1. Fork Template
