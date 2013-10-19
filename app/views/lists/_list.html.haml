@@ -1,0 +1,12 @@
+%tr
+  %td= list.id
+  %td= list.name
+  %td= list.sort
+  %td= list.project
+  %td.action
+    = link_to(list, class: 'btn btn-success', toogle: 'tooltip', title: t('tooltips.zoom')) do
+      %i.icon-zoom-in
+    = link_to(edit_list_path(list) , class: 'btn btn-info') do
+      %i.icon-edit
+    = link_to(list, class: 'btn btn-danger', method: :delete) do
+      %i.icon-trash
