@@ -34,6 +34,7 @@ class ApplicationController < ActionController::Base
   def get_version
     IO.foreach('public/version.txt') do |line|
       @version = line
+      @version = "v #{@version}"
     end
   end
 
