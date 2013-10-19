@@ -17,13 +17,12 @@
     %link(rel="shortcut icon" href="/assets/favicon.png")
 
     / Stylesheets (Don't change include order)
-    = stylesheet_link_tag '//netdna.bootstrapcdn.com/font-awesome/3.2.0/css/font-awesome.min.css',
-                          'welcome'
+    = stylesheet_link_tag '//netdna.bootstrapcdn.com/font-awesome/3.2.0/css/font-awesome.min.css', 'welcome'
     = yield :head
 
   %body
     #navbar.navbar.navbar-default.navbar-fixed-top
-      %a.navbar-brand{:href => '#'}
+      %a.navbar-brand{:href => root_url}
         %i.icon-tasks
         Ganban
       %ul.nav.navbar-nav.pull-right
