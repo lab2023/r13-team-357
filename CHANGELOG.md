@@ -1,7 +1,63 @@
 
 #### [Current]
+ * [4493c03](../../commit/4493c03) - __(Muhammet DİLEK)__ settings symlink added
+ * [fe4d649](../../commit/fe4d649) - __(hamitturkukaya)__ [#35](../../issues/35) Triggerin multiple event error fixed(turbolinks removed)
+ * [4d86e7a](../../commit/4d86e7a) - __(hamitturkukaya)__ [#35](../../issues/35) Triggerin multiple event error fixed
+ * [41df774](../../commit/41df774) - __(hamitturkukaya)__ [#35](../../issues/35) Triggerin multiple event error fixed
+ * [cd1465b](../../commit/cd1465b) - __(Tayfun Öziş ERİKAN)__ [#25](../../issues/25) Project lists was designed and improved - Add card form was added
+ * [da6bcd7](../../commit/da6bcd7) - __(Onur Ozgur OZKAN)__ [#12](../../issues/12) change devise email
+ * [2f043da](../../commit/2f043da) - __(Onur Ozgur OZKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+ * [bbe0aa6](../../commit/bbe0aa6) - __(Onur Ozgur OZKAN)__ [#12](../../issues/12) change settings
+ * [16f6597](../../commit/16f6597) - __(Muhammet DİLEK)__ [#33](../../issues/33) user edit form designed
+ * [f54d622](../../commit/f54d622) - __(Muhammet DİLEK)__ [#16](../../issues/16) default value added to card count fields
+ * [cd46e51](../../commit/cd46e51) - __(Muhammet DİLEK)__ [#4](../../issues/4) collaborator page added
+ * [db6e2cd](../../commit/db6e2cd) - __(hamitturkukaya)__ [#28](../../issues/28) Card view drafts saved
+ * [418255b](../../commit/418255b) - __(Onur Ozgur OZKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+ * [8d7f35c](../../commit/8d7f35c) - __(Onur Ozgur OZKAN)__ [#30](../../issues/30) remove unused icons
+ * [421b3a5](../../commit/421b3a5) - __(hamitturkukaya)__ [#28](../../issues/28) Card view drafts saved
+ * [ad8e13b](../../commit/ad8e13b) - __(Tayfun Öziş ERİKAN)__ [#25](../../issues/25) Project lists was designed and improved - Default project lists was created - Nested field design was completed
+ * [1086277](../../commit/1086277) - __(Onur Ozgur OZKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+ * [228735a](../../commit/228735a) - __(Onur Ozgur OZKAN)__ [#15](../../issues/15) add lab2023 icon
+ * [f38e1dc](../../commit/f38e1dc) - __(Tayfun Öziş ERİKAN)__ Turbolinks ready event was fixed.
+ * [d9e56ac](../../commit/d9e56ac) - __(hamitturkukaya)__ [#29](../../issues/29) Drag & drop activities implemented
+ * [4005e64](../../commit/4005e64) - __(Muhammet DİLEK)__ [#16](../../issues/16) Card model created
 
-#### 
+Conflicts:
+	app/assets/stylesheets/application.css.sass
+
+ * [d37ad02](../../commit/d37ad02) - __(hamitturkukaya)__ [#27](../../issues/27) List views designed
+ * [8f7a33d](../../commit/8f7a33d) - __(Onur Ozgur OZKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+ * [694a8a3](../../commit/694a8a3) - __(Muhammet DİLEK)__ [#3](../../issues/3) dependent destroy added to project association
+ * [daef651](../../commit/daef651) - __(Onur Ozgur OZKAN)__ [#12](../../issues/12) modified mandrill settings
+ * [f98684d](../../commit/f98684d) - __(Muhammet DİLEK)__ [#21](../../issues/21) switcher combobox data
+ * [d3bae94](../../commit/d3bae94) - __(Muhammet DİLEK)__ [#3](../../issues/3) list create in project new
+ * [5bc2fc3](../../commit/5bc2fc3) - __(Tayfun Öziş ERİKAN)__ [#21](../../issues/21) Conflict was resolved
+ * [aef1a73](../../commit/aef1a73) - __(Tayfun Öziş ERİKAN)__ [#21](../../issues/21) Project switcher was created
+ * [f58de98](../../commit/f58de98) - __(Muhammet DİLEK)__ [#17](../../issues/17) list model created
+ * [9c89de4](../../commit/9c89de4) - __(Muhammet DİLEK)__ [#3](../../issues/3) description added to project
+ * [7f87cac](../../commit/7f87cac) - __(Muhammet DİLEK)__ [#3](../../issues/3) validation added to project name
+ * [a02f02e](../../commit/a02f02e) - __(Onur Ozgur OZKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+ * [9d339e1](../../commit/9d339e1) - __(Onur Ozgur OZKAN)__ [#24](../../issues/24) add target _blank to links
+ * [a37f0c7](../../commit/a37f0c7) - __(Muhammet DİLEK)__ [#23](../../issues/23) version link changed
+
+Conflicts:
+	app/views/layouts/partials/_dock.haml
+	config/locales/en.yml
+
+ * [21d1514](../../commit/21d1514) - __(hamitturkukaya)__ [#4](../../issues/4) Owner can add user to project
+
+ - Controllers and models created
+
+ * [a4beaed](../../commit/a4beaed) - __(hamitturkukaya)__ [#4](../../issues/4) Owner can add user to project
+
+ - Controllers and models created
+
+ * [246b865](../../commit/246b865) - __(Onur Ozgur OZKAN)__ [#22](../../issues/22) add favicon to project
+ * [da4026d](../../commit/da4026d) - __(Muhammet DİLEK)__ [#14](../../issues/14) production server deploy completed
+ * [56229f9](../../commit/56229f9) - __(hamitturkukaya)__ [#3](../../issues/3) Owner can create project now
+
+#### 0.1.0
+ * [108a74a](../../commit/108a74a) - __(Muhammet DİLEK)__ bump version 0.1.0
  * [bd9e778](../../commit/bd9e778) - __(Muhammet DİLEK)__ [#5](../../issues/5) sign_ot button removed from welcome page
 
 Conflicts:
