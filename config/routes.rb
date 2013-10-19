@@ -1,7 +1,11 @@
 Ganban::Application.routes.draw do
-  resources :cards
+  resources :cards do
+    put :move, on: :member
+  end
 
-  resources :lists
+  resources :lists do
+    put :move, on: :member
+  end
 
   resources :current_projects, only: [:create]
 

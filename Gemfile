@@ -31,7 +31,7 @@ gem 'rails-i18n', '~> 4.0.0'
 gem 'ransack'
 #gem 'jquery-turbolinks'
 gem 'select2-rails'
-# gem 'rails-observers'
+gem 'rails-observers'
 
 gem 'hierapolis-rails', '~> 0.4.0'
 gem 'breadcrumbs_on_rails', '~> 2.3.0'

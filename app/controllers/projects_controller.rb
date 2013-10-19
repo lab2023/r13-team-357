@@ -1,16 +1,17 @@
 # encoding: UTF-8
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :set_project, only: [:show]
   add_breadcrumb I18n.t('activerecord.models.project'), :projects_path
   def index
     @search = current_user.projects.search(params[:q])
-     @projects = @search.result(:distinct => true).paginate(:page => params[:page])
-     respond_with(@projects)
+    @projects = @search.result(:distinct => true).paginate(:page => params[:page])
+    respond_with(@projects)
   end
 
   def show
     add_breadcrumb @project.name, project_path(@project)
-    respond_with(@project)
+    @lists = List.where(:project_id => @project.id).order('sort asc')
+    respond_with(@lists)
   end
 
   def new
@@ -24,12 +25,13 @@ class ProjectsController < ApplicationController
   end
 
   def edit
+    @project = current_user.own_projects.find(params[:id])
     add_breadcrumb @project.id, project_path(@project)
     add_breadcrumb t('tooltips.edit'), edit_project_path
   end
 
   def create
-    @project = current_user.projects.new(project_params)
+    @project = current_user.own_projects.new(project_params)
     @project.owner = current_user
     @project.save
     @project.users << current_user
@@ -37,11 +39,13 @@ class ProjectsController < ApplicationController
   end
 
   def update
+    @project = current_user.own_projects.find(params[:id])
     @project.update(project_params)
     respond_with(@project)
   end
 
   def destroy
+    @project = current_user.own_projects.find(params[:id])
     @project.users.clear
     @project.destroy
     respond_with(@project)
@@ -49,7 +53,7 @@ class ProjectsController < ApplicationController
 
   def auto_users
     search = User.search(:name_or_email_start => params[:term])
-    users = search.result(:distinct => true).limit(10)
+    users = search.result(:distinct => true).limit(10) - @current_project.users
     render :json => users.map {|p| Hash[id: p.id, label: "#{p.name} - #{p.email}", name: p.id]}
   end
 

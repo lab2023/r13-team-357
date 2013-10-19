@@ -40,10 +40,31 @@ class ListsController < ApplicationController
     respond_with(@list)
   end
 
+  def move
+    @current_list = @current_project.lists
+    sort = Array.new
+    params[:sort].each do |hash|
+      sort << hash.to_i
+    end
+    @current_list.each_with_index do |list,index|
+      list.sort = index*100
+      list.save
+    end
+
+    @current_list.each do |list|
+      list.sort = sort.index(list.id)+1
+      list.save
+    end
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
 
   def set_list
-    @list = List.find(params[:id])
+    @list = @current_project.lists.find(params[:id])
   end
 
   def list_params
