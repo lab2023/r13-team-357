@@ -27,7 +27,9 @@ class CardsController < ApplicationController
   def create
     @card = Card.new(card_params)
     @card.save
-    respond_with(@card)
+    respond_to do |format|
+      format.js
+    end
   end
 
   def update
@@ -36,8 +38,11 @@ class CardsController < ApplicationController
   end
 
   def destroy
+    @card_id = @card.id
     @card.destroy
-    respond_with(@card)
+    respond_to do |format|
+      format.js
+    end
   end
 
   def move
@@ -51,6 +56,6 @@ class CardsController < ApplicationController
   end
 
   def card_params
-    params.require(:card).permit(:assignment_id, :body, :checklist_done_count, :checklist_total_count, :comment_count, :document_count, :done, :due_date, :list, :owner_id, :private, :sort, :title)
+    params.require(:card).permit(:assignment_id, :body, :checklist_done_count, :checklist_total_count, :comment_count, :document_count, :done, :due_date, :list_id, :owner_id, :private, :sort, :title)
   end
 end
