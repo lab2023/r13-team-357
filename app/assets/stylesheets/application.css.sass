@@ -13,6 +13,12 @@
 
 @import 'hierapolis'
 
+#assign-project-collaborators
+  img
+    width: 35px
+    margin-left: 5px
+    cursor: move
+
 ul.ui-autocomplete
   position: absolute
   width: 400px
@@ -82,6 +88,8 @@ body.login .wrapper .brand h1 .logo-icon i[class*='icon-']
   overflow: scroll
 
 .project-list
+  &:active
+    cursor: move !important
   width: 300px !important
   float: left
   margin-right: 10px
@@ -103,69 +111,69 @@ body.login .wrapper .brand h1 .logo-icon i[class*='icon-']
           left: 7px
         i.icon-remove-sign
           color: $silver
-
-.project-list-item
-  width: 300px !important
-  float: left
-  max-height: 500px
-  overflow-y: scroll
-  .card
-    &:active
-      cursor: move
-    cursor: pointer
-    border: 1px solid $panel-default-border
-    width: 100%
-    height: 66px
-    margin-bottom: 5px
-    background-color: gray
-    border-radius: 5px
-    background-color: #f3f3f3
-    padding: 5px
-    margin-bottom: 15px
-    a.close
-      margin:
-        top: -10px
-        right: -4px
-
-    p.title
-      padding-top: 0px
-      margin: 0 0 4px
-      width: 200px
-    .stats
-      &.extended
-        width: 255px
-      width: 202px
-      border-top: 1px solid $silver
-      padding-top: 5px
-      .stat
-        @extend .btn, .btn-default
-        padding: 3px
-        font-size: 0.8em
-        float: left
-        margin-right: 2px
-    .user
-      img
-        float: right
-        width: 50px
+  .project-list-item
+    width: 300px !important
+    float: left
+    max-height: 500px
+    overflow-y: scroll
+    .card
+      &:active
+        cursor: move
+      cursor: pointer
+      border: 1px solid $panel-default-border
+      width: 100%
+      height: 66px
+      margin-bottom: 5px
+      background-color: gray
+      border-radius: 5px
+      background-color: #f3f3f3
+      padding: 5px
+      margin-bottom: 15px
+      a.close
         margin:
-          top: -25px
-          right: 2px
+          top: -10px
+          right: -4px
 
-  .user-icon
-    @extend .icon-list
-    float: right
-    margin-right: 10px
+      p.title
+        padding-top: 0px
+        margin: 0 0 4px
+        width: 200px
+      .stats
+        &.extended
+          width: 255px
+        width: 202px
+        border-top: 1px solid $silver
+        padding-top: 5px
+        .stat
+          @extend .btn, .btn-default
+          padding: 3px
+          font-size: 0.8em
+          float: left
+          margin-right: 2px
+      .user
+        img
+          float: right
+          width: 50px
+          margin:
+            top: -25px
+            right: 2px
+
+    .user-icon
+      @extend .icon-list
+      float: right
+      margin-right: 10px
+
+  .project-list-item::-webkit-scrollbar
+    display: none
+  .vertical-scroll::-webkit-scrollbar
+    display: none
+  .project-list-item::-moz-scrollbar
+    display: none
+
 .ui-sortable-placeholder
   border: 1px dashed $silver !important
   visibility: visible !important
   height: 50px !important
-
-.project-list-item::-webkit-scrollbar
-  display: none
-.vertical-scroll::-webkit-scrollbar
-  display: none
-.project-list-item::-moz-scrollbar
-  display: none
 
 
 
