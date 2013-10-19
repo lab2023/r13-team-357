@@ -16,6 +16,10 @@ class ProjectsController < ApplicationController
   def new
     add_breadcrumb t('tooltips.new'), new_project_path
     @project = current_user.projects.new
+    # Build default lists
+    Settings.default_lists.each do |list|
+      @project.lists.build(name: list)
+    end
     respond_with(@project)
   end
 
