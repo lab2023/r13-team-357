@@ -2,12 +2,38 @@
   = link_to edit_project_path(@project ), class: 'btn btn-default' do
     %i.icon-pencil
     = t('action_button.edit')
-.panel.panel-default
-  .panel-heading
-    %i.icon-edit.icon-large
-    = t('tt.show', resource_name: Project.model_name.human)
-  .panel-body
-    = show_for @project do |s|
-      = s.attribute :name
-      = s.attribute :archive
-      = s.association :owner
+.vertical-scroll{style: "width: #{315*6}px"}
+  .panel.panel-default.project-list
+    .panel-heading
+      %i.icon-edit.icon-large
+      Form Default
+    .panel-body.project-list-item
+
+  .panel.panel-default.project-list
+    .panel-heading
+      %i.icon-edit.icon-large
+      Form Default
+    .panel-body.project-list-item
+  .panel.panel-default.project-list
+    .panel-heading
+      %i.icon-edit.icon-large
+      Form Default
+    .panel-body.project-list-item
+
+  .panel.panel-default.project-list
+    .panel-heading
+      %i.icon-edit.icon-large
+      Form Default
+    .panel-body.project-list-item
+
+  .panel.panel-default.project-list
+    .panel-heading
+      %i.icon-edit.icon-large
+      Form Default
+    .panel-body.project-list-item
+
+  .panel.panel-default.project-list
+    .panel-heading
+      %i.icon-edit.icon-large
+      Form Default
+    .panel-body.project-list-item
