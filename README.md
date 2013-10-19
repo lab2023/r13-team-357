@@ -48,7 +48,7 @@ We make a rake `dev:setup` it will create dummy data for development.
 **Users**
 
 muhammet.dilek@lab2023.com,     password: '12341234', name: 'Muhammet Dilek'
-onur.oozgur.ozkan@lab2023.com,  password: '12341234', name: 'Onur Özgür Ozkan'
+onur.ozgur.ozkan@lab2023.com,   password: '12341234', name: 'Onur Özgür Ozkan'
 tayfun.ozis.erikan@lab2023.com, password: '12341234', name: 'Tayfun Ozis Erikan'
 hamit.turku.kaya@lab2023.com,   password: '12341234', name: 'Hamit Türkü Kaya'
 
