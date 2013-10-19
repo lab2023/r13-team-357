@@ -1,5 +1,9 @@
 
 #### [Current]
+ * [105e859](../../commit/105e859) - __(hamitturkukaya)__  [#42](../../issues/42) Turbolinks removed from hq/application.js
+
+#### 0.2.1
+ * [78a6bb0](../../commit/78a6bb0) - __(hamitturkukaya)__ 0.2.1
  * [f38ad23](../../commit/f38ad23) - __(hamitturkukaya)__ [#41](../../issues/41) Turbolinks disabled in welcome layout
  * [b8c9c57](../../commit/b8c9c57) - __(Muhammet DİLEK)__ bump version 0.2.0
  * [4493c03](../../commit/4493c03) - __(Muhammet DİLEK)__ settings symlink added
