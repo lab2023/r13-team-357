@@ -1,21 +1,22 @@
-.card{id: "card-#{card.id}"}
-  -#%a.close{type: 'button', data: {toggle: 'tooltip'}, title: 'Remove card'} ×
-  = link_to '×', card_path(card), method: :delete, class: 'close', data: { toggle: 'tooltip' }, title: 'Remove Card', remote: true, confirm: 'Are you sure?'
-  %p.title
-    =truncate card.title
-  .stats{class: card.assigned.present? ? 'default' : 'extended'}
-    .stat{data: {toggle: 'tooltip'}, title: 'Checklists'}
-      %i.icon-list
-      1 / 9
-    .stat{data: {toggle: 'tooltip'}, title: 'Comments'}
-      %i.icon-comments-alt
-      12
-    .stat{data: {toggle: 'tooltip'}, title: 'Attachments'}
-      %i.icon-file-alt
-      3
-    .stat{data: {toggle: 'tooltip'}, title: 'Due date'}
-      %i.icon-time
-      10 Nov
-  - if card.assigned.present?
-    .user
-      = image_tag avatar_url(card.assigned), class: 'img-circle', data: {toggle: 'tooltip'}, title: card.try(:assigned).try(:name)
+- if card.id.present?
+  .card{id: "card-#{card.id}"}
+    -#%a.close{type: 'button', data: {toggle: 'tooltip'}, title: 'Remove card'} ×
+    = link_to '×', card_path(card), method: :delete, class: 'close', data: { toggle: 'tooltip' }, title: 'Remove Card', remote: true, confirm: 'Are you sure?'
+    %p.title
+      =truncate card.title
+    .stats{class: card.assigned.present? ? 'default' : 'extended'}
+      .stat{data: {toggle: 'tooltip'}, title: 'Checklists'}
+        %i.icon-list
+        1 / 9
+      .stat{data: {toggle: 'tooltip'}, title: 'Comments'}
+        %i.icon-comments-alt
+        12
+      .stat{data: {toggle: 'tooltip'}, title: 'Attachments'}
+        %i.icon-file-alt
+        3
+      .stat{data: {toggle: 'tooltip'}, title: 'Due date'}
+        %i.icon-time
+        10 Nov
+    - if card.assigned.present?
+      .user
+        = image_tag avatar_url(card.assigned), class: 'img-circle', data: {toggle: 'tooltip'}, title: card.try(:assigned).try(:name)
