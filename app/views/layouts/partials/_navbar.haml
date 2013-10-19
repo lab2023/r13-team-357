@@ -13,14 +13,14 @@
           %li.active
             %i.icon-circle
             = @current_project.name
-          %li.divider
+          - if current_user.projects.size > 1
+            %li.divider
           - current_user.projects.each do |project|
             - unless project.id == @current_project.id || project.id.nil?
               %li.project
                 = link_to current_projects_path(project_id: project.id), method: :post do
                   %i.icon-circle-blank
                   = project.name
-
           %li.divider
           %li.action
             %a.btn.btn-xs.btn-success{href: new_project_path}

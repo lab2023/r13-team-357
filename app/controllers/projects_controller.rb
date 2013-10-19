@@ -38,6 +38,7 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
+    @project.users.clear
     @project.destroy
     respond_with(@project)
   end

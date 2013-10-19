@@ -3,6 +3,13 @@ en:
     models:
       project: Projects
       list: List
+      card: Card
     attributes:
       project:
         name: Name
+      card:
+        owner_id: Creater
+        assignment_id: Assignee
+        list: List
+        list_id: List
+        body: Body
