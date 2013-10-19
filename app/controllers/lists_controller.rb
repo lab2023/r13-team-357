@@ -40,10 +40,14 @@ class ListsController < ApplicationController
     respond_with(@list)
   end
 
+  def move
+
+  end
+
   private
 
   def set_list
-    @list = List.find(params[:id])
+    @list = @current_project.lists.find(params[:id])
   end
 
   def list_params
