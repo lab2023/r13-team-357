@@ -1,7 +1,6 @@
 - if card.id.present?
-  .card{id: "card-#{card.id}"}
-    -#%a.close{type: 'button', data: {toggle: 'tooltip'}, title: 'Remove card'} ×
-    = link_to '×', card_path(card), method: :delete, class: 'close', data: { toggle: 'tooltip' }, title: 'Remove Card', remote: true, confirm: 'Are you sure?'
+  .card{id: card.id}
+    %a.close{type: 'button', data: {toggle: 'tooltip'}, title: 'Remove card'} ×
     %p.title
       =truncate card.title
     .stats{class: card.assigned.present? ? 'default' : 'extended'}

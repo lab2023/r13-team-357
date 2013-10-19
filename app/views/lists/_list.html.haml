@@ -22,4 +22,4 @@
 
     .clearfix
   .panel-body.project-list-item{id: "list-#{list.id}"}
-    =render list.cards
+    =render list.cards.order('sort asc')
