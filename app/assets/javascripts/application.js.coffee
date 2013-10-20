@@ -24,6 +24,7 @@
 #= require cocoon
 #= require bootstrap-datepicker/core
 #= require bootstrap-datepicker/locales/bootstrap-datepicker.fr
+#= require dropzone
 
 #$.datepicker.setDefaults
 #  showOn: "both"
@@ -33,6 +34,10 @@
 #  dateFormat: "dd-mm-yy"
 
 $(document).ready ->
+  Dropzone.options.photoDropzone =
+    paramName: "file"
+    maxFilesize: 5 #mb
+
   $('.best_in_place').best_in_place()
 
 

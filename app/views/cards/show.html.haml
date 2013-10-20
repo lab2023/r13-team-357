@@ -80,3 +80,9 @@
               %span.stat.card-due_date-edit-activator{href: '#'}
                 %i.icon-time
                 = best_in_place @card, :due_date, type: :date, activator: '.card-due_date-edit-activator'
+
+
+
+= form_for Document.new, multipart: true, html: {class: :dropzone, id: 'photo-dropzone'} do |f|
+  = f.hidden_field :file
+  = f.hidden_field :card_id, value: @card.id
