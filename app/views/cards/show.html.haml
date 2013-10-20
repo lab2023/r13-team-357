@@ -21,3 +21,9 @@
       = s.attribute :checklist_done_count
       = s.attribute :private
       = s.attribute :sort
+
+#comments
+  = render @card.comments
+
+#comment_form
+  = render 'comments/form'

@@ -1,4 +1,6 @@
 Ganban::Application.routes.draw do
+  resources :comments
+
   resources :cards do
     put :move, on: :member
   end
