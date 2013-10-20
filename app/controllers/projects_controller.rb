@@ -13,7 +13,9 @@ class ProjectsController < ApplicationController
     add_breadcrumb @project.name, project_path(@project)
     @current_project = @project
     session[:project_id] = @current_project.id
-    @lists = List.where(:project_id => @project.id).order('sort asc')
+    #@lists = List.where(:project_id => @project.id).order('sort asc')
+    @lists = @current_project.lists.order('sort asc')
+
     respond_with(@lists)
   end
 

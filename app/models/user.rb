@@ -18,4 +18,12 @@ class User < ActiveRecord::Base
   has_many :domains
 
   accepts_nested_attributes_for :profile
+
+  def assigned_to_you(current_project)
+    current_project.cards.where(assignment_id: self.id).count
+  end
+
+  def created_by_you(current_project)
+    current_project.cards.where(owner_id: self.id).count
+  end
 end
