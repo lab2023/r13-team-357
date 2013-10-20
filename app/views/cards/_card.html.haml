@@ -14,7 +14,7 @@
         %i.icon-file-alt
         = card.try(:document_count)
       - if card.due_date.present?
-        %span.stat{data: {toggle: 'tooltip'}, title: 'Due date', class: card.due_date < Date.current ? 'past_due' : ''}
+        %span.stat{data: {toggle: 'tooltip'}, title: card.due_date < Date.current ? 'Past due date' : 'Due date', class: card.due_date < Date.current ? 'past_due' : ''}
           %i.icon-time
           = card.due_date.to_formatted_s(:short)
     .user
