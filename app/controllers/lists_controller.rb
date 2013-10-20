@@ -51,6 +51,8 @@ class ListsController < ApplicationController
       list.save
     end
 
+    $moved_list = params[:id]
+
     @current_list.each do |list|
       list.sort = (sort.index(list.id))+1
       list.save
