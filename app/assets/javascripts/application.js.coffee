@@ -41,6 +41,10 @@ $(document).ready ->
 
   $('.best_in_place').best_in_place()
 
+  $(".assign_best_in_place").bind "ajax:success", ->
+    location.reload()
+
+
 
   $(".add-card-form textarea").keypress (e) ->
     if e.keyCode is 13

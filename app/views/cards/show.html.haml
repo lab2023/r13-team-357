@@ -50,7 +50,7 @@
               #assigned_id
                 = image_tag avatar_url(@card.assigned), class: 'pointer card-collaborator-edit-activator img-circle avatar-image'
               %p
-                %strong.card-collaborator-edit-activator= best_in_place @card, :assignment_id, type: :select, nil: '<span></span>', collection: @collaborators.map{|u| [u.id, u.name]}, activator: '.card-collaborator-edit-activator'
+                %strong.card-collaborator-edit-activator= best_in_place @card, :assignment_id, type: :select, classes: 'assign_best_in_place', nil: '<span></span>', collection: @collaborators.map{|u| [u.id, u.name]}, activator: '.card-collaborator-edit-activator'
                 %br/
                 %a.card-collaborator-edit-activator.inplace-edit-activator{href: '#'}
                   %i.icon-edit
@@ -120,3 +120,5 @@
           = f.hidden_field :card_id, value: @card.id
       .modal-footer
         %button#btn-close.btn.btn-default{'data-dismiss' => 'modal', type: 'button'} Close
+
+
