@@ -14,10 +14,10 @@
 #= require jquery_ujs
 #= require jquery.purr
 #= require best_in_place
-#= require jquery_ujs
 #= require jquery.ui.autocomplete
 #= require jquery.ui.draggable
 #= require jquery.ui.droppable
+#= require jquery.ui.effect-highlight
 #= require jquery.ui.sortable
 #= require bootstrap
 #= require hierapolis
@@ -35,6 +35,13 @@
 $(document).ready ->
   $('.best_in_place').best_in_place()
 
+
+  $(".add-card-form textarea").keypress (e) ->
+    if e.keyCode is 13
+      e.preventDefault()
+      $(this).closest("form").submit()
+      target = $(this).closest("div.add-card-form").attr('id')
+      $("##{target}").hide()
 
   $('.toggle-card-form').click ->
     target = $(this).data('target')
