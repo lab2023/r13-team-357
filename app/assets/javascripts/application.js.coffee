@@ -19,20 +19,24 @@
 #= require jquery.ui.droppable
 #= require jquery.ui.effect-highlight
 #= require jquery.ui.sortable
+#= require jquery.ui.datepicker
 #= require bootstrap
 #= require hierapolis
 #= require cocoon
-#= require bootstrap-datepicker/core
-#= require bootstrap-datepicker/locales/bootstrap-datepicker.fr
+#= require dropzone
 
-#$.datepicker.setDefaults
-#  showOn: "both"
-#  buttonImageOnly: true
-#  buttonImage: "calendar.gif"
-#  buttonText: "Calendar"
-#  dateFormat: "dd-mm-yy"
+$.datepicker.setDefaults
+  showOn: "both"
+  buttonImageOnly: true
+  buttonImage: "calendar.gif"
+  buttonText: "Calendar"
+  dateFormat: "dd-mm-yy"
 
 $(document).ready ->
+  Dropzone.options.photoDropzone =
+    paramName: "file"
+    maxFilesize: 5 #mb
+
   $('.best_in_place').best_in_place()
 
 

@@ -23,6 +23,7 @@ gem 'will_paginate', '~> 3.0.4'
 gem 'will_paginate-bootstrap', '~> 0.2.3'
 gem 'will-paginate-i18n', '~> 0.1.13'
 gem 'paperclip', '~> 3.5.1'
+gem 'dropzonejs-rails'
 gem 'kangal', '~> 1.0.0'
 gem 'rack-timeout', '~> 0.0.4'
 gem 'annotate', '>=2.5.0'
@@ -39,6 +40,7 @@ gem 'blankable', '~> 0.2.0'
 gem 'cocoon'
 gem 'best_in_place', github: 'bernat/best_in_place', branch: 'rails-4'
 gem 'bootstrap-datepicker-rails'
+gem 'aws-sdk'
 
 group :doc do
   gem 'sdoc', require: false

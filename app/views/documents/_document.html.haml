@@ -1,0 +1,11 @@
+%tr
+  %td= document.id
+  %td= document.card
+  %td= document.user
+  %td.action
+    = link_to(document, class: 'btn btn-success', toogle: 'tooltip', title: t('tooltips.zoom')) do
+      %i.icon-zoom-in
+    = link_to(edit_document_path(document) , class: 'btn btn-info') do
+      %i.icon-edit
+    = link_to(document, class: 'btn btn-danger', method: :delete) do
+      %i.icon-trash

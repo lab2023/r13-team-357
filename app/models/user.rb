@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :own_projects, class_name: 'Project', foreign_key: 'owner_id'
   has_and_belongs_to_many :projects
   has_many :comments
+  has_many :documents
 
   has_one :profile
   delegate :name, :name=, :github, :github=, :stackoverflow, :stackoverflow=, :bio, :bio=, :facebook, :facebook=, :twitter, :twitter=, :blog, :blog=, to: :profile
