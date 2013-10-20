@@ -11,7 +11,7 @@
             %i.icon-edit
             Edit title...
         %p
-          = best_in_place @card, :body, type: :textarea, activator: '#card-body-edit-activator'
+          = best_in_place @card, :body, type: :textarea, :display_with => lambda { |v| v.gsub(/\n/, '<br/>').html_safe }, activator: '#card-body-edit-activator'
           %a#card-body-edit-activator.inplace-edit-activator{href: '#'}
             %i.icon-edit
             Edit description...
@@ -37,13 +37,16 @@
         .panel.panel-default
           .panel-body
             .text-center
-              = image_tag avatar_url(@card.assigned), class: 'pointer card-collaborator-edit-activator img-circle avatar-image'
+              #assigned_id
+                = image_tag avatar_url(@card.assigned), class: 'pointer card-collaborator-edit-activator img-circle avatar-image'
               %p
-                %strong.card-collaborator-edit-activator= best_in_place @card, :assignment_id, type: :select, nil: '<span></span>', collection: @card.list.project.users.map{|u| [u.id, u.name]}, activator: '.card-collaborator-edit-activator'
+                %strong.card-collaborator-edit-activator= best_in_place @card, :assignment_id, type: :select, nil: '<span></span>', collection: @collaborators.map{|u| [u.id, u.name]}, activator: '.card-collaborator-edit-activator'
                 %br/
                 %a.card-collaborator-edit-activator.inplace-edit-activator{href: '#'}
                   %i.icon-edit
                   Change collaborator...
+                %br/
+                = link_to 'Clear assigned', card_path(@card, card: {assignment_id: nil}), class: 'btn btn-default btn-sm', method: :put, remote: true
             %hr/
 
             .card-stats.card-stats-lg

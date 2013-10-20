@@ -5,6 +5,7 @@ class CardsController < ApplicationController
   def show
     add_breadcrumb @card.list.project.name, project_path(@card.list.project)
     add_breadcrumb "Card ##{@card.id}", card_path(@card)
+    @collaborators = @card.list.project.users
     respond_with(@card)
   end
 
