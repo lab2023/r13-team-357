@@ -2,16 +2,30 @@
 
 %ul#dock
   - if @current_project
+    - if params[:controller] == 'projects' && params[:action] == 'show'
+      %li.launcher.active
+        %i.icon-tasks
+        =link_to 'Kanban', @current_project
+    - else
+      %li.launcher
+        %i.icon-tasks
+        =link_to 'Kanban', @current_project
+  - if params[:controller] == 'projects' && params[:action]== 'index'
     %li.launcher.active
-      %i.icon-tasks
-      =link_to 'Kanban', @current_project
-
-  %li.launcher
-    %i.icon-suitcase
-    =link_to 'Projects', projects_path
-  %li.launcher
-    %i.icon-group
-    %a{href: collaborators_path} Collaborators
+      %i.icon-suitcase
+      =link_to 'Projects', projects_path
+  - else
+    %li.launcher
+      %i.icon-suitcase
+      =link_to 'Projects', projects_path
+  - if params[:controller] == 'collaborators'
+    %li.launcher.active
+      %i.icon-group
+      %a{href: collaborators_path} Collaborators
+  - else
+    %li.launcher
+      %i.icon-group
+      %a{href: collaborators_path} Collaborators
   -#%li.launcher.dropdown.hover
   -#  %i.icon-envelope
   -#  %a{href: '#'} Messages
