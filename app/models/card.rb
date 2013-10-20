@@ -4,6 +4,15 @@ class Card < ActiveRecord::Base
   belongs_to :assigned, class_name: 'User', foreign_key: 'assignment_id'
   has_many :comments
   has_many :checklists
+  has_many :documents
+
+  scope :by_assigned, lambda {|user_id|
+    where(assignment_id: user_id)
+  }
+
+  scope :by_created, lambda {|user_id|
+    where(owner_id: user_id)
+  }
 
   validates :title, presence: true
   validates :list_id, presence: true

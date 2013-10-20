@@ -1,0 +1,10 @@
+- content_for :toolbar do
+  = link_to new_document_path, class: 'btn btn-default' do
+    %i.icon-plus
+    = t('action_button.new', resource_name: Document.model_name.human)
+
+.panel.panel-default.grid
+  =blankable(@documents)
+  .panel-footer
+    .pagination.pagination-sm
+      = will_paginate @documents, renderer: BootstrapPagination::Rails, bootstrap: 3

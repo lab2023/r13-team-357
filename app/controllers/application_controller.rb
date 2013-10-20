@@ -70,8 +70,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource_or_scope)
     if current_user
-      current_user.projects.size > 0 ? dashboard_index_path : new_project_path
-
+      current_user.projects.size > 0 ? project_path(@current_project) : new_project_path
     else
       hq_dashboard_index_path
     end
@@ -79,6 +78,7 @@ class ApplicationController < ActionController::Base
 
   def redirect_to_new_project
     redirect_to new_project_path if current_user.projects.size < 1
+    #flash[:warning] = 'Please add new project.'
   end
 
 end

@@ -4,8 +4,11 @@
     =user.name
   %td=user.email
   %td.action
-    - if @current_project.owner != user
-      =link_to collaborator_path(@current_project, email: user.email), method: :delete, confirm: 'Are you sure?', remote: true, class: 'btn btn-danger' do
-        %i.icon-remove-sign
+    - if user == current_user || current_user == @current_project.owner
+      - if user != @current_project.owner
+        =link_to collaborator_path(@current_project, email: user.email), method: :delete, confirm: 'Are you sure?', remote: true, class: 'btn btn-danger' do
+          %i.icon-remove-sign
+      - else
+        %span.label.label-default Owner
     - else
-      %span.label.label-default Owner
+      %span.label.label-default= user == @current_project.owner ? 'Owner' : 'Member'

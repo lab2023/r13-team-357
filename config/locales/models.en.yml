@@ -7,7 +7,7 @@ en:
       collaborator: Collaborator
     attributes:
       project:
-        name: Name
+        name: Project name
         user_ids: Collaborator
       card:
         owner_id: Creater

@@ -1,3 +1,4 @@
+- title 'Card - ' + @card.title
 .panel.panel-default
   .panel-heading
     %i.icon-edit.icon-large
@@ -21,6 +22,7 @@
         #checklist_form
           #progress-check-list
             %h4
+              %i.icon-list-alt
               Checklists
               %span#checklist_percentage.pull-right.label.label-info.sml-text="#{@checklist_percentage} % Complete"
             .progress
@@ -34,13 +36,15 @@
 
         %hr/
         #comments
-          %h4 Comments
+          %h4
+            %i.icon-comments-alt
+            Comments
           = render @card.comments
         #comment_form
           = render 'comments/form'
 
       .col-md-3
-        .panel.panel-default
+        .panel.panel-default.panel-light
           .panel-body
             .text-center
               #assigned_id
@@ -51,10 +55,11 @@
                 %a.card-collaborator-edit-activator.inplace-edit-activator{href: '#'}
                   %i.icon-edit
                   Change collaborator...
-                %br/
-                = link_to card_path(@card, card: {assignment_id: nil}), class: 'inplace-edit-activator', method: :put, remote: true do
-                  %i.icon-remove-circle
-                  Remove assigned...
+                - if @card.assigned.present?
+                  %br/
+                  = link_to card_path(@card, card: {assignment_id: nil}), class: 'inplace-edit-activator', method: :put, remote: true do
+                    %i.icon-remove-circle
+                    Remove assigned...
             %hr/
 
             %span.label.label-default.card-list{data: {toggle: 'tooltip'}, title: 'Current list'}
@@ -62,21 +67,56 @@
 
 
             .card-stats.card-stats-lg
+              %span.stat
+                %strong{class: (@card.due_date.present? && @card.due_date < Date.current) ? 'past_due_text' : ''}
+                  %i.icon-time
+                  = best_in_place @card, :due_date, type: :date, activator: '.card-due_date-edit-activator'
+                %a.pull-right.card-due_date-edit-activator.inplace-edit-activator{href: '#'}
+                  %i.icon-edit
+                  Set...
+
               %span#checklist_stat.stat
-                %i.icon-list
-                = @card.try(:checklist_done_count).to_s + '/' + @card.try(:checklist_total_count).to_s
-                \- Checklist(s)
+                %strong
+                  %i.icon-list
+                  = @card.try(:checklist_done_count).to_s + '/' + @card.try(:checklist_total_count).to_s
+                Checklist(s)
 
               %span#comment_stat.stat
-                %i.icon-comments-alt
-                = @card.try(:comment_count)
-                \- Comment(s)
+                %strong
+                  %i.icon-comments-alt
+                  = @card.try(:comment_count)
+                Comment(s)
 
               %span.stat
-                %i.icon-file-alt
-                = @card.try(:document_count)
-                \- Document(s)
+                %strong#document-count
+                  %i.icon-file-alt
+                  = @card.try(:document_count)
+                Document(s)
+                %a.pull-right.inplace-edit-activator{href: '#documentsModal', data: {toggle: 'modal'}}
+                  %i.icon-plus-sign
+                  Add...
+                %table#documents-list-table.table.table-condensed
+                  %tbody#documents-list-table-body
+                    - @card.documents.each do |attachment|
+                      %tr{id: "document-#{attachment.id}"}
+                        %td= link_to attachment.file_file_name, attachment.file.url, target: '_blank'
+                        %td= attachment.file_file_size
+                        %td
+                          = link_to document_path(attachment), method: :delete, remote: true, confirm: 'Are you sure?',
+                            class: 'inplace-edit-activator', data: {toggle: 'tooltip'}, title: 'Remove' do
+                            %i.icon-remove-circle
 
-              %span.stat.card-due_date-edit-activator{href: '#'}
-                %i.icon-time
-                = best_in_place @card, :due_date, type: :date, activator: '.card-due_date-edit-activator'
+
+
+#documentsModal.modal.fade{'aria-hidden' => 'true', 'aria-labelledby' => 'myModalLabel', role: 'dialog', tabindex: '-1'}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{'aria-hidden' => 'true', 'data-dismiss' => 'modal', type: 'button'} ×
+        %h4.modal-title Attach more documents
+      .modal-body
+        = form_for Document.new, multipart: true, html: {class: :dropzone, id: 'photo-dropzone'} do |f|
+          = f.hidden_field :file
+          = f.hidden_field :card_id, value: @card.id
+      .modal-footer
+        %button#btn-close.btn.btn-default{'data-dismiss' => 'modal', type: 'button'} Close

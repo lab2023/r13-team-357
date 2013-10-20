@@ -1,0 +1,24 @@
+#
+# Don't use this use rails_config gem
+# this file will be deleted.
+#
+defaults: &defaults
+
+
+production:
+  <<: *defaults
+  bucket: ganban-production
+  aws_url: http://ganban-staging.s3.amazonaws.com/
+  aws_raw_url: ganban-production.s3.amazonaws.com
+
+development:
+  <<: *defaults
+  bucket: ganban-development
+  aws_url: http://ganban-development.s3.amazonaws.com/
+  aws_raw_url: ganban-development.s3.amazonaws.com
+
+staging:
+  <<: *defaults
+  bucket: ganban-staging
+  aws_url: http://ganban-staging.s3.amazonaws.com/
+  aws_raw_url: ganban-staging.s3.amazonaws.com
