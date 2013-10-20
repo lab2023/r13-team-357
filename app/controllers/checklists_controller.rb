@@ -40,7 +40,9 @@ class ChecklistsController < ApplicationController
 
   def destroy
     @checklist.destroy
-    respond_with(@checklist)
+    respond_to do |format|
+      format.js
+    end
   end
 
   def done

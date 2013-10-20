@@ -2,6 +2,7 @@
   .row.checklist-item
     .col-md-12
       .pull-left
+        = link_to "x", checklist_path(checklist), method: :delete, remote: true, confirm: 'Are you sure?'
         - if checklist.done
           = check_box_tag "checklist-#{checklist.id}", checklist.id, true, class: 'checklist_check'
         - else
