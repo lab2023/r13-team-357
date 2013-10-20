@@ -1,4 +1,6 @@
-$("#<%= @card_id %>-card").remove();
+$("#<%= @card_id %>-card").fadeOut('fast', function() {
+  $(this).remove();
+});
 
 $(function() {
     $(".draggable").draggable({
