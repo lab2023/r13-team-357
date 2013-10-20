@@ -1,4 +1,5 @@
 class CollaboratorsController < ApplicationController
+  add_breadcrumb I18n.t('activerecord.models.collaborator'), :collaborators_path
 
   def index
     @collaborators = @current_project.users

@@ -59,10 +59,34 @@ $(document).ready ->
       $(this).toggleClass("ui-icon-minusthick").toggleClass "ui-icon-plusthick"
       $(this).parents(".panel-default:first").find(".panel-body").toggle()
     $(".vertical-scroll").disableSelection()
+
   #Card drag & drop
   $ ->
+    arr = []
     $(".project-list-item").sortable
+
+      change: (event, ui) ->
+        arr.push(event.target)
+
+      stop: (event, ui) ->
+        if arr.length == 1
+          item = ui.item.attr('id')
+          list = $(this).parent().attr('id')
+          sort = $(this).sortable('toArray')
+          URL = "/cards/" + item + '/move'
+          card =
+            id: item
+            list: list
+            sort: sort
+          $.ajax
+            url: URL
+            type: "PUT"
+            data: JSON.stringify(card)
+            contentType: "application/json"
+            success: (result) ->
+        arr = []
       receive: (event, ui) ->
+        document.trk = ui
         item = ui.item.attr('id')
         list = $(this).parent().attr('id')
         sort = $(this).sortable('toArray')

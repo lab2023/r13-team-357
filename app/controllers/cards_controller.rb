@@ -63,7 +63,7 @@ class CardsController < ApplicationController
     end
 
     @cards.each do |card|
-      card.sort = sort.index(card.id)+1
+      card.sort = (sort.index(card.id))+1
       card.save
     end
 
