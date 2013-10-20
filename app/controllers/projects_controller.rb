@@ -56,7 +56,7 @@ class ProjectsController < ApplicationController
   end
 
   def auto_users
-    search = User.search(:name_or_email_start => params[:term])
+    search = User.search(:profile_name_or_email_start => params[:term])
     users = search.result(:distinct => true).limit(10) - @current_project.users
     render :json => users.map {|p| Hash[id: p.id, label: "#{p.name} - #{p.email}", name: p.id]}
   end
