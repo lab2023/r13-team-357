@@ -61,7 +61,7 @@
                 = @card.try(:checklist_done_count).to_s + '/' + @card.try(:checklist_total_count).to_s
                 \- Checklist(s)
 
-              %span.stat
+              %span#comment_stat.stat
                 %i.icon-comments-alt
                 = @card.try(:comment_count)
                 \- Comment(s)
