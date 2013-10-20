@@ -51,10 +51,11 @@
                 %a.card-collaborator-edit-activator.inplace-edit-activator{href: '#'}
                   %i.icon-edit
                   Change collaborator...
-                %br/
-                = link_to card_path(@card, card: {assignment_id: nil}), class: 'inplace-edit-activator', method: :put, remote: true do
-                  %i.icon-remove-circle
-                  Remove assigned...
+                - if @card.assigned.present?
+                  %br/
+                  = link_to card_path(@card, card: {assignment_id: nil}), class: 'inplace-edit-activator', method: :put, remote: true do
+                    %i.icon-remove-circle
+                    Remove assigned...
             %hr/
 
             %span.label.label-default.card-list{data: {toggle: 'tooltip'}, title: 'Current list'}
