@@ -7,3 +7,13 @@
     $('#progress-check-list').html("<%= escape_javascript( render 'progress', checklist_percentage: @checklist_percentage ) %>")
     $('#checklist_stat').html("<%= escape_javascript( render 'stat', card: @checklist.card ) %>")
 <% end %>
+
+$(".checklist_check").click(function() {
+    return $.ajax({
+        url: "/checklists/" + $(this).val() + '/done',
+        type: "PUT",
+        data: {},
+        contentType: "application/json",
+        success: function(result) {}
+    });
+});
