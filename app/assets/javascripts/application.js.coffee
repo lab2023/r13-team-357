@@ -30,6 +30,7 @@ $(document).ready ->
     buttonImageOnly: true
     buttonImage: "calendar.gif"
     buttonText: "Calendar"
+    dateFormat: "dd-mm-yy"
 
   $(".checklist_check").click ->
     if $(this).is(":checked")
