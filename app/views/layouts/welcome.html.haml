@@ -34,18 +34,41 @@
 
     %footer#footer
       .container
-        %ul.nav.navbar-nav
-          %li= link_to 'GitHub Repo', 'https://github.com/railsrumble/r13-team-357', :target => '_blank'
-          %li= link_to 'Blog', 'http://ganban.tumblr.com/', :target => '_blank'
-          %li{style: "margin-top: 15px;"}
-            %a.twitter-share-button{"data-hashtags" => "railsrumble", "data-related" => "railsrumble", "data-text" => "Ganban is a simple kanban app.", "data-url" => "ganban.r13.railsrumble.com", "data-via" => "lab2023",'data-via' =>"twitterapi", href: "https://twitter.com/share"} Tweet
+        .row
+          .col-md-8
+            %ul.nav.navbar-nav
+              %li= link_to 'GitHub Repo', 'https://github.com/railsrumble/r13-team-357', :target => '_blank'
+              %li= link_to 'Blog', 'http://ganban.tumblr.com/', :target => '_blank'
+              %li{style: 'margin-top: 15px;'}
+                %a.twitter-share-button{'data-hashtags' => 'railsrumble', 'data-related' => 'railsrumble', 'data-text' => 'Ganban is a simple kanban app.', 'data-url' => 'ganban.r13.railsrumble.com', 'data-via' => 'lab2023','data-via' =>'twitterapi', href: 'https://twitter.com/share'} Tweet
 
-        .pull-right
-          %ul.nav.navbar-nav
-            %li= link_to @version, 'https://github.com/railsrumble/r13-team-357/blob/develop/CHANGELOG.md', target: '_blank'
-            %br
-            %li= link_to image_tag('rumble-ganban.png'), 'http://railsrumble.com/entries/357-lab2023', :target => '_blank'
+            #contributors
+              %p
+                %strong Contributors
+                %br/
+                = link_to (image_tag 'https://1.gravatar.com/avatar/4732dcddf313b9c5809613437975f7e6', class: 'img-circle avatar-image'),
+                 'https://github.com/muhammetdilek', target: '_blank'
+                = link_to (image_tag 'https://0.gravatar.com/avatar/6cb312c4ecb4ab0ca968cef91592cd97', class: 'img-circle avatar-image'),
+                 'https://github.com/hamitturkukaya', target: '_blank'
+                = link_to (image_tag 'https://0.gravatar.com/avatar/616ed71ecc8cbe7a3f72dfe3f17d6ad6', class: 'img-circle avatar-image'),
+                 'https://github.com/onurozgurozkan', target: '_blank'
+                = link_to (image_tag 'https://2.gravatar.com/avatar/9c55af85fdee9df09c5fa7dd3d1945b0', class: 'img-circle avatar-image'),
+                 'https://github.com/tayfunoziserikan', target: '_blank'
+
+          .col-md-4.copyrights
+            %p
+              This project as part of
+              = link_to image_tag('rumble-ganban.png', width: 100), 'http://railsrumble.com', target: '_blank'
+            %p
+              Please consider
+              =link_to 'voting for us', 'http://railsrumble.com/entries/357-lab2023', target: '_blank'
+              if you like Ganban!
+            %p
+              Current version:
+              = link_to @version, 'https://github.com/railsrumble/r13-team-357/blob/develop/CHANGELOG.md', target: '_blank'
+
 
     = javascript_include_tag 'welcome'
+
 :javascript
   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
