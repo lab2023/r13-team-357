@@ -12,6 +12,9 @@
 #
 #= require jquery
 #= require jquery_ujs
+#= require jquery.purr
+#= require best_in_place
+#= require jquery_ujs
 #= require jquery.ui.autocomplete
 #= require jquery.ui.draggable
 #= require jquery.ui.droppable
@@ -19,8 +22,23 @@
 #= require bootstrap
 #= require hierapolis
 #= require cocoon
+#= require bootstrap-datepicker/core
+#= require bootstrap-datepicker/locales/bootstrap-datepicker.fr
 
 $(document).ready ->
+  $('.best_in_place').best_in_place()
+#  $.datepicker.setDefaults
+#    showOn: "both"
+#    buttonImageOnly: true
+#    buttonImage: "calendar.gif"
+#    buttonText: "Calendar"
+#    dateFormat: "dd-mm-yy"
+
+
+  $('.toggle-card-form').click ->
+    target = $(this).data('target')
+    $("##{target}").toggle()
+
   $(".checklist_check").click ->
     if $(this).is(":checked")
       $.ajax
@@ -144,7 +162,7 @@ $(document).ready ->
           new_user.attr('style', 'prosition: relative;')
           ui.draggable.remove()
 
-          URL = "/cards/" + card_id
+          URL = "/cards/" + card_id + '.js'
 
           card =
             card:

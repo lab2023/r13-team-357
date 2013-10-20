@@ -9,13 +9,13 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require bootstrap-datepicker
  *= require_tree .
 
 @import 'hierapolis'
 
 #assign-project-collaborators
   img
-    width: 35px
     margin-left: 5px
     cursor: move
 
@@ -83,6 +83,23 @@ body.login .wrapper .brand h1 .logo-icon i[class*='icon-']
 #navbar .navbar-brand
   margin-top: -3px !important
 
+.avatar-image
+  border: 1px solid $silver
+  padding: 2px
+  background-color: white
+  width: 75px
+  height: 75px
+  &.avatar-image-sml
+    padding: 1px
+    width: 20px
+    height: 20px
+  &.avatar-image-md
+    width: 35px
+    height: 35px
+  &.avatar-image-lg
+    width: 100px
+    height: 100px
+
 // Project and cards
 .vertical-scroll
   overflow: scroll
@@ -94,32 +111,18 @@ body.login .wrapper .brand h1 .logo-icon i[class*='icon-']
   float: left
   margin-right: 10px
 
-  form.add-card-form
-    //display: none
-    textarea
-      width: 220px
-      height: 75px
-    .actions
-      width: 48px
-      text-align: right
-      button
-        margin-bottom: 6px
-        display: inline-block
-        width: 33px
-        padding:
-          top: 7px
-          left: 7px
-        i.icon-remove-sign
-          color: $silver
+  .add-card-form
+    display: none
   .project-list-item
     width: 300px !important
     float: left
     max-height: 500px
     overflow-y: scroll
     .card
+      a
+        color: $base-dark-color
       &:active
         cursor: move
-      cursor: pointer
       border: 1px solid $panel-default-border
       width: 100%
       height: 66px
@@ -177,6 +180,17 @@ body.login .wrapper .brand h1 .logo-icon i[class*='icon-']
 
 .checklist-text
   margin-left: 20px !important
+
+.best_in_place
+  textarea, input
+    width: 100%
+    @extend .text, .form-control
+
+a.inplace-edit-activator
+  color: $silver
+  text-decoration: none !important
+  &:hover
+    color: darken($silver, 50)
 
 .draggable
   z-index: 2
