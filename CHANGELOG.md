@@ -1,5 +1,62 @@
 
 #### [Current]
+ * [b73f853](../../commit/b73f853) - __(hamitturkukaya)__ [#74](../../issues/74) Assignment error after creating cards fixed
+ * [806cf70](../../commit/806cf70) - __(Tayfun Öziş ERİKAN)__ Card breadcrumb was fixed.
+ * [5ecaccf](../../commit/5ecaccf) - __(Muhammet DİLEK)__ [#56](../../issues/56) card routing fixed
+ * [9df6f2b](../../commit/9df6f2b) - __(Tayfun Öziş ERİKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+ * [54e35db](../../commit/54e35db) - __(Tayfun Öziş ERİKAN)__ Minor changes was done.
+ * [df73e0a](../../commit/df73e0a) - __(Muhammet DİLEK)__ [#63](../../issues/63) breadcrumb fixed
+ * [ece6a8b](../../commit/ece6a8b) - __(Tayfun Öziş ERİKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+ * [a91bdb0](../../commit/a91bdb0) - __(Tayfun Öziş ERİKAN)__ "Drag & drop, assign collaborators" info was added
+ * [819a133](../../commit/819a133) - __(hamitturkukaya)__ [#49](../../issues/49) Temporary solution found for scrollbars
+ * [da2f44a](../../commit/da2f44a) - __(Tayfun Öziş ERİKAN)__ Minor improvements was done - Empty card collaborator was added. - Project edit button was removed
+ * [fc7b65d](../../commit/fc7b65d) - __(hamitturkukaya)__ [#68](../../issues/68) Active class added to the current links
+ * [9b778fc](../../commit/9b778fc) - __(Muhammet DİLEK)__ [#63](../../issues/63) project collaborator search  term fixed
+ * [a79eee7](../../commit/a79eee7) - __(Tayfun Öziş ERİKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+ * [b82e2f7](../../commit/b82e2f7) - __(Tayfun Öziş ERİKAN)__ Dock active css class was added.
+ * [a34df38](../../commit/a34df38) - __(Onur Ozgur OZKAN)__ [#67](../../issues/67) Remove feedback and message links
+ * [7557dc7](../../commit/7557dc7) - __(hamitturkukaya)__ [#66](../../issues/66) Sort and current project bugs fixed
+ * [e20ba96](../../commit/e20ba96) - __(hamitturkukaya)__ [#59](../../issues/59) Rails rumble and twitter share links added
+ * [c66c007](../../commit/c66c007) - __(Tayfun Öziş ERİKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+ * [0535c74](../../commit/0535c74) - __(Tayfun Öziş ERİKAN)__ User profile and account links was improved
+ * [71a0de9](../../commit/71a0de9) - __(Muhammet DİLEK)__ [#61](../../issues/61) card update action fixed
+ * [fff7cc0](../../commit/fff7cc0) - __(Tayfun Öziş ERİKAN)__ [#53](../../issues/53) Card details page was designed
+ * [5245b84](../../commit/5245b84) - __(Muhammet DİLEK)__ [#63](../../issues/63) User profile added
+ * [c19c8ea](../../commit/c19c8ea) - __(hamitturkukaya)__ [#64](../../issues/64) Re-assign bug fixed
+
+Conflicts:
+	app/assets/stylesheets/application.css.sass
+	app/views/projects/show.html.haml
+
+ * [952c9a8](../../commit/952c9a8) - __(hamitturkukaya)__ [#18](../../issues/18) assigning cards to users with drag & drop completed
+ * [a07ed8c](../../commit/a07ed8c) - __(Tayfun Öziş ERİKAN)__ [#53](../../issues/53) Design Card details page - Typo fixed
+ * [b050325](../../commit/b050325) - __(Tayfun Öziş ERİKAN)__ [#53](../../issues/53) Design Card details page - In-place editor was improved
+ * [da5faed](../../commit/da5faed) - __(Tayfun Öziş ERİKAN)__ Conflict resolved
+ * [494e867](../../commit/494e867) - __(Tayfun Öziş ERİKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+
+Conflicts:
+	app/views/lists/_list.html.haml
+
+ * [2ce11e8](../../commit/2ce11e8) - __(Tayfun Öziş ERİKAN)__ [#61](../../issues/61) Card form show/hide toggle was done
+ * [dfc9036](../../commit/dfc9036) - __(Muhammet DİLEK)__ [#58](../../issues/58) best in place improved
+ * [4d7efdd](../../commit/4d7efdd) - __(Onur Ozgur OZKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+ * [22cfa5c](../../commit/22cfa5c) - __(Onur Ozgur OZKAN)__ [#60](../../issues/60) Add confirm message before delete items
+ * [7e842ca](../../commit/7e842ca) - __(Muhammet DİLEK)__ [#58](../../issues/58) best in place completed
+ * [f35239a](../../commit/f35239a) - __(Onur Ozgur OZKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+ * [d3674fc](../../commit/d3674fc) - __(Onur Ozgur OZKAN)__ [#60](../../issues/60) Add confirm message before delete items
+ * [796ae03](../../commit/796ae03) - __(Tayfun Öziş ERİKAN)__ [#56](../../issues/56) Avatar image sizes were fixed.
+ * [de385b5](../../commit/de385b5) - __(Onur Ozgur OZKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+ * [985c1ea](../../commit/985c1ea) - __(Onur Ozgur OZKAN)__ [#57](../../issues/57) improve collabrator page
+ * [6fc0992](../../commit/6fc0992) - __(hamitturkukaya)__ [#48](../../issues/48) Card sort errors fixed
+ * [96b199f](../../commit/96b199f) - __(Muhammet DİLEK)__ [#51](../../issues/51) checklist resource added
+ * [a23b38d](../../commit/a23b38d) - __(Onur Ozgur OZKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+ * [edb3d49](../../commit/edb3d49) - __(Onur Ozgur OZKAN)__ [#56](../../issues/56) add card data
+ * [8e10a7e](../../commit/8e10a7e) - __(hamitturkukaya)__ [#48](../../issues/48) Card sort errors fixed
+ * [75c0633](../../commit/75c0633) - __(Onur Ozgur OZKAN)__ [#55](../../issues/55) Remove dashboard at breadcrumbs
+ * [0ae1995](../../commit/0ae1995) - __(Onur Ozgur OZKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+ * [875c1d7](../../commit/875c1d7) - __(Onur Ozgur OZKAN)__ [#54](../../issues/54) refactor .ruby-version file name
+ * [17027b8](../../commit/17027b8) - __(Muhammet DİLEK)__ [#19](../../issues/19) comment resource added to card
+ * [1af1523](../../commit/1af1523) - __(Muhammet DİLEK)__ bump version 0.3.0
  * [cefe67f](../../commit/cefe67f) - __(Muhammet DİLEK)__ dashboard link fixed
  * [5a34886](../../commit/5a34886) - __(hamitturkukaya)__ [#44](../../issues/44) Move card in kanban completed
  * [591a8f3](../../commit/591a8f3) - __(Tayfun Öziş ERİKAN)__ [#36](../../issues/36) Design improvements for project page - Project collaborator area was fixed - Project card item css classes were reviewed
