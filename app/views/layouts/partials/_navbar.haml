@@ -2,7 +2,7 @@
   - if @current_project.present?
     %a.navbar-brand{:href => project_path(@current_project)}
       %i.icon-tasks
-      =t @current_project.name
+      = @current_project.name
     %ul.nav.navbar-nav.switcher
       %li.dropdown
         %a.dropdown-toggle{data: {toggle: 'dropdown'}, :href => '#'}
