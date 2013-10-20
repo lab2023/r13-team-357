@@ -3,7 +3,11 @@
 %ul#dock
   %li.launcher
     %i.icon-dashboard
-    =link_to 'Dashboard', dashboard_index_path
+    - if @current_project
+      =link_to 'Dashboard', @current_project
+    - else
+      =link_to 'Dashboard', dashboard_index_path
+
   %li.launcher
     %i.icon-suitcase
     =link_to 'Projects', projects_path

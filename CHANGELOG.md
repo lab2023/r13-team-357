@@ -1,10 +1,61 @@
 
 #### [Current]
+ * [cefe67f](../../commit/cefe67f) - __(Muhammet DİLEK)__ dashboard link fixed
+ * [5a34886](../../commit/5a34886) - __(hamitturkukaya)__ [#44](../../issues/44) Move card in kanban completed
+ * [591a8f3](../../commit/591a8f3) - __(Tayfun Öziş ERİKAN)__ [#36](../../issues/36) Design improvements for project page - Project collaborator area was fixed - Project card item css classes were reviewed
+ * [52051b9](../../commit/52051b9) - __(hamitturkukaya)__ [#43](../../issues/43) Move list in kanban completed
+ * [aeb15b4](../../commit/aeb15b4) - __(Tayfun Öziş ERİKAN)__ [#46](../../issues/46) Cart create form was designed
+ * [51643b2](../../commit/51643b2) - __(Muhammet DİLEK)__ [#46](../../issues/46) cart create parameter added
+ * [d37dcce](../../commit/d37dcce) - __(Muhammet DİLEK)__ [#45](../../issues/45) cart destroy button fixed
+ * [be270b9](../../commit/be270b9) - __(Tayfun Öziş ERİKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+ * [29afd0d](../../commit/29afd0d) - __(Tayfun Öziş ERİKAN)__ [#37](../../issues/37) Project collaborators page was re-designed
+ * [baf32dc](../../commit/baf32dc) - __(Onur Ozgur OZKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+ * [fd7a1b5](../../commit/fd7a1b5) - __(Onur Ozgur OZKAN)__ [#43](../../issues/43) move lists
+
+Conflicts:
+	app/views/cards/_card.html.haml
+	app/views/lists/_list.html.haml
+
+
+Conflicts:
+	app/views/cards/_card.html.haml
+	app/views/lists/_list.html.haml
+
+ * [162bf3c](../../commit/162bf3c) - __(Muhammet DİLEK)__ [#46](../../issues/46) cart list fixed
+
+Conflicts:
+	app/views/projects/show.html.haml
+
+ * [7caa031](../../commit/7caa031) - __(hamitturkukaya)__ [#44](../../issues/44) Request sent after card moved
+ * [00fb11b](../../commit/00fb11b) - __(Muhammet DİLEK)__ [#47](../../issues/47) project users displayed on detail
+ * [e4e6684](../../commit/e4e6684) - __(Muhammet DİLEK)__ [#46](../../issues/46) cart create form added
+ * [a2b4450](../../commit/a2b4450) - __(Muhammet DİLEK)__ [#45](../../issues/45) destroy action added to button
+ * [c7c4358](../../commit/c7c4358) - __(hamitturkukaya)__ [#43](../../issues/43) Request sent after list moved
+ * [1f24986](../../commit/1f24986) - __(hamitturkukaya)__ [#43](../../issues/43) Request sent after list moved
+ * [866e3ff](../../commit/866e3ff) - __(Onur Ozgur OZKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+ * [ba6f274](../../commit/ba6f274) - __(Onur Ozgur OZKAN)__ [#37](../../issues/37) add hint for guest user
+ * [0a5de0c](../../commit/0a5de0c) - __(Muhammet DİLEK)__ [#44](../../issues/44) [#43](../../issues/43) move routing completed
+ * [9faf39a](../../commit/9faf39a) - __(Tayfun Öziş ERİKAN)__ [#45](../../issues/45) Destroy button was added to cards
+ * [2435496](../../commit/2435496) - __(Tayfun Öziş ERİKAN)__ [#25](../../issues/25) Project lists was designed and improved - Card and list partials was created
+ * [f200e46](../../commit/f200e46) - __(Muhammet DİLEK)__ [#34](../../issues/34) set sort value before create for card and list
+ * [d961773](../../commit/d961773) - __(Muhammet DİLEK)__ [#40](../../issues/40) seed data added for development
+ * [59040c8](../../commit/59040c8) - __(Onur Ozgur OZKAN)__ [#31](../../issues/31) Remove users already in project
+ * [2553ad8](../../commit/2553ad8) - __(Muhammet DİLEK)__ [#39](../../issues/39) Project authorization
+ * [3d5cb4c](../../commit/3d5cb4c) - __(hamitturkukaya)__ [#34](../../issues/34) sorted list edited for new instance
+ * [07055e3](../../commit/07055e3) - __(Onur Ozgur OZKAN)__ [#31](../../issues/31) check user is project owner
+ * [de9cc1a](../../commit/de9cc1a) - __(Muhammet DİLEK)__ [#38](../../issues/38) Project User model relation fixed
+ * [e1f084e](../../commit/e1f084e) - __(Onur Ozgur OZKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+ * [1509edd](../../commit/1509edd) - __(Onur Ozgur OZKAN)__ [#24](../../issues/24) sort lists
+
+#### 0.2.2
+ * [b1b24a6](../../commit/b1b24a6) - __(hamitturkukaya)__ 0.2.2
  * [105e859](../../commit/105e859) - __(hamitturkukaya)__  [#42](../../issues/42) Turbolinks removed from hq/application.js
 
 #### 0.2.1
  * [78a6bb0](../../commit/78a6bb0) - __(hamitturkukaya)__ 0.2.1
  * [f38ad23](../../commit/f38ad23) - __(hamitturkukaya)__ [#41](../../issues/41) Turbolinks disabled in welcome layout
+
+#### 0.2.0
  * [b8c9c57](../../commit/b8c9c57) - __(Muhammet DİLEK)__ bump version 0.2.0
  * [4493c03](../../commit/4493c03) - __(Muhammet DİLEK)__ settings symlink added
  * [fe4d649](../../commit/fe4d649) - __(hamitturkukaya)__ [#35](../../issues/35) Triggerin multiple event error fixed(turbolinks removed)
