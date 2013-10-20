@@ -78,7 +78,7 @@ class ApplicationController < ActionController::Base
 
   def redirect_to_new_project
     redirect_to new_project_path if current_user.projects.size < 1
-    flash[:warning] = 'Please add new project.'
+    #flash[:warning] = 'Please add new project.'
   end
 
 end
