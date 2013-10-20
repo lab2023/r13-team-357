@@ -10,6 +10,8 @@ class ProjectsController < ApplicationController
 
   def show
     add_breadcrumb @project.name, project_path(@project)
+    @current_project = @project
+    session[:project_id] = @current_project.id
     @lists = List.where(:project_id => @project.id).order('sort asc')
     respond_with(@lists)
   end
@@ -35,6 +37,8 @@ class ProjectsController < ApplicationController
     @project.owner = current_user
     @project.save
     @project.users << current_user
+    @current_project = @project
+    session[:project_id] = @current_project.id
     respond_with(@project)
   end
 

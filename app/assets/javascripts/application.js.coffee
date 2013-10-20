@@ -139,7 +139,6 @@ $(document).ready ->
     $(".project-list-item").disableSelection()
 
     $ ->
-      droppable_image = ''
       $(".draggable").draggable
         containment: "#wrapper"
         revert: "invalid"

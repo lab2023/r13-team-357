@@ -17,6 +17,8 @@
         %span.stat{data: {toggle: 'tooltip'}, title: 'Due date'}
           %i.icon-time
           = card.due_date
-    - if card.assigned.present?
-      .user
+    .user
+      - if card.assigned.present?
         = image_tag avatar_url(card.assigned), class: 'img-circle avatar-image avatar-image-md', data: {toggle: 'tooltip'}, title: card.try(:assigned).try(:name)
+      - else
+        = image_tag 'http://placehold.it/50x50', class: 'img-circle avatar-image avatar-image-md'

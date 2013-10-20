@@ -1,6 +1,6 @@
 #navbar.navbar.navbar-default
   - if @current_project.present?
-    %a.navbar-brand{:href => '#'}
+    %a.navbar-brand{:href => project_path(@current_project)}
       %i.icon-tasks
       =t @current_project.name
     %ul.nav.navbar-nav.switcher
