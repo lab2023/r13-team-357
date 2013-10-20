@@ -80,8 +80,13 @@ ul.ui-autocomplete
       padding: 0 10px 5px 10px
 
 // Hierapolis overrides
-.sprite-image, #beaker
-  background-image: url(#{$assets-url}sprite.png)
+img#beaker-img
+  width: 18px
+  margin: auto
+  position: fixed
+  bottom: 15px
+  margin-left: -10px
+
 body.login .wrapper .brand h1 .logo-icon i[class*='icon-']
   margin-left: -2px !important
 #navbar .navbar-brand
@@ -318,8 +323,13 @@ a.inplace-edit-activator
     text-decoration: none
     &:hover
       color: $base-color
+
+.ui-datepicker-trigger
+  display: none
+
 .past_due
   background-color: $brand-danger !important
   color: white !important
 .past_due_text
   color: $brand-danger !important
+
