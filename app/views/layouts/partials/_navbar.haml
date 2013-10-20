@@ -25,9 +25,23 @@
           %li.action
             %a.btn.btn-xs.btn-success{href: new_project_path}
               Add New Project
+
+
   %ul.nav.navbar-nav.pull-right
     %li.dropdown.user
-      =link_to edit_user_registration_path do
+      %a.dropdown-toggle{'data-toggle' => 'dropdown', :href => '#'}
+        %i.icon-user
+        %strong= current_user.name
+        %b.caret
+      %ul.dropdown-menu
+        %li
+          %a{:href => edit_profile_path(current_user)} Profile
+        %li.divider
+        %li
+          %a{:href => edit_user_registration_path} Account
+
+    %li.dropdown.user
+      =link_to profile_path(current_user) do
         =image_tag avatar_url(current_user), class: 'img-circle'
         %strong=current_user.name
     %li

@@ -1,0 +1,26 @@
+.panel.panel-default
+  .panel-heading
+    %i.icon-edit.icon-large
+    = @profile.name
+  .panel-body
+    %p
+      %strong Bio:
+      = @profile.bio
+    %p
+      %strong Blog:
+      = link_to @profile.blog, @profile.blog
+    %p
+      %strong Github:
+      = link_to @profile.github, @profile.github
+    %p
+      %strong Stack Overflow:
+      = link_to @profile.stackoverflow, @profile.stackoverflow
+    %p
+      %strong LinkedIn:
+      = link_to @profile.linkedin, @profile.linkedin
+    %p
+      %strong Twitter:
+      = link_to @profile.twitter, @profile.twitter
+    %p
+      %strong Facebook:
+      = link_to @profile.facebook, @profile.facebook

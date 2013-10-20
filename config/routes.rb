@@ -1,4 +1,6 @@
 Ganban::Application.routes.draw do
+  resources :profiles
+
   resources :checklists do
     put :done, on: :member
   end

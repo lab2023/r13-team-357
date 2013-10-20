@@ -15,10 +15,10 @@ namespace :dev do
 
   task :user => [:environment] do
     guest = User.find_by_email('info@lab2023.com')
-    muhammet  = User.create!(email: 'muhammet.dilek@lab2023.com',     password: '12341234', password_confirmation: '12341234', name: 'Muhammet Dilek')
-    onur      = User.create!(email: 'onur.ozgur.ozkan@lab2023.com',   password: '12341234', password_confirmation: '12341234', name: 'Onur Özgür Ozkan')
-    tayfun    = User.create!(email: 'tayfun.ozis.erikan@lab2023.com', password: '12341234', password_confirmation: '12341234', name: 'Tayfun Ozis Erikan')
-    hamit     = User.create!(email: 'hamit.turku.kaya@lab2023.com',   password: '12341234', password_confirmation: '12341234', name: 'Hamit Türkü Kaya')
+    muhammet  = User.create!(email: 'muhammet.dilek@lab2023.com',     password: '12341234', password_confirmation: '12341234', profile_attributes: { name: 'Muhammet Dilek' })
+    onur      = User.create!(email: 'onur.ozgur.ozkan@lab2023.com',   password: '12341234', password_confirmation: '12341234', profile_attributes: { name: 'Onur Özgür Özkan' })
+    tayfun    = User.create!(email: 'tayfun.ozis.erikan@lab2023.com', password: '12341234', password_confirmation: '12341234', profile_attributes: { name: 'Tayfun Öziş Erikan'})
+    hamit     = User.create!(email: 'hamit.turku.kaya@lab2023.com',   password: '12341234', password_confirmation: '12341234', profile_attributes: { name: 'Hamit Türkü Kaya' })
 
     project = guest.own_projects.create(name: 'Blog', description: 'My personel website', owner_id: guest.id)
     project.users << guest
