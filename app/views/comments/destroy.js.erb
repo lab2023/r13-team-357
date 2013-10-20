@@ -1,3 +1,4 @@
 <% if @comment.destroyed? %>
     $("#comment-<%= @comment_id %>").remove();
+    $("#comment_stat").html("<%= escape_javascript( render 'stat', card: @comment.card ) %>");
 <% end %>

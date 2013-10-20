@@ -5,7 +5,7 @@ class CommentObserver < ActiveRecord::Observer
     card.save!
   end
 
-  def after_devise(comment)
+  def after_destroy(comment)
     card = comment.card
     card.comment_count = card.comment_count - 1
     card.save!
