@@ -1,5 +1,47 @@
 
 #### [Current]
+ * [5ef8b78](../../commit/5ef8b78) - __(Muhammet DİLEK)__ update user button name fixed
+ * [9e3489e](../../commit/9e3489e) - __(hamitturkukaya)__ [#70](../../issues/70) Amazon setting uncommented for deploy
+ * [43938b7](../../commit/43938b7) - __(Muhammet DİLEK)__ alert message fixed
+ * [cc9ad6b](../../commit/cc9ad6b) - __(Muhammet DİLEK)__ card detail past due date fixed
+ * [8cc9d43](../../commit/8cc9d43) - __(Muhammet DİLEK)__ message added to layout
+ * [03aaa2b](../../commit/03aaa2b) - __(Muhammet DİLEK)__ collaborator search result fixed
+ * [db277b0](../../commit/db277b0) - __(hamitturkukaya)__ [#105](../../issues/105) Google analytics added
+ * [cc2ad00](../../commit/cc2ad00) - __(Muhammet DİLEK)__ [#103](../../issues/103) past due date design
+ * [18d463f](../../commit/18d463f) - __(Onur Ozgur OZKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+ * [3e8ed93](../../commit/3e8ed93) - __(Onur Ozgur OZKAN)__ [#104](../../issues/104) Add title card  detail page
+ * [3af7ed6](../../commit/3af7ed6) - __(Tayfun Öziş ERİKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+ * [dbdafa6](../../commit/dbdafa6) - __(Tayfun Öziş ERİKAN)__ [#100](../../issues/100) Minor changes was done
+ * [5ffb05c](../../commit/5ffb05c) - __(Muhammet DİLEK)__ [#103](../../issues/103) past due date design
+ * [3faabf2](../../commit/3faabf2) - __(hamitturkukaya)__ [#99](../../issues/99) Document management improved
+ * [0b67751](../../commit/0b67751) - __(Onur Ozgur OZKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+ * [25df3dc](../../commit/25df3dc) - __(Onur Ozgur OZKAN)__ [#69](../../issues/69) remove project id
+ * [5deb310](../../commit/5deb310) - __(Muhammet DİLEK)__ [#102](../../issues/102) sing up input design
+
+Conflicts:
+	app/assets/stylesheets/application.css.sass
+
+ * [a3bc0f9](../../commit/a3bc0f9) - __(Muhammet DİLEK)__ [#100](../../issues/100) assigned filter added
+ * [63e5602](../../commit/63e5602) - __(Tayfun Öziş ERİKAN)__ Datepicker style overrides were done
+ * [d6b1ab3](../../commit/d6b1ab3) - __(Tayfun Öziş ERİKAN)__ [#96](../../issues/96) Dropzone design was done
+ * [ea07701](../../commit/ea07701) - __(Muhammet DİLEK)__ [#98](../../issues/98) collaborator add bug fixed
+ * [0bdd8e4](../../commit/0bdd8e4) - __(Tayfun Öziş ERİKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+ * [1ceafc2](../../commit/1ceafc2) - __(Tayfun Öziş ERİKAN)__ [#97](../../issues/97) Was done
+
+Conflicts:
+	app/assets/javascripts/application.js.coffee
+
+ * [8f8e006](../../commit/8f8e006) - __(Muhammet DİLEK)__ Bootstrap datepicker removed from application.js
+ * [f49c2ce](../../commit/f49c2ce) - __(hamitturkukaya)__  [#95](../../issues/95) List move highlight effect bug fixed
+ * [55827ec](../../commit/55827ec) - __(hamitturkukaya)__ [#70](../../issues/70) amazon s3 setting commented out for design
+ * [dd6b7c0](../../commit/dd6b7c0) - __(hamitturkukaya)__ [#70](../../issues/70) amazon s3 added to the document model
+ * [b1bce61](../../commit/b1bce61) - __(Tayfun Öziş ERİKAN)__ Highlight effect added actions of update, move, delete
+ * [f3f17af](../../commit/f3f17af) - __(Tayfun Öziş ERİKAN)__ Highlight effect added for update, move, delete actions
+ * [f77fd9f](../../commit/f77fd9f) - __(Muhammet DİLEK)__ [#70](../../issues/70) document observer created
+ * [bda5d62](../../commit/bda5d62) - __(Muhammet DİLEK)__ [#70](../../issues/70) document resources created
+
+#### 1.1.0
+ * [ba8690d](../../commit/ba8690d) - __(hamitturkukaya)__ bump version 1.1.0
  * [9f30ec0](../../commit/9f30ec0) - __(Tayfun Öziş ERİKAN)__ Merge remote-tracking branch 'origin/develop' into develop
  * [4dde1d0](../../commit/4dde1d0) - __(Tayfun Öziş ERİKAN)__ [#78](../../issues/78) Card list info was added to card details
  * [d89e803](../../commit/d89e803) - __(Onur Ozgur OZKAN)__ [#92](../../issues/92) update home page title
