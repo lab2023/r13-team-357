@@ -1,5 +1,5 @@
-
-
+$("#assigned_id").html("<%= escape_javascript( image_tag avatar_url(@card.assigned), class: 'pointer card-collaborator-edit-activator img-circle avatar-image' ) %>");
+$("#best_in_place_card_<%= @card.id %>_assignment_id").html("");
 $(function() {
     $(".draggable").draggable({
         containment: "#wrapper",
