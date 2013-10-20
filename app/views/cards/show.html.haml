@@ -62,8 +62,15 @@
                     Remove assigned...
             %hr/
 
-            %span.label.label-default.card-list{data: {toggle: 'tooltip'}, title: 'Current list'}
-              = @card.list.name
+            #list-switcher.btn-group{data: {toggle: 'tooltip'}, title: 'Swtich list'}
+              %button.btn.btn-primary.dropdown-toggle{'data-toggle' => 'dropdown', type: 'button'}
+                = @card.list.name
+                %span.caret
+              %ul.dropdown-menu{role: 'menu'}
+                - @current_project.lists.each do |list|
+                  - if @card.list.id != list.id
+                    %li
+                      %a{href: '#'}= list.name
 
 
             .card-stats.card-stats-lg
