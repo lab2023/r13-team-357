@@ -1,12 +1,10 @@
 %i#toggle.icon-align-justify.icon-large
 
 %ul#dock
-  %li.launcher
-    %i.icon-dashboard
-    - if @current_project
-      =link_to 'Dashboard', @current_project
-    - else
-      =link_to 'Dashboard', dashboard_index_path
+  - if @current_project
+    %li.launcher.active
+      %i.icon-tasks
+      =link_to 'Kanban', @current_project
 
   %li.launcher
     %i.icon-suitcase
