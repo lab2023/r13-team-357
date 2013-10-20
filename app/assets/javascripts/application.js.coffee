@@ -140,8 +140,6 @@ $(document).ready ->
     $ ->
       droppable_image = ''
       $(".draggable").draggable
-        start: (event, ui) ->
-          $('.toolbar-tooltip').tooltip('hide')
         containment: "#wrapper"
         revert: "invalid"
       $(".droppable").droppable
@@ -159,7 +157,7 @@ $(document).ready ->
           assigned_id = ui.draggable.attr('id')
           main_cont = $(this).find('.img-circle')
           main_cont.attr('src', new_user_img)
-          new_user.attr('style', 'prosition: relative;')
+          new_user.attr('style', 'position: relative;')
           ui.draggable.remove()
 
           URL = "/cards/" + card_id + '.js'
