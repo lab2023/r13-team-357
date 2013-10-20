@@ -6,6 +6,7 @@ class CardsController < ApplicationController
     add_breadcrumb @card.list.project.name, project_path(@card.list.project)
     add_breadcrumb "Card ##{@card.id}", card_path(@card)
     @collaborators = @card.list.project.users
+    @checklist_percentage = 100 * @card.try(:checklist_done_count).to_i / @card.try(:checklist_total_count).to_i
     respond_with(@card)
   end
 
