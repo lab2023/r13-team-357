@@ -33,6 +33,8 @@ $.datepicker.setDefaults
   dateFormat: "dd-mm-yy"
 
 $(document).ready ->
+  $("#documentsModal").on "hidden.bs.modal", ->
+    location.reload()
   Dropzone.options.photoDropzone =
     paramName: "file"
     maxFilesize: 5 #mb

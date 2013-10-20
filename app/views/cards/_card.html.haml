@@ -6,7 +6,7 @@
     .card-stats.card-stats-inline
       %span.stat{data: {toggle: 'tooltip'}, title: 'Checklists'}
         %i.icon-list
-        = card.try(:checklist_total_count).to_s + '/' + card.try(:checklist_done_count).to_s
+        = card.try(:checklist_done_count).to_s + '/' + card.try(:checklist_total_count).to_s
       %span.stat{data: {toggle: 'tooltip'}, title: 'Comments'}
         %i.icon-comments-alt
         = card.try(:comment_count)
