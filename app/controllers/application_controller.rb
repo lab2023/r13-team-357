@@ -6,7 +6,6 @@ class ApplicationController < ActionController::Base
   before_action :set_quest_user
   before_action :get_version
   before_action :set_current_project, :if => :user_signed_in?
-  add_breadcrumb "Dashboard", :dashboard_index_path
 
   self.responder = ApplicationResponder
   respond_to :html, :json

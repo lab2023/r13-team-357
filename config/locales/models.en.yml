@@ -4,6 +4,7 @@ en:
       project: Projects
       list: List
       card: Card
+      collaborator: Collaborator
     attributes:
       project:
         name: Name
