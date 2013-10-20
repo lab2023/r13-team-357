@@ -119,9 +119,10 @@ body.login .wrapper .brand h1 .logo-icon i[class*='icon-']
     max-height: 500px
     overflow-y: scroll
     .card
+      a
+        color: $base-dark-color
       &:active
         cursor: move
-      cursor: pointer
       border: 1px solid $panel-default-border
       width: 100%
       height: 66px
@@ -147,6 +148,7 @@ body.login .wrapper .brand h1 .logo-icon i[class*='icon-']
         border-top: 1px solid $silver
         padding-top: 5px
         .stat
+          cursor: default
           @extend .btn, .btn-default
           padding: 3px
           font-size: 0.8em
@@ -179,6 +181,17 @@ body.login .wrapper .brand h1 .logo-icon i[class*='icon-']
 
 .checklist-text
   margin-left: 20px !important
+
+.best_in_place
+  textarea, input
+    width: 100%
+    @extend .text, .form-control
+
+a.inplace-edit-activator
+  color: $silver
+  text-decoration: none !important
+  &:hover
+    color: darken($silver, 50)
 
 
 

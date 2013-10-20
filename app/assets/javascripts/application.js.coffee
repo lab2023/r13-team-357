@@ -25,12 +25,12 @@
 
 $(document).ready ->
   $('.best_in_place').best_in_place()
-  $.datepicker.setDefaults
-    showOn: "both"
-    buttonImageOnly: true
-    buttonImage: "calendar.gif"
-    buttonText: "Calendar"
-    dateFormat: "dd-mm-yy"
+#  $.datepicker.setDefaults
+#    showOn: "both"
+#    buttonImageOnly: true
+#    buttonImage: "calendar.gif"
+#    buttonText: "Calendar"
+#    dateFormat: "dd-mm-yy"
 
 
   $('.toggle-card-form').click ->
