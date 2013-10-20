@@ -52,6 +52,10 @@ $(document).ready ->
   $("#collaborator_user_id").autocomplete
       source: $('#collaborator_user_id').data('autocomplete-source')
       autoFocus: true
+      messages:
+        noResults: null
+        results: ->
+
 
   width = $(".project-list").width()
   size = $(".project-list").size()
