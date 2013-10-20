@@ -25,7 +25,7 @@ class DocumentsController < ApplicationController
   end
 
   def create
-    @document = Document.create(file: params[:file], card_id: params[:card_id])
+    @document = Document.create(file: params[:file], card_id: params[:document][:card_id])
     @document.user = current_user
     @document.save
     render json: @document
