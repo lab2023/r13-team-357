@@ -1,15 +1,4 @@
-.panel.panel-default
-  .panel-heading
-    %i.icon-edit.icon-large
-    = yield :form_title
-  .panel-body
-    = simple_form_for(@card.comments.new, remote: true) do |f|
-      = f.error_notification
-
-      .form-inputs
-        = f.input :card_id, input_html: {value: @card.id}, as: :hidden
-        = f.input :body, input_html: {id: 'comment_form_body'}
-
-      .form-actions
-        = f.button :submit, class: 'btn btn-default'
-        = link_to t('cancel'), comments_path, class: 'btn'
+= simple_form_for(@card.comments.new, remote: true) do |f|
+  = f.input :card_id, input_html: {value: @card.id}, as: :hidden
+  = f.input :body, input_html: {id: 'comment_form_body'}, label: false, placeholder: 'Write a new comment...'
+  = f.button :submit, class: 'btn btn-default'

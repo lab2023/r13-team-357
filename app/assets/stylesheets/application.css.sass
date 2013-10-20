@@ -141,22 +141,11 @@ body.login .wrapper .brand h1 .logo-icon i[class*='icon-']
         padding-top: 0px
         margin: 0 0 4px
         width: 200px
-      .stats
-        &.extended
-          width: 255px
-        width: 202px
-        border-top: 1px solid $silver
-        padding-top: 5px
-        .stat
-          @extend .btn, .btn-default
-          padding: 3px
-          font-size: 0.8em
-          float: left
-          margin-right: 2px
       .user
         img
           float: right
           width: 50px
+          height: 50px
           margin:
             top: -25px
             right: 2px
@@ -173,6 +162,30 @@ body.login .wrapper .brand h1 .logo-icon i[class*='icon-']
   .project-list-item::-moz-scrollbar
     display: none
 
+.card-stats
+  &.card-stats-inline
+    width: 202px
+    border-top: 1px solid $silver
+    padding-top: 5px
+    span.stat
+      font-size: 0.8em !important
+  &.card-stats-extended
+    width: 255px
+  &.card-stats-lg
+    span.stat
+      display: inline-block
+      width: 100%
+      background-color: $clouds
+      text-align: left
+      margin-bottom: 5px
+      padding: 4px
+  span.stat
+    cursor: default
+    @extend .btn, .btn-default
+    padding: 3px
+    float: left
+    margin-right: 2px
+
 .ui-sortable-placeholder
   border: 1px dashed $silver !important
   visibility: visible !important
@@ -182,15 +195,33 @@ body.login .wrapper .brand h1 .logo-icon i[class*='icon-']
   margin-left: 20px !important
 
 .best_in_place
-  textarea, input
+  textarea, input, select
     width: 100%
     @extend .text, .form-control
+  select
+    margin: 10px 0
+    display: inline
+    font-size: 1em !important
+    height: 30px !important
 
 a.inplace-edit-activator
   color: $silver
+  font-size: .9em
   text-decoration: none !important
   &:hover
     color: darken($silver, 50)
+
+.pointer
+  cursor: pointer !important
+
+.bs-callout
+  background-color: $clouds
+  margin: 20px 0
+  padding: 15px 30px 15px 15px
+  border-left: 5px solid $silver
+
+.margin-up
+  margin-top: 5px
 
 .draggable
   z-index: 2

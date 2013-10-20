@@ -1,6 +1,8 @@
 - if comment.id.present?
-  .row
-    .col-md-1
-      = image_tag avatar_url(comment.user), class: 'img-circle ', data: { toggle: 'toolbar-tooltip' }, title: comment.user.name
-    .col-md-11
+  .bs-callout
+    = image_tag avatar_url(comment.user), class: 'img-circle avatar-image avatar-image-sml'
+    %strong= comment.user.name
+    %span.pull-right= comment.created_at.to_formatted_s(:short)
+
+    %p.margin-up
       = comment.body

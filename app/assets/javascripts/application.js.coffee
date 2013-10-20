@@ -25,14 +25,15 @@
 #= require bootstrap-datepicker/core
 #= require bootstrap-datepicker/locales/bootstrap-datepicker.fr
 
+#$.datepicker.setDefaults
+#  showOn: "both"
+#  buttonImageOnly: true
+#  buttonImage: "calendar.gif"
+#  buttonText: "Calendar"
+#  dateFormat: "dd-mm-yy"
+
 $(document).ready ->
   $('.best_in_place').best_in_place()
-#  $.datepicker.setDefaults
-#    showOn: "both"
-#    buttonImageOnly: true
-#    buttonImage: "calendar.gif"
-#    buttonText: "Calendar"
-#    dateFormat: "dd-mm-yy"
 
 
   $('.toggle-card-form').click ->

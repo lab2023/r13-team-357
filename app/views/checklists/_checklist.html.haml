@@ -1,5 +1,5 @@
 - if checklist.id.present?
-  .row
+  .row.checklist-item
     .col-md-12
       .pull-left
         - if checklist.done
@@ -7,4 +7,4 @@
         - else
           = check_box_tag "checklist-#{checklist.id}", checklist.id, false, class: 'checklist_check'
 
-      %p.checklist-text{id: "checklist-text-#{checklist.id}", style: checklist.done? ? "text-decoration: line-through" : ""}= checklist.title
+      %p.checklist-text{id: "checklist-text-#{checklist.id}", style: checklist.done? ? 'text-decoration: line-through' : ''}= checklist.title
