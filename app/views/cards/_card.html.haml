@@ -16,7 +16,7 @@
       - if card.due_date.present?
         %span.stat{data: {toggle: 'tooltip'}, title: 'Due date'}
           %i.icon-time
-          = card.due_date
+          = card.due_date.to_formatted_s(:short)
     .user
       - if card.assigned.present?
         = image_tag avatar_url(card.assigned), class: 'img-circle avatar-image avatar-image-md', data: {toggle: 'tooltip'}, title: card.try(:assigned).try(:name)
