@@ -27,8 +27,12 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment.destroy
-    respond_with(@comment)
+    @comment_id = @comment.id
+    @comment.destroy if @comment.user == current_user
+
+    respond_to do |format|
+      format.js
+    end
   end
 
   private

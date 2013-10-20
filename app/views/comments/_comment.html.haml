@@ -1,8 +1,12 @@
 - if comment.id.present?
-  .bs-callout
+  .bs-callout{id: "comment-#{comment.id}"}
     = image_tag avatar_url(comment.user), class: 'img-circle avatar-image avatar-image-sml'
     %strong= comment.user.name
-    %span.pull-right= comment.created_at.to_formatted_s(:short)
+    .pull-right
+      %span= comment.created_at.to_formatted_s(:short)
+      - if comment.user == current_user
+        = link_to comment_path(comment), method: :delete, remote: true do
+          %i.icon-remove
 
     %p.margin-up
-      = comment.body
+      = comment.body.gsub(/\n/, '<br/>').html_safe
