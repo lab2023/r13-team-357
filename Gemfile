@@ -40,6 +40,7 @@ gem 'blankable', '~> 0.2.0'
 gem 'cocoon'
 gem 'best_in_place', github: 'bernat/best_in_place', branch: 'rails-4'
 gem 'bootstrap-datepicker-rails'
+gem 'aws-sdk'
 
 group :doc do
   gem 'sdoc', require: false

@@ -55,6 +55,10 @@ GEM
       rake
     arel (4.0.0)
     atomic (1.1.14)
+    aws-sdk (1.11.1)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
+      uuidtools (~> 2.1)
     bcrypt-ruby (3.1.2)
     better_errors (1.0.1)
       coderay (>= 1.0.0)
@@ -275,6 +279,7 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    uuidtools (2.1.4)
     warden (1.2.3)
       rack (>= 1.0)
     whenever (0.8.4)
@@ -292,6 +297,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate (>= 2.5.0)
+  aws-sdk
   best_in_place!
   better_errors
   binding_of_caller
