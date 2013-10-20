@@ -1,11 +1,11 @@
 # encoding: UTF-8
 class CardsController < ApplicationController
   before_action :set_card, only: [:show, :edit, :update, :destroy]
-  add_breadcrumb I18n.t('activerecord.models.cards'), :cards_path
+  add_breadcrumb I18n.t('activerecord.models.card'), :cards_path
   def index
     @search = Card.search(params[:q])
-     @cards = @search.result(:distinct => true).paginate(:page => params[:page])
-     respond_with(@cards)
+    @cards = @search.result(:distinct => true).paginate(:page => params[:page])
+    respond_with(@cards)
   end
 
   def show
