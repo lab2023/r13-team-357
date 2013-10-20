@@ -43,7 +43,7 @@
         - if flash.count > 0
           .row-fluid
             - flash.each do |name, msg|
-              %div{class: "alert alert-#{name}"}
+              %div{class: "alert alert-warning"}
                 %a.close{data: {dismiss: 'alert'}, href: '#'} &times;
                 = content_tag :div, msg, id: "flash_#{name}" if msg.is_a?(String)
         = yield
