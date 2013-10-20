@@ -1,5 +1,30 @@
 
 #### [Current]
+ * [1848d54](../../commit/1848d54) - __(Tayfun Öziş ERİKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+ * [1da1b18](../../commit/1da1b18) - __(Tayfun Öziş ERİKAN)__ Videos was added.
+ * [bfc2f0c](../../commit/bfc2f0c) - __(hamitturkukaya)__ [#112](../../issues/112) linkedin from user profile fixed
+ * [5dbdddb](../../commit/5dbdddb) - __(hamitturkukaya)__ [#111](../../issues/111) Create project validation error fixed
+ * [f76f7f4](../../commit/f76f7f4) - __(Tayfun Öziş ERİKAN)__ [#111](../../issues/111) i18n translate helper was removed
+ * [0dde931](../../commit/0dde931) - __(Tayfun Öziş ERİKAN)__ [#71](../../issues/71) Screenshots was added
+ * [7e8cb72](../../commit/7e8cb72) - __(hamitturkukaya)__ [#110](../../issues/110) Card list changed from card detail
+ * [c953615](../../commit/c953615) - __(Tayfun Öziş ERİKAN)__ [#110](../../issues/110) List switch button was added.
+ * [36a0e26](../../commit/36a0e26) - __(Tayfun Öziş ERİKAN)__ Minor change...
+ * [1ff2b79](../../commit/1ff2b79) - __(Tayfun Öziş ERİKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+ * [7bb7b26](../../commit/7bb7b26) - __(Tayfun Öziş ERİKAN)__ [#82](../../issues/82) Complete Rails Rumble Verification Steps - 2013 Rails Rumble "Vote" Banner / Badge was added
+ * [dc7f4f3](../../commit/dc7f4f3) - __(hamitturkukaya)__ [#101](../../issues/101) Collabrator gravatar changed after reassign card at card detail.
+ * [4d1f558](../../commit/4d1f558) - __(Tayfun Öziş ERİKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+ * [87332b7](../../commit/87332b7) - __(Tayfun Öziş ERİKAN)__ [#109](../../issues/109) Beaker fixed - Feedback link was added
+ * [5681024](../../commit/5681024) - __(Onur Ozgur OZKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+ * [b70f1b8](../../commit/b70f1b8) - __(Onur Ozgur OZKAN)__ [#107](../../issues/107)  fixed typo.
+ * [7c0587c](../../commit/7c0587c) - __(Tayfun Öziş ERİKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+ * [4a4c303](../../commit/4a4c303) - __(Tayfun Öziş ERİKAN)__ Minor changes...
+ * [2915e76](../../commit/2915e76) - __(hamitturkukaya)__ [#108](../../issues/108) Application.yml test
+ * [5e223ae](../../commit/5e223ae) - __(hamitturkukaya)__ [#108](../../issues/108) Application.yml added to gittignore
+ * [9763048](../../commit/9763048) - __(Onur Ozgur OZKAN)__ [#107](../../issues/107) update readme.md and fixed typo.
+ * [7658606](../../commit/7658606) - __(Muhammet DİLEK)__ messages removed
+
+#### 1.2.0
+ * [cf50f33](../../commit/cf50f33) - __(hamitturkukaya)__ 1.2.0
  * [5ef8b78](../../commit/5ef8b78) - __(Muhammet DİLEK)__ update user button name fixed
  * [9e3489e](../../commit/9e3489e) - __(hamitturkukaya)__ [#70](../../issues/70) Amazon setting uncommented for deploy
  * [43938b7](../../commit/43938b7) - __(Muhammet DİLEK)__ alert message fixed
