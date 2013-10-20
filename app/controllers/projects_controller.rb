@@ -1,5 +1,6 @@
 # encoding: UTF-8
 class ProjectsController < ApplicationController
+  skip_before_action :redirect_to_new_project
   before_action :set_project, only: [:show]
   add_breadcrumb I18n.t('activerecord.models.project'), :projects_path
   def index
