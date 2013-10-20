@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   before_action :set_quest_user
   before_action :get_version
   before_action :set_current_project, :if => :user_signed_in?
+  before_action :redirect_to_new_project, :if => :user_signed_in?
+
 
   self.responder = ApplicationResponder
   respond_to :html, :json
@@ -14,6 +16,15 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+
+
+  def get_percentage(card)
+    checklist_percentage = 0
+    if card.try(:checklist_total_count).to_i > 0
+      checklist_percentage = 100 * card.try(:checklist_done_count).to_i / card.try(:checklist_total_count).to_i
+    end
+    checklist_percentage
+  end
 
   protected
   def set_user_time_zone
@@ -64,6 +75,10 @@ class ApplicationController < ActionController::Base
     else
       hq_dashboard_index_path
     end
+  end
+
+  def redirect_to_new_project
+    redirect_to new_project_path if current_user.projects.size < 1
   end
 
 end

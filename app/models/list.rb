@@ -1,6 +1,6 @@
 class List < ActiveRecord::Base
   belongs_to :project
-  has_many :cards
+  has_many :cards, dependent: :destroy
 
   validates :name, presence: true, uniqueness: {scope: :project_id}
   validates :sort, uniqueness: {scope: :project_id}

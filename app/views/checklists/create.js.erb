@@ -1,7 +1,7 @@
 $("#checklist_title").val('')
 $("#checklists").prepend("<%= escape_javascript( render @checklist ) %>");
-
-
+$('#progress-check-list').html("<%= escape_javascript( render 'progress', checklist_percentage: @checklist_percentage ) %>")
+$('#checklist_stat').html("<%= escape_javascript( render 'stat', card: @checklist.card ) %>")
 $(".checklist_check").click(function() {
     if ($(this).is(":checked")) {
         return $.ajax({

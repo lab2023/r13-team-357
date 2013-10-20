@@ -1,0 +1,4 @@
+element = $("#checklist-text-<%= @checklist.id %>").parent().parent();
+element[0].remove();
+$('#progress-check-list').html("<%= escape_javascript( render 'progress', checklist_percentage: @checklist_percentage ) %>")
+$('#checklist_stat').html("<%= escape_javascript( render 'stat', card: @checklist.card ) %>")

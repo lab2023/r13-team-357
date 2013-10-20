@@ -11,6 +11,8 @@ class Card < ActiveRecord::Base
 
   before_create :set_sort
 
+  validates_inclusion_of :assignment_id, :in => lambda { |card| card.list.project.users.map(&:id) }, allow_nil: true
+
   private
   def set_sort
     last_card = self.list.cards.order('sort ASC').last

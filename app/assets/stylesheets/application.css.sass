@@ -14,6 +14,8 @@
 
 @import 'hierapolis'
 
+$assets-url: "/assets/"
+
 #assign-project-collaborators
   text-align: right
   img
@@ -78,7 +80,7 @@ ul.ui-autocomplete
 
 // Hierapolis overrides
 .sprite-image, #beaker
-  background-image: url('sprite.png')
+  background-image: url(#{$assets-url}sprite.png)
 body.login .wrapper .brand h1 .logo-icon i[class*='icon-']
   margin-left: -2px !important
 #navbar .navbar-brand
@@ -170,7 +172,18 @@ body.login .wrapper .brand h1 .logo-icon i[class*='icon-']
   .project-list-item::-moz-scrollbar
     display: none
 
+.card-list
+  width: 100%
+  font-size: 1.1em
+  padding: 8px
+  margin-top: -20px
+  display: inline-block
+  background-color: $silver
+  color: $base-dark-color
+  margin-bottom: 12px
 .card-stats
+  border-top: 1px solid $clouds
+  padding-top: 10px
   &.card-stats-inline
     width: 202px
     border-top: 1px solid $silver
@@ -237,5 +250,14 @@ a.inplace-edit-activator
   width: 50px !important
 
 
+.checklist-item
+  .inplace-edit-activator
+    margin-top: 2px
+  .checklist_check
+    margin: 0 2px 0 4px
 
-
+.blank_message
+  font-size: 36px
+.sml-text
+  font-size: .7em
+  font-weight: 400

@@ -8,7 +8,6 @@ class CollaboratorsController < ApplicationController
   def create
     value = params[:project][:user_ids]
     email = value.split('-').last
-    Rails.logger.info email.strip
     user = User.where(email: email.strip).last
     unless @current_project.users.include?(user)
       @current_project.users << user
@@ -22,6 +21,7 @@ class CollaboratorsController < ApplicationController
   def destroy
     email = params[:email]
     user = @current_project.users.where(email: email).last
+    @current_project.cards.update_all('assignment_id = null', "assignment_id = #{user.id}")
     unless user == @current_project.owner
       @current_project.users.delete(user)
     end

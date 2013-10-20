@@ -11,7 +11,7 @@
             %i.icon-edit
             Edit title...
         %p
-          = best_in_place @card, :body, type: :textarea, activator: '#card-body-edit-activator'
+          = best_in_place @card, :body, type: :textarea, :display_with => lambda { |v| v.gsub(/\n/, '<br/>').html_safe }, activator: '#card-body-edit-activator'
           %a#card-body-edit-activator.inplace-edit-activator{href: '#'}
             %i.icon-edit
             Edit description...
@@ -19,7 +19,15 @@
         %hr/
 
         #checklist_form
-          %h4 Checklists
+          #progress-check-list
+            %h4
+              Checklists
+              %span#checklist_percentage.pull-right.label.label-info.sml-text="#{@checklist_percentage} % Complete"
+            .progress
+              .progress-bar.progress-bar-info{'aria-valuemax' => '100', 'aria-valuemin' => '0', 'aria-valuenow' => @checklist_percentage, role: 'progressbar', style: "width: #{@checklist_percentage}%;"}
+                %span.sr-only
+                  ="#{@checklist_percentage}% Completed"
+
           = render 'checklists/form'
           #checklists
             = render @card.checklists
@@ -31,28 +39,35 @@
         #comment_form
           = render 'comments/form'
 
-
-
       .col-md-3
         .panel.panel-default
           .panel-body
             .text-center
-              = image_tag avatar_url(@card.assigned), class: 'pointer card-collaborator-edit-activator img-circle avatar-image'
+              #assigned_id
+                = image_tag avatar_url(@card.assigned), class: 'pointer card-collaborator-edit-activator img-circle avatar-image'
               %p
-                %strong.card-collaborator-edit-activator= best_in_place @card, :assignment_id, type: :select, nil: '<span></span>', collection: @card.list.project.users.map{|u| [u.id, u.name]}, activator: '.card-collaborator-edit-activator'
+                %strong.card-collaborator-edit-activator= best_in_place @card, :assignment_id, type: :select, nil: '<span></span>', collection: @collaborators.map{|u| [u.id, u.name]}, activator: '.card-collaborator-edit-activator'
                 %br/
                 %a.card-collaborator-edit-activator.inplace-edit-activator{href: '#'}
                   %i.icon-edit
                   Change collaborator...
+                %br/
+                = link_to card_path(@card, card: {assignment_id: nil}), class: 'inplace-edit-activator', method: :put, remote: true do
+                  %i.icon-remove-circle
+                  Remove assigned...
             %hr/
 
+            %span.label.label-default.card-list{data: {toggle: 'tooltip'}, title: 'Current list'}
+              = @card.list.name
+
+
             .card-stats.card-stats-lg
-              %span.stat
+              %span#checklist_stat.stat
                 %i.icon-list
-                = @card.try(:checklist_total_count).to_s + '/' + @card.try(:checklist_done_count).to_s
+                = @card.try(:checklist_done_count).to_s + '/' + @card.try(:checklist_total_count).to_s
                 \- Checklist(s)
 
-              %span.stat
+              %span#comment_stat.stat
                 %i.icon-comments-alt
                 = @card.try(:comment_count)
                 \- Comment(s)

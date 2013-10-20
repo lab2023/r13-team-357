@@ -1,1 +1,10 @@
-%h1 Please create a project.
+
+.row-fluid
+  .col-md-12
+    %p.blank_message
+      - if params[:q]
+        %strong No search results.
+        = link_to 'Clear search filter.', projects_path
+      - else
+        %strong You haven't any project.
+        = link_to 'Please add a new  project.', new_project_path
