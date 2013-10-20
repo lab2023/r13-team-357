@@ -15,6 +15,15 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+
+  def get_percentage(card)
+    checklist_percentage = 0
+    if card.try(:checklist_total_count).to_i > 0
+      checklist_percentage = 100 * card.try(:checklist_done_count).to_i / card.try(:checklist_total_count).to_i
+    end
+    checklist_percentage
+  end
+
   protected
   def set_user_time_zone
     Time.zone = current_user.time_zone if user_signed_in? && current_user.time_zone.present?

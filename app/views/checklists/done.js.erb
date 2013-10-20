@@ -1,5 +1,9 @@
 <% if @checklist.done?%>
     $("#checklist-text-<%= @checklist.id %>").css('text-decoration', 'line-through');
+    $('#progress-check-list').html("<%= escape_javascript( render 'progress', checklist_percentage: @checklist_percentage ) %>")
+    $('#checklist_stat').html("<%= escape_javascript( render 'stat', card: @checklist.card ) %>")
 <% else %>
     $("#checklist-text-<%= @checklist.id %>").css('text-decoration', '');
+    $('#progress-check-list').html("<%= escape_javascript( render 'progress', checklist_percentage: @checklist_percentage ) %>")
+    $('#checklist_stat').html("<%= escape_javascript( render 'stat', card: @checklist.card ) %>")
 <% end %>

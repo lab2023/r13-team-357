@@ -27,7 +27,7 @@ class ChecklistsController < ApplicationController
   def create
     @checklist = Checklist.new(checklist_params)
     @checklist.save
-
+    @checklist_percentage = get_percentage(@checklist.card)
     respond_to do |format|
       format.js
     end
@@ -40,6 +40,7 @@ class ChecklistsController < ApplicationController
 
   def destroy
     @checklist.destroy
+    @checklist_percentage = get_percentage(@checklist.card)
     respond_to do |format|
       format.js
     end
@@ -54,6 +55,7 @@ class ChecklistsController < ApplicationController
       @checklist.done =  true
     end
     @checklist.save!
+    @checklist_percentage = get_percentage(@checklist.card)
     respond_to do |format|
       format.js
     end
