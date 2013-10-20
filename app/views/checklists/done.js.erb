@@ -1,2 +1,5 @@
-$("#checklist-<%= @checklist.id %>").attr('disabled', 'disabled');
-$("#checklist-text-<%= @checklist.id %>").css('text-decoration', 'line-through');
+<% if @checklist.done?%>
+    $("#checklist-text-<%= @checklist.id %>").css('text-decoration', 'line-through');
+<% else %>
+    $("#checklist-text-<%= @checklist.id %>").css('text-decoration', '');
+<% end %>

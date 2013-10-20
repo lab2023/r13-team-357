@@ -3,7 +3,7 @@
     .col-md-12
       .pull-left
         - if checklist.done
-          = check_box_tag "checklist-#{checklist.id}", checklist.id, true, class: 'checklist_check', disabled: 'disabled'
+          = check_box_tag "checklist-#{checklist.id}", checklist.id, true, class: 'checklist_check'
         - else
           = check_box_tag "checklist-#{checklist.id}", checklist.id, false, class: 'checklist_check'
 

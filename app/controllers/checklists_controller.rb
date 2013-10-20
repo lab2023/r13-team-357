@@ -44,8 +44,13 @@ class ChecklistsController < ApplicationController
   end
 
   def done
-    @checklist.done = true
-    @checklist.done_at = Time.now
+    if @checklist.done?
+      @checklist.done =  false
+      @checklist.done_at = nil
+    else
+      @checklist.done_at = Time.now
+      @checklist.done =  true
+    end
     @checklist.save!
     respond_to do |format|
       format.js
