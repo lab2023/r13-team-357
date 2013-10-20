@@ -1,9 +1,5 @@
 - content_for :toolbar do
-  #assign-project-collaborators
-    .pull-left
-      %span.label.info-text
-        Drag & drop, assign collaborators
-        %i.icon-long-arrow-right
+  #assign-project-collaborators{data: {toggle: 'toolbar-tooltip'}, title: 'Drag and drop users to cards'}
     - @project.users.each do |user|
       = image_tag avatar_url(user), class: 'avatar-image avatar-image-md img-circle draggable', id: user.id , title: user.name
 
