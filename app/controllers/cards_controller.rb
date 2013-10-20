@@ -13,16 +13,6 @@ class CardsController < ApplicationController
     respond_with(@card)
   end
 
-  def new
-    add_breadcrumb t('tooltips.new'), new_card_path
-    @card = Card.new
-    respond_with(@card)
-  end
-
-  def edit
-    add_breadcrumb @card.id, card_path(@card)
-    add_breadcrumb t('tooltips.edit'), edit_card_path
-  end
 
   def create
     @card = Card.new(card_params)

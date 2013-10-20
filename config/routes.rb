@@ -7,7 +7,7 @@ Ganban::Application.routes.draw do
 
   resources :comments
 
-  resources :cards do
+  resources :cards, except: [:new, :edit] do
     put :move, on: :member
   end
 
