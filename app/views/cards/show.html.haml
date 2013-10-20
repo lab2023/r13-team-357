@@ -50,7 +50,7 @@
               #assigned_id
                 = image_tag avatar_url(@card.assigned), class: 'pointer card-collaborator-edit-activator img-circle avatar-image'
               %p
-                %strong.card-collaborator-edit-activator= best_in_place @card, :assignment_id, type: :select, nil: '<span></span>', collection: @collaborators.map{|u| [u.id, u.name]}, activator: '.card-collaborator-edit-activator'
+                %strong.card-collaborator-edit-activator= best_in_place @card, :assignment_id, type: :select, classes: 'assign_best_in_place', nil: '<span></span>', collection: @collaborators.map{|u| [u.id, u.name]}, activator: '.card-collaborator-edit-activator'
                 %br/
                 %a.card-collaborator-edit-activator.inplace-edit-activator{href: '#'}
                   %i.icon-edit
@@ -62,8 +62,15 @@
                     Remove assigned...
             %hr/
 
-            %span.label.label-default.card-list{data: {toggle: 'tooltip'}, title: 'Current list'}
-              = @card.list.name
+            #list-switcher.btn-group{data: {toggle: 'tooltip'}, title: 'Swtich list'}
+              %button.btn.btn-primary.dropdown-toggle{'data-toggle' => 'dropdown', type: 'button'}
+                = @card.list.name
+                %span.caret
+              %ul.dropdown-menu{role: 'menu'}
+                - @current_project.lists.each do |list|
+                  - if @card.list.id != list.id
+                    %li
+                      = link_to list.name, card_path(@card, card: {list_id: list.id}, list_change: true), method: :put
 
 
             .card-stats.card-stats-lg
@@ -99,8 +106,8 @@
                   %tbody#documents-list-table-body
                     - @card.documents.each do |attachment|
                       %tr{id: "document-#{attachment.id}"}
-                        %td= link_to attachment.file_file_name, attachment.file.url, target: '_blank'
-                        %td= attachment.file_file_size
+                        %td= link_to(truncate(attachment.file_file_name, length: 20), attachment.file.url, target: '_blank')
+                        %td= number_to_human_size(attachment.file_file_size)
                         %td
                           = link_to document_path(attachment), method: :delete, remote: true, confirm: 'Are you sure?',
                             class: 'inplace-edit-activator', data: {toggle: 'tooltip'}, title: 'Remove' do
@@ -120,3 +127,5 @@
           = f.hidden_field :card_id, value: @card.id
       .modal-footer
         %button#btn-close.btn.btn-default{'data-dismiss' => 'modal', type: 'button'} Close
+
+

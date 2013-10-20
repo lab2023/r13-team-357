@@ -37,18 +37,22 @@ body
   line-height: 25px
   .sign-buttons
     margin-bottom: 10px
-  #video
+  #preview
     border: 1px solid $silver
     background-color: white
     padding: 2px
     +border-radius(10px)
-    iframe
+    img
+      width: 390px
+      height: 280px
       margin-top: 5px
 
 #videos
   image.thumbnail
     width: 100%
     height: 200px
+  .row
+    margin-bottom: 20px
 
 footer#footer
   margin-top: 50px

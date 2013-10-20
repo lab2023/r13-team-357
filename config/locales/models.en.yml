@@ -1,7 +1,7 @@
 en:
   activerecord:
     models:
-      project: Projects
+      project: Project
       list: List
       card: Card
       collaborator: Collaborator

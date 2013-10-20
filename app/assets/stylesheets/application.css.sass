@@ -80,8 +80,15 @@ ul.ui-autocomplete
       padding: 0 10px 5px 10px
 
 // Hierapolis overrides
-.sprite-image, #beaker
-  background-image: url(#{$assets-url}sprite.png)
+#beaker-wrapper
+  text-align: center
+  width: 80px
+  position: fixed
+  bottom: 15px
+  img#beaker-img
+    width: 18px
+    margin: auto
+
 body.login .wrapper .brand h1 .logo-icon i[class*='icon-']
   margin-left: -2px !important
 #navbar .navbar-brand
@@ -93,7 +100,6 @@ body.login .wrapper .brand h1 .logo-icon i[class*='icon-']
 
 .avatar-image
   border: 1px solid $silver
-  padding: 2px
   background-color: white
   width: 75px
   height: 75px
@@ -183,7 +189,6 @@ body.login .wrapper .brand h1 .logo-icon i[class*='icon-']
   color: $base-dark-color
   margin-bottom: 12px
 .card-stats
-  border-top: 1px solid $panel-default-border
   padding-top: 10px
   &.card-stats-inline
     width: 202px
@@ -318,8 +323,26 @@ a.inplace-edit-activator
     text-decoration: none
     &:hover
       color: $base-color
+
+.ui-datepicker-trigger
+  display: none
+
 .past_due
   background-color: $brand-danger !important
   color: white !important
 .past_due_text
   color: $brand-danger !important
+
+#list-switcher
+  margin-top: -8px
+  button
+    width: 100%
+    font-weight: 800
+  width: 100%
+  text-align: center
+  .dropdown-menu
+    width: 100%
+
+.text-center
+  text-align: center
+

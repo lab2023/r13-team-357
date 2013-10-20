@@ -25,8 +25,8 @@
           = link_to 'Sign in', new_user_session_path, class: 'btn btn-lg btn-primary'
         = link_to 'You can sign in as guest user from here<br/>(if you are in Rails Rumble Team)'.html_safe, agent_sessions_path(user_id: @guest_user.id), method: :post, class: 'sml-link'
     .col-md-5
-      #video
-        %iframe{allowfullscreen: '', frameborder: '0', height: '290', src: '//www.youtube.com/embed/RcWNtXvRcYs?rel=0&controls=0&showinfo=0', width: '390'}
+      #preview
+        =image_tag '0-ganban-preview.jpg'
 
 .row
   .col-md-10.col-md-offset-1
@@ -41,42 +41,40 @@
 
 
 #videos
-
   %h3.text-center See how it works
+  %hr/
   .row
-    %hr/
     .col-md-3
-      =link_to 'http://www.youtube.com/watch?v=RcWNtXvRcYs', target: :blank do
-        =image_tag 'http://placehold.it/300x200&text=Screencast video', class: 'thumbnail'
+      =link_to 'http://vimeo.com/77360714', target: :blank do
+        =image_tag '1-create-project.jpg'
         .text-center
           Create project
     .col-md-3
-      =link_to 'http://www.youtube.com/watch?v=RcWNtXvRcYs', target: :blank do
-        =image_tag 'http://placehold.it/300x200&text=Screencast video', class: 'thumbnail'
+      =link_to 'https://vimeo.com/77360715', target: :blank do
+        =image_tag '2-add-project-collaborators.jpg'
         .text-center
           Add project collaborators
     .col-md-3
-      =link_to '#', target: :blank do
-        =image_tag 'http://placehold.it/300x200&text=Screencast video', class: 'thumbnail'
+      =link_to 'https://vimeo.com/77360716', target: :blank do
+        =image_tag '3-user-kanban.jpg'
         .text-center
           Use kanban
     .col-md-3
-      =link_to '#', target: :blank do
-        =image_tag 'http://placehold.it/300x200&text=Screencast video', class: 'thumbnail'
+      =link_to 'https://vimeo.com/77361295', target: :blank do
+        =image_tag '4-add-card-to-kanban.jpg'
         .text-center
-          Add card to project
+          Add cards to kanban
   .row
-    %hr/
-    .col-md-3
-      =link_to 'http://www.youtube.com/watch?v=RcWNtXvRcYs', target: :blank do
-        =image_tag 'http://placehold.it/300x200&text=Screencast video', class: 'thumbnail'
+    .col-md-3.col-md-offset-3
+      =link_to 'http://vimeo.com/77361852', target: :blank do
+        =image_tag '5-card-detail.jpg'
         .text-center
           Card detail
     .col-md-3
-      =link_to 'http://www.youtube.com/watch?v=RcWNtXvRcYs', target: :blank do
-        =image_tag 'http://placehold.it/300x200&text=Screencast video', class: 'thumbnail'
+      =link_to 'http://vimeo.com/77362348', target: :blank do
+        =image_tag '6-assign-card.jpg'
         .text-center
-          Profile & Account
+          Assign Card (Task)
     -#.col-md-3
     -#  =link_to '#', target: :blank do
     -#    =image_tag 'http://placehold.it/300x200&text=Screencast video', class: 'thumbnail'

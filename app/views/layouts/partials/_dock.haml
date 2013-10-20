@@ -2,7 +2,7 @@
 
 %ul#dock
   - if @current_project
-    - if params[:controller] == 'projects' && params[:action] == 'show'
+    - if (params[:controller] == 'projects' && params[:action] == 'show') || (params[:controller] == 'cards' && params[:action] == 'show')
       %li.launcher.active
         %i.icon-tasks
         =link_to 'Kanban', @current_project
@@ -38,8 +38,9 @@
   -#      %a{:href => '#'} Out box
   -#    %li
   -#      %a{:href => '#'} Trash
-  -#%li.launcher
-  -#  %i.icon-bug
-  -#  %a{href: '#'} Feedback
+  %li.launcher
+    %i.icon-bug
+    %a{href: 'http://railsrumble.com/entries/357-ganban', target: '_blank'} Feedback
 
-#beaker{data: {toggle: 'tooltip'}, title: 'Made by lab2023'}
+#beaker-wrapper
+  = image_tag 'beaker.png', data: {toggle: 'tooltip'}, title: 'Made by lab2023', id: 'beaker-img'

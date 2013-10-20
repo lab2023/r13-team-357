@@ -21,7 +21,19 @@ class CardsController < ApplicationController
   end
 
   def update
-    @card.update(card_params)
+    #raise Exception
+    if params[:list_change]
+      list = List.find(params[:card][:list_id])
+      if list.cards.count > 0
+        @card.sort= list.cards.last.sort+1
+      else
+        @card.sort = 1
+      end
+      @card.list_id = list.id
+      @card.save
+    else
+      @card.update(card_params)
+    end
     respond_to do |format|
       format.html { redirect_to(card_path(@card)) }
       format.js

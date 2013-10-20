@@ -25,10 +25,12 @@ Before generating your application, you will need:
 * Ruby ~> 2.0
 * Rails ~> 4.0
 * PostgreSQL
+* Amazon S3 - Don't forget to update config/application.yml
+* Mandrill - Don't forget to update config/settings/production.yml
 
 ## Usage
 
-...
+It is easy to use. You don't need a guide.
 
 ## Bugs and  Feedback
 
