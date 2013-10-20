@@ -8,7 +8,6 @@ class CollaboratorsController < ApplicationController
   def create
     value = params[:project][:user_ids]
     email = value.split('-').last
-    Rails.logger.info email.strip
     user = User.where(email: email.strip).last
     unless @current_project.users.include?(user)
       @current_project.users << user
