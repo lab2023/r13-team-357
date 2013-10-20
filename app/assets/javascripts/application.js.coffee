@@ -13,6 +13,8 @@
 #= require jquery
 #= require jquery_ujs
 #= require jquery.ui.autocomplete
+#= require jquery.ui.draggable
+#= require jquery.ui.droppable
 #= require jquery.ui.sortable
 #= require bootstrap
 #= require hierapolis
@@ -116,3 +118,43 @@ $(document).ready ->
       $(this).toggleClass("ui-icon-minusthick").toggleClass "ui-icon-plusthick"
       $(this).parents(".card:first").find(".card-content").toggle()
     $(".project-list-item").disableSelection()
+
+    $ ->
+      droppable_image = ''
+      $(".draggable").draggable
+        start: (event, ui) ->
+          $('.toolbar-tooltip').tooltip('hide')
+        containment: "#wrapper"
+        revert: "invalid"
+      $(".droppable").droppable
+        tolerance: "fit"
+        over: (event, ui) ->
+          $(".ui-dragable-dragging").addClass "hoverClass"
+
+        out: (event, ui) ->
+          $(".ui-dragable-dragging").removeClass "hoverClass"
+
+        drop: (event, ui) ->
+          new_user = ui.draggable
+          card_id = $(this).attr('id')
+          new_user_img = ui.draggable.attr('src')
+          assigned_id = ui.draggable.attr('id')
+          main_cont = $(this).find('.img-circle')
+          main_cont.attr('src', new_user_img)
+          new_user.attr('style', 'prosition: relative;')
+          ui.draggable.remove()
+
+          URL = "/cards/" + card_id
+
+          card =
+            card:
+              assignment_id: assigned_id
+          $.ajax
+            url: URL
+            type: "PUT"
+            data: JSON.stringify(card)
+            contentType: "application/json"
+            success: (result) ->
+          $('#assign-project-collaborators').prepend($(new_user))
+
+
