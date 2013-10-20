@@ -14,6 +14,8 @@
 
 @import 'hierapolis'
 
+$assets-url: "/assets/"
+
 #assign-project-collaborators
   text-align: right
   img
@@ -78,7 +80,7 @@ ul.ui-autocomplete
 
 // Hierapolis overrides
 .sprite-image, #beaker
-  background-image: url('sprite.png')
+  background-image: url(#{$assets-url}sprite.png)
 body.login .wrapper .brand h1 .logo-icon i[class*='icon-']
   margin-left: -2px !important
 #navbar .navbar-brand
@@ -236,6 +238,12 @@ a.inplace-edit-activator
 .dropClass
   width: 50px !important
 
+
+.checklist-item
+  .inplace-edit-activator
+    margin-top: 2px
+  .checklist_check
+    margin: 0 2px 0 4px
 
 
 

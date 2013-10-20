@@ -6,7 +6,7 @@ class Project < ActiveRecord::Base
   has_many :lists, dependent: :destroy
   has_many :cards, through: :lists
 
-  accepts_nested_attributes_for :lists
+  accepts_nested_attributes_for :lists, allow_destroy: true
 
   scope :by_owner, lambda { |owner_id| where(owner_id: owner_id) unless owner_id.nil? }
 
