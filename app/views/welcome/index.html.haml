@@ -23,9 +23,10 @@
         .sign-buttons
           = link_to 'Create your Kanban now!', new_user_registration_path, class: 'btn btn-lg btn-success'
           = link_to 'Sign in', new_user_session_path, class: 'btn btn-lg btn-primary'
-        = link_to "You can sign in as guest user from here<br/>(if you are in Rails Rumble Team)".html_safe, agent_sessions_path(user_id: @guest_user.id), method: :post, class: 'sml-link'
+        = link_to 'You can sign in as guest user from here<br/>(if you are in Rails Rumble Team)'.html_safe, agent_sessions_path(user_id: @guest_user.id), method: :post, class: 'sml-link'
     .col-md-5
-      =image_tag 'http://placehold.it/400x300&text=Screencast video', id: 'video'
+      #video
+        %iframe{allowfullscreen: '', frameborder: '0', height: '290', src: '//www.youtube.com/embed/RcWNtXvRcYs?rel=0&controls=0&showinfo=0', width: '390'}
 
 .row
   .col-md-10.col-md-offset-1
@@ -38,4 +39,22 @@
       to find a system to improve and maintain a high level of production.
       Kanban is one method through which JIT is achieved.
 
+
+#videos
+
+  %h3.text-center Show how it works
+  .row
+    %hr/
+    .col-md-3
+      =link_to 'http://www.youtube.com/watch?v=RcWNtXvRcYs', target: :blank do
+        =image_tag 'http://placehold.it/300x200&text=Screencast video', class: 'thumbnail'
+    .col-md-3
+      =link_to 'http://www.youtube.com/watch?v=RcWNtXvRcYs', target: :blank do
+        =image_tag 'http://placehold.it/300x200&text=Screencast video', class: 'thumbnail'
+    .col-md-3
+      =link_to '#', target: :blank do
+        =image_tag 'http://placehold.it/300x200&text=Screencast video', class: 'thumbnail'
+    .col-md-3
+      =link_to '#', target: :blank do
+        =image_tag 'http://placehold.it/300x200&text=Screencast video', class: 'thumbnail'
 
