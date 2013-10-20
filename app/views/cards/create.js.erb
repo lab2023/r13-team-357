@@ -1,2 +1,43 @@
 $("#list-<%= @card.list_id %>").html("<%= escape_javascript( render @card.list.cards.order('sort asc') ) %>");
 $("#list-<%= @card.list_id %>-title-input").val('');
+
+$(function() {
+    $(".draggable").draggable({
+        containment: "#wrapper",
+        revert: "invalid"
+    });
+    return $(".droppable").droppable({
+        tolerance: "fit",
+        over: function(event, ui) {
+            return $(".ui-dragable-dragging").addClass("hoverClass");
+        },
+        out: function(event, ui) {
+            return $(".ui-dragable-dragging").removeClass("hoverClass");
+        },
+        drop: function(event, ui) {
+            var URL, assigned_id, card, card_id, main_cont, new_user, new_user_img;
+            new_user = ui.draggable;
+            card_id = $(this).attr('id');
+            new_user_img = ui.draggable.attr('src');
+            assigned_id = ui.draggable.attr('id');
+            main_cont = $(this).find('.img-circle');
+            main_cont.attr('src', new_user_img);
+            new_user.attr('style', 'position: relative;');
+            ui.draggable.remove();
+            URL = "/cards/" + card_id + '.js';
+            card = {
+                card: {
+                    assignment_id: assigned_id
+                }
+            };
+            $.ajax({
+                url: URL,
+                type: "PUT",
+                data: JSON.stringify(card),
+                contentType: "application/json",
+                success: function(result) {}
+            });
+            return $('#assign-project-collaborators').prepend($(new_user));
+        }
+    });
+});
