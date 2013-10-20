@@ -3,9 +3,7 @@
 # this file will be deleted.
 #
 defaults: &defaults
-  end_point: s3-us-west-2.amazonaws.com
-  access_key_id: XXXXXXXX
-  secret_access_key: XXXXXXXX
+
 
 production:
   <<: *defaults
