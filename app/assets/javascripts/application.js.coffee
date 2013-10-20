@@ -66,7 +66,7 @@ $(document).ready ->
       source: $('#collaborator_user_id').data('autocomplete-source')
       autoFocus: true
       messages:
-        noResults: null
+        noResults: ''
         results: ->
 
 
