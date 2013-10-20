@@ -1,0 +1,7 @@
+.row
+  = simple_form_for(@card.checklists.new, remote: true) do |f|
+    .col-md-9
+      = f.input :card_id, input_html: {value: @card.id}, as: :hidden
+      = f.input :title, label: false
+    .col-md-2
+      = f.button :submit, class: 'btn btn-default'

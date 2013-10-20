@@ -10,6 +10,8 @@ class ProjectsController < ApplicationController
 
   def show
     add_breadcrumb @project.name, project_path(@project)
+    @current_project = @project
+    session[:project_id] = @current_project.id
     @lists = List.where(:project_id => @project.id).order('sort asc')
     respond_with(@lists)
   end
@@ -35,6 +37,8 @@ class ProjectsController < ApplicationController
     @project.owner = current_user
     @project.save
     @project.users << current_user
+    @current_project = @project
+    session[:project_id] = @current_project.id
     respond_with(@project)
   end
 
@@ -52,7 +56,7 @@ class ProjectsController < ApplicationController
   end
 
   def auto_users
-    search = User.search(:name_or_email_start => params[:term])
+    search = User.search(:profile_name_or_email_start => params[:term])
     users = search.result(:distinct => true).limit(10) - @current_project.users
     render :json => users.map {|p| Hash[id: p.id, label: "#{p.name} - #{p.email}", name: p.id]}
   end

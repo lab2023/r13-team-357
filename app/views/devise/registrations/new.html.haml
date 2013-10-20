@@ -4,8 +4,10 @@
 = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
   = f.error_notification
   .form-inputs
-    = f.input :name, :autofocus => true
-    = f.input :email, :required => true
+    = f.input :email, :autofocus => true
+    = f.simple_fields_for :profile, resource.build_profile do |p|
+      = p.input :name
+
     = f.input :password, :required => true
     = f.input :password_confirmation, :required => true
   .text-center

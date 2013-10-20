@@ -1,5 +1,13 @@
 Ganban::Application.routes.draw do
-  resources :cards do
+  resources :profiles
+
+  resources :checklists do
+    put :done, on: :member
+  end
+
+  resources :comments
+
+  resources :cards, except: [:new, :edit] do
     put :move, on: :member
   end
 
@@ -20,9 +28,10 @@ Ganban::Application.routes.draw do
              path_names: {sign_in: 'login', sign_out: 'logout', password: 'secret',
                           confirmation: 'verification'}
   devise_for :users,
-             :path => 'accounts',
-             :path_names => { :sign_in => 'login', :sign_up => 'new', :sign_out => 'logout', :password => 'secret',
-                              :confirmation => 'verification' }
+             path: 'accounts',
+             controllers: {registrations: 'registrations'},
+             path_names: {sign_in: 'login', sign_up: 'new', sign_out: 'logout', password: 'secret',
+                          confirmation: 'verification'}
   root to: 'welcome#index'
   namespace :hq do
       resources :dashboard, only: [:index]

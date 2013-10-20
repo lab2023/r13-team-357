@@ -7,6 +7,15 @@ GIT
       compass (>= 0.12.2, < 0.14)
 
 GIT
+  remote: git://github.com/bernat/best_in_place.git
+  revision: 366413be357d65cdf47031e928aea969f72e3659
+  branch: rails-4
+  specs:
+    best_in_place (2.0.3)
+      jquery-rails
+      rails (~> 4)
+
+GIT
   remote: git://github.com/thomas-mcdonald/bootstrap-sass.git
   revision: 0e88056ac5d58fb0bbd23d3fe929eac01712d964
   branch: 3
@@ -53,6 +62,8 @@ GEM
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     blankable (0.2.0)
+    bootstrap-datepicker-rails (1.1.1.8)
+      railties (>= 3.0)
     breadcrumbs_on_rails (2.3.0)
     builder (3.1.4)
     capistrano (2.15.5)
@@ -279,9 +290,11 @@ PLATFORMS
 
 DEPENDENCIES
   annotate (>= 2.5.0)
+  best_in_place!
   better_errors
   binding_of_caller
   blankable (~> 0.2.0)
+  bootstrap-datepicker-rails
   bootstrap-sass!
   breadcrumbs_on_rails (~> 2.3.0)
   capistrano (~> 2.15.5)

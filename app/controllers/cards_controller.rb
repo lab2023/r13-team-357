@@ -1,28 +1,13 @@
 # encoding: UTF-8
 class CardsController < ApplicationController
   before_action :set_card, only: [:show, :edit, :update, :destroy]
-  add_breadcrumb I18n.t('activerecord.models.cards'), :cards_path
-  def index
-    @search = Card.search(params[:q])
-     @cards = @search.result(:distinct => true).paginate(:page => params[:page])
-     respond_with(@cards)
-  end
 
   def show
-    add_breadcrumb @card.owner_id, card_path(@card)
+    add_breadcrumb @card.list.project.name, project_path(@card.list.project)
+    add_breadcrumb "Card ##{@card.id}", card_path(@card)
     respond_with(@card)
   end
 
-  def new
-    add_breadcrumb t('tooltips.new'), new_card_path
-    @card = Card.new
-    respond_with(@card)
-  end
-
-  def edit
-    add_breadcrumb @card.id, card_path(@card)
-    add_breadcrumb t('tooltips.edit'), edit_card_path
-  end
 
   def create
     @card = Card.new(card_params)
@@ -35,7 +20,11 @@ class CardsController < ApplicationController
 
   def update
     @card.update(card_params)
-    respond_with(@card)
+    respond_to do |format|
+      format.html { redirect_to(card_path(@card)) }
+      format.js
+      format.json{ render json: @card}
+    end
   end
 
   def destroy
@@ -63,7 +52,7 @@ class CardsController < ApplicationController
     end
 
     @cards.each do |card|
-      card.sort = sort.index(card.id)+1
+      card.sort = (sort.index(card.id))+1
       card.save
     end
 

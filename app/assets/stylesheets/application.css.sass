@@ -9,13 +9,14 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require bootstrap-datepicker
  *= require_tree .
 
 @import 'hierapolis'
 
 #assign-project-collaborators
+  text-align: right
   img
-    width: 35px
     margin-left: 5px
     cursor: move
 
@@ -83,9 +84,33 @@ body.login .wrapper .brand h1 .logo-icon i[class*='icon-']
 #navbar .navbar-brand
   margin-top: -3px !important
 
+.info-text
+  font-size: .9em
+  color: $silver
+
+.avatar-image
+  border: 1px solid $silver
+  padding: 2px
+  background-color: white
+  width: 75px
+  height: 75px
+  &.avatar-image-empty
+    width: 50px
+    height: 50px
+  &.avatar-image-sml
+    padding: 1px
+    width: 20px
+    height: 20px
+  &.avatar-image-md
+    width: 35px
+    height: 35px
+  &.avatar-image-lg
+    width: 100px
+    height: 100px
+
 // Project and cards
-.vertical-scroll
-  overflow: scroll
+//.vertical-scroll
+//  overflow-x: scroll
 
 .project-list
   &:active
@@ -94,32 +119,18 @@ body.login .wrapper .brand h1 .logo-icon i[class*='icon-']
   float: left
   margin-right: 10px
 
-  form.add-card-form
-    //display: none
-    textarea
-      width: 220px
-      height: 75px
-    .actions
-      width: 48px
-      text-align: right
-      button
-        margin-bottom: 6px
-        display: inline-block
-        width: 33px
-        padding:
-          top: 7px
-          left: 7px
-        i.icon-remove-sign
-          color: $silver
+  .add-card-form
+    display: none
   .project-list-item
     width: 300px !important
     float: left
     max-height: 500px
     overflow-y: scroll
     .card
+      a
+        color: $base-dark-color
       &:active
         cursor: move
-      cursor: pointer
       border: 1px solid $panel-default-border
       width: 100%
       height: 66px
@@ -138,22 +149,11 @@ body.login .wrapper .brand h1 .logo-icon i[class*='icon-']
         padding-top: 0px
         margin: 0 0 4px
         width: 200px
-      .stats
-        &.extended
-          width: 255px
-        width: 202px
-        border-top: 1px solid $silver
-        padding-top: 5px
-        .stat
-          @extend .btn, .btn-default
-          padding: 3px
-          font-size: 0.8em
-          float: left
-          margin-right: 2px
       .user
         img
           float: right
           width: 50px
+          height: 50px
           margin:
             top: -25px
             right: 2px
@@ -170,11 +170,71 @@ body.login .wrapper .brand h1 .logo-icon i[class*='icon-']
   .project-list-item::-moz-scrollbar
     display: none
 
+.card-stats
+  &.card-stats-inline
+    width: 202px
+    border-top: 1px solid $silver
+    padding-top: 5px
+    span.stat
+      font-size: 0.8em !important
+  &.card-stats-extended
+    width: 255px
+  &.card-stats-lg
+    span.stat
+      display: inline-block
+      width: 100%
+      background-color: $clouds
+      text-align: left
+      margin-bottom: 5px
+      padding: 4px
+  span.stat
+    cursor: default
+    @extend .btn, .btn-default
+    padding: 3px
+    float: left
+    margin-right: 2px
+
 .ui-sortable-placeholder
   border: 1px dashed $silver !important
   visibility: visible !important
   height: 50px !important
 
+.checklist-text
+  margin-left: 20px !important
+
+.best_in_place
+  textarea, input, select
+    width: 100%
+    @extend .text, .form-control
+  select
+    margin: 10px 0
+    display: inline
+    font-size: 1em !important
+    height: 30px !important
+
+a.inplace-edit-activator
+  color: $silver
+  font-size: .9em
+  text-decoration: none !important
+  &:hover
+    color: darken($silver, 50)
+
+.pointer
+  cursor: pointer !important
+
+.bs-callout
+  background-color: $clouds
+  margin: 20px 0
+  padding: 15px 30px 15px 15px
+  border-left: 5px solid $silver
+
+.margin-up
+  margin-top: 5px
+
+.draggable
+  z-index: 2
+.dropClass
+  width: 50px !important
 
 
 

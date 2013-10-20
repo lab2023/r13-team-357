@@ -1,6 +1,6 @@
 #navbar.navbar.navbar-default
   - if @current_project.present?
-    %a.navbar-brand{:href => '#'}
+    %a.navbar-brand{:href => project_path(@current_project)}
       %i.icon-tasks
       =t @current_project.name
     %ul.nav.navbar-nav.switcher
@@ -25,12 +25,21 @@
           %li.action
             %a.btn.btn-xs.btn-success{href: new_project_path}
               Add New Project
+
+
   %ul.nav.navbar-nav.pull-right
     %li.dropdown.user
-      =link_to edit_user_registration_path do
-        =image_tag avatar_url(current_user), class: 'img-circle'
+      %a.dropdown-toggle{'data-toggle' => 'dropdown', :href => '#'}
+        = image_tag avatar_url(current_user), class: 'img-circle'
         %strong=current_user.name
+        %b.caret
+      %ul.dropdown-menu
+        %li
+          %a{:href => edit_user_registration_path} Account settings
+        %li
+          %a{:href => edit_profile_path(current_user)} Edit profile
+
     %li
-      =link_to destroy_user_session_path,  method: :delete do
+      = link_to destroy_user_session_path,  method: :delete do
         %i.icon-off
         Sign out

@@ -1,21 +1,24 @@
 - if card.id.present?
-  .card{id: "#{card.id}-card"}
+  .card.droppable{id: "#{card.id}-card"}
     = link_to '×', card_path(card), method: :delete, class: 'close', data: { toggle: 'tooltip' }, title: 'Remove Card', remote: true, confirm: 'Are you sure?'
     %p.title
-      =truncate card.title
-    .stats{class: card.assigned.present? ? 'default' : 'extended'}
-      .stat{data: {toggle: 'tooltip'}, title: 'Checklists'}
+      =link_to("##{card.id} - #{truncate(card.title, length: 25)}", card)
+    .card-stats.card-stats-inline
+      %span.stat{data: {toggle: 'tooltip'}, title: 'Checklists'}
         %i.icon-list
-        1 / 9
-      .stat{data: {toggle: 'tooltip'}, title: 'Comments'}
+        = card.try(:checklist_total_count).to_s + '/' + card.try(:checklist_done_count).to_s
+      %span.stat{data: {toggle: 'tooltip'}, title: 'Comments'}
         %i.icon-comments-alt
-        12
-      .stat{data: {toggle: 'tooltip'}, title: 'Attachments'}
+        = card.try(:comment_count)
+      %span.stat{data: {toggle: 'tooltip'}, title: 'Attachments'}
         %i.icon-file-alt
-        3
-      .stat{data: {toggle: 'tooltip'}, title: 'Due date'}
-        %i.icon-time
-        10 Nov
-    - if card.assigned.present?
-      .user
-        = image_tag avatar_url(card.assigned), class: 'img-circle', data: {toggle: 'tooltip'}, title: card.try(:assigned).try(:name)
+        = card.try(:document_count)
+      - if card.due_date.present?
+        %span.stat{data: {toggle: 'tooltip'}, title: 'Due date'}
+          %i.icon-time
+          = card.due_date
+    .user
+      - if card.assigned.present?
+        = image_tag avatar_url(card.assigned), class: 'img-circle avatar-image avatar-image-md', data: {toggle: 'tooltip'}, title: card.try(:assigned).try(:name)
+      - else
+        = image_tag 'empty-collaborator.png', class: 'img-circle avatar-image avatar-image-md avatar-image-empty'

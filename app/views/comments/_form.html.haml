@@ -1,0 +1,4 @@
+= simple_form_for(@card.comments.new, remote: true) do |f|
+  = f.input :card_id, input_html: {value: @card.id}, as: :hidden
+  = f.input :body, input_html: {id: 'comment_form_body'}, label: false, placeholder: 'Write a new comment...'
+  = f.button :submit, class: 'btn btn-default'

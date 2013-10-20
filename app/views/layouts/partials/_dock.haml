@@ -1,33 +1,45 @@
 %i#toggle.icon-align-justify.icon-large
 
 %ul#dock
-  %li.launcher
-    %i.icon-dashboard
-    - if @current_project
-      =link_to 'Dashboard', @current_project
+  - if @current_project
+    - if params[:controller] == 'projects' && params[:action] == 'show'
+      %li.launcher.active
+        %i.icon-tasks
+        =link_to 'Kanban', @current_project
     - else
-      =link_to 'Dashboard', dashboard_index_path
-
-  %li.launcher
-    %i.icon-suitcase
-    =link_to 'Projects', projects_path
-  %li.launcher
-    %i.icon-group
-    %a{href: collaborators_path} Collaborators
-  %li.launcher.dropdown.hover
-    %i.icon-envelope
-    %a{href: '#'} Messages
-    %ul.dropdown-menu
-      %li
-        %a{:href => '#'} New message
-      %li
-        %a{:href => '#'} Inbox
-      %li
-        %a{:href => '#'} Out box
-      %li
-        %a{:href => '#'} Trash
-  %li.launcher
-    %i.icon-bug
-    %a{href: '#'} Feedback
+      %li.launcher
+        %i.icon-tasks
+        =link_to 'Kanban', @current_project
+  - if params[:controller] == 'projects' && params[:action]== 'index'
+    %li.launcher.active
+      %i.icon-suitcase
+      =link_to 'Projects', projects_path
+  - else
+    %li.launcher
+      %i.icon-suitcase
+      =link_to 'Projects', projects_path
+  - if params[:controller] == 'collaborators'
+    %li.launcher.active
+      %i.icon-group
+      %a{href: collaborators_path} Collaborators
+  - else
+    %li.launcher
+      %i.icon-group
+      %a{href: collaborators_path} Collaborators
+  -#%li.launcher.dropdown.hover
+  -#  %i.icon-envelope
+  -#  %a{href: '#'} Messages
+  -#  %ul.dropdown-menu
+  -#    %li
+  -#      %a{:href => '#'} New message
+  -#    %li
+  -#      %a{:href => '#'} Inbox
+  -#    %li
+  -#      %a{:href => '#'} Out box
+  -#    %li
+  -#      %a{:href => '#'} Trash
+  -#%li.launcher
+  -#  %i.icon-bug
+  -#  %a{href: '#'} Feedback
 
 #beaker{data: {toggle: 'tooltip'}, title: 'Made by lab2023'}

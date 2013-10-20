@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131019142932) do
+ActiveRecord::Schema.define(version: 20131020085328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,28 @@ ActiveRecord::Schema.define(version: 20131019142932) do
 
   add_index "cards", ["list_id"], name: "index_cards_on_list_id", using: :btree
 
+  create_table "checklists", force: true do |t|
+    t.integer  "card_id"
+    t.string   "title"
+    t.boolean  "done"
+    t.datetime "done_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "checklists", ["card_id"], name: "index_checklists_on_card_id", using: :btree
+
+  create_table "comments", force: true do |t|
+    t.integer  "card_id"
+    t.integer  "user_id"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["card_id"], name: "index_comments_on_card_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
   create_table "lists", force: true do |t|
     t.string   "name"
     t.integer  "sort"
@@ -63,6 +85,22 @@ ActiveRecord::Schema.define(version: 20131019142932) do
   end
 
   add_index "lists", ["project_id"], name: "index_lists_on_project_id", using: :btree
+
+  create_table "profiles", force: true do |t|
+    t.string   "twitter"
+    t.string   "stackoverflow"
+    t.string   "github"
+    t.string   "facebook"
+    t.string   "blog"
+    t.string   "linkedin"
+    t.text     "bio"
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
 
   create_table "projects", force: true do |t|
     t.string   "name"
@@ -93,7 +131,6 @@ ActiveRecord::Schema.define(version: 20131019142932) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "time_zone"
