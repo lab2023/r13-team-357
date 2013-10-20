@@ -1,6 +1,6 @@
 - title 'Project - ' + @project.name
 - content_for :toolbar do
-  .pull-left.assigned-filters
+  .pull-left.assigned-filters{data: {toggle: 'toolbar-tooltip'}, title: 'Filter cards'}
     = link_to project_path(@current_project, assigned: 'you'), class: "label label-default #{params[:assigned].present? ? 'active' : 'default'}" do
       Assigned to you
       %strong= current_user.assigned_to_you(@current_project)

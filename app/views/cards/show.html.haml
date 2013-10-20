@@ -99,8 +99,8 @@
                   %tbody#documents-list-table-body
                     - @card.documents.each do |attachment|
                       %tr{id: "document-#{attachment.id}"}
-                        %td= link_to attachment.file_file_name, attachment.file.url, target: '_blank'
-                        %td= attachment.file_file_size
+                        %td= link_to(truncate(attachment.file_file_name, length: 20), attachment.file.url, target: '_blank')
+                        %td= number_to_human_size(attachment.file_file_size)
                         %td
                           = link_to document_path(attachment), method: :delete, remote: true, confirm: 'Are you sure?',
                             class: 'inplace-edit-activator', data: {toggle: 'tooltip'}, title: 'Remove' do
