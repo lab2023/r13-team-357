@@ -15,7 +15,10 @@
             %br/
             %strong Email:
             = current_user.email
-        = link_to 'Ganban Dashboard', dashboard_index_path, class: 'btn btn-lg btn-primary'
+        - if @current_project
+          = link_to 'Ganban Dashboard', @current_project, class: 'btn btn-lg btn-primary'
+        - else
+          = link_to 'Ganban Dashboard', new_project_path, class: 'btn btn-lg btn-primary'
       - else
         .sign-buttons
           = link_to 'Create your Kanban now!', new_user_registration_path, class: 'btn btn-lg btn-success'
