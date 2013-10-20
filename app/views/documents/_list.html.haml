@@ -1,0 +1,26 @@
+.panel-heading
+  %i.icon-table.icon-large
+  = t('tt.index', resource_name: Document.model_name.human)
+  .panel-tools
+    .btn-group
+      %a.btn{href: '#'}
+        %i.icon-wrench
+        Settings
+      %a.btn{href: '#'}
+        %i.icon-filter
+        Filters
+      %a.btn{href: documents_path, data: {toggle: 'toolbar-tooltip'}, title: 'Reload'}
+        %i.icon-refresh
+    .badge= @documents.total_entries
+.panel-body.filters
+  = render 'filters'
+%table.table
+  %thead
+    %tr
+      %th #
+      %th= sort_link(@search, :card, t('activerecord.attributes.document.card'))
+      %th= sort_link(@search, :user, t('activerecord.attributes.document.user'))
+      %th.actions
+        Actions
+  %tbody
+    = render @documents

@@ -4,6 +4,7 @@ class Card < ActiveRecord::Base
   belongs_to :assigned, class_name: 'User', foreign_key: 'assignment_id'
   has_many :comments
   has_many :checklists
+  has_many :documents
 
   validates :title, presence: true
   validates :list_id, presence: true
