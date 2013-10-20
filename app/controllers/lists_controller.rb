@@ -52,7 +52,7 @@ class ListsController < ApplicationController
     end
 
     @current_list.each do |list|
-      list.sort = sort.index(list.id)+1
+      list.sort = (sort.index(list.id))+1
       list.save
     end
 
