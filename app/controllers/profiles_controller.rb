@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+  skip_before_action :redirect_to_new_project
   def show
     @profile = Profile.find(params[:id])
     add_breadcrumb @profile.name, profile_path(@profile)

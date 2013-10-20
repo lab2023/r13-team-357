@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   before_action :set_quest_user
   before_action :get_version
   before_action :set_current_project, :if => :user_signed_in?
+  before_action :redirect_to_new_project, :if => :user_signed_in?
+
 
   self.responder = ApplicationResponder
   respond_to :html, :json
@@ -73,6 +75,10 @@ class ApplicationController < ActionController::Base
     else
       hq_dashboard_index_path
     end
+  end
+
+  def redirect_to_new_project
+    redirect_to new_project_path if current_user.projects.size < 1
   end
 
 end
