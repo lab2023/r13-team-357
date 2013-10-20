@@ -9,7 +9,7 @@
     %div.add-card-form{id: "add-card-form-#{list.id}"}
       = simple_form_for list.cards.new, remote: true do |f|
         = f.input :list_id, input_html: {value: list.id}, as: :hidden
-        = f.input :title, input_html: {id: "list-#{list.id}-title-input"}, as: :text, label: false, placeholder: 'Type card details...'
+        = f.input :title, input_html: {id: "list-#{list.id}-title-input"}, as: :text, label: false
         = f.submit 'Create', class: 'btn btn-success'
         %a.toggle-card-form{href: '#', data: {target: "add-card-form-#{list.id}"}} Cancel
 

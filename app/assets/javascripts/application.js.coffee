@@ -12,13 +12,26 @@
 #
 #= require jquery
 #= require jquery_ujs
+#= require jquery.purr
+#= require best_in_place
+#= require jquery_ujs
 #= require jquery.ui.autocomplete
 #= require jquery.ui.sortable
 #= require bootstrap
 #= require hierapolis
 #= require cocoon
+#= require bootstrap-datepicker/core
+#= require bootstrap-datepicker/locales/bootstrap-datepicker.fr
 
 $(document).ready ->
+  $('.best_in_place').best_in_place()
+  $.datepicker.setDefaults
+    showOn: "both"
+    buttonImageOnly: true
+    buttonImage: "calendar.gif"
+    buttonText: "Calendar"
+    dateFormat: "dd-mm-yy"
+
   $(".checklist_check").click ->
     if $(this).is(":checked")
       $.ajax

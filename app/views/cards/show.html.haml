@@ -8,26 +8,40 @@
     = t('tt.show', resource_name: Card.model_name.human)
   .panel-body
     .row
-      .col-md-6
-        = show_for @card do |s|
-          = s.attribute :owner_id
-          = s.attribute :assignment_id
-          = s.association :list
-          = s.attribute :title
-          = s.attribute :body
-          = s.attribute :due_date
-          = s.attribute :done
-          = s.attribute :comment_count
-          = s.attribute :document_count
-          = s.attribute :checklist_total_count
-          = s.attribute :checklist_done_count
-          = s.attribute :private
-          = s.attribute :sort
-      .col-md-6
+      .col-md-10
+        %p
+          %strong Title
+        %p
+          = best_in_place @card, :title
+
+        %p
+          %strong Description
+        %p
+          = best_in_place @card, :body, type: :textarea, nil: 'Edit description ...'
+
         #checklist_form
           = render 'checklists/form'
         #checklists
           = render @card.checklists
+
+
+
+      .col-md-2
+        = image_tag avatar_url(@card.assigned)
+        %p
+          = best_in_place @card, :assignment_id, type: :select, collection: @card.list.project.users.map{|u| [u.id, u.name]}
+        %p
+          %strong Due Date
+        %p
+          %a.btn.btn-primary.btn-lg
+            = best_in_place @card, :due_date, type: :date
+        %p
+          %strong= @card.comment_count
+          Comment
+        %p
+          %strong= @card.document_count
+          Document
+        %p= "#{@card.checklist_total_count}/#{@card.checklist_done_count}"
 
 
 #comments
