@@ -15,4 +15,9 @@
 
     .clearfix
   .panel-body.project-list-item{id: "list-#{list.id}"}
-    =render list.cards.order('sort asc')
+    - if params[:assigned].present?
+      =render list.cards.by_assigned(current_user.id).order('sort asc')
+    - elsif params[:created].present?
+      =render list.cards.by_created(current_user.id).order('sort asc')
+    - else
+      =render list.cards.order('sort asc')
