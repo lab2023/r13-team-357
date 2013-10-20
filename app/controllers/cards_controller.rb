@@ -38,6 +38,7 @@ class CardsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(card_path(@card)) }
       format.js
+      format.json{ render json: @card}
     end
   end
 
