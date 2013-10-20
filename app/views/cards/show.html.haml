@@ -70,7 +70,7 @@
                 - @current_project.lists.each do |list|
                   - if @card.list.id != list.id
                     %li
-                      %a{href: '#'}= list.name
+                      = link_to list.name, card_path(@card, card: {list_id: list.id}, list_change: true), method: :put
 
 
             .card-stats.card-stats-lg
