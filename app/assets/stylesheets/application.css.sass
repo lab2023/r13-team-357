@@ -111,32 +111,18 @@ body.login .wrapper .brand h1 .logo-icon i[class*='icon-']
   float: left
   margin-right: 10px
 
-  form.add-card-form
-    //display: none
-    textarea
-      width: 220px
-      height: 75px
-    .actions
-      width: 48px
-      text-align: right
-      button
-        margin-bottom: 6px
-        display: inline-block
-        width: 33px
-        padding:
-          top: 7px
-          left: 7px
-        i.icon-remove-sign
-          color: $silver
+  .add-card-form
+    display: none
   .project-list-item
     width: 300px !important
     float: left
     max-height: 500px
     overflow-y: scroll
     .card
+      a
+        color: $base-dark-color
       &:active
         cursor: move
-      cursor: pointer
       border: 1px solid $panel-default-border
       width: 100%
       height: 66px
@@ -195,6 +181,21 @@ body.login .wrapper .brand h1 .logo-icon i[class*='icon-']
 .checklist-text
   margin-left: 20px !important
 
+.best_in_place
+  textarea, input
+    width: 100%
+    @extend .text, .form-control
+
+a.inplace-edit-activator
+  color: $silver
+  text-decoration: none !important
+  &:hover
+    color: darken($silver, 50)
+
+.draggable
+  z-index: 2
+.dropClass
+  width: 50px !important
 
 
 

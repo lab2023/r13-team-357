@@ -16,6 +16,8 @@
 #= require best_in_place
 #= require jquery_ujs
 #= require jquery.ui.autocomplete
+#= require jquery.ui.draggable
+#= require jquery.ui.droppable
 #= require jquery.ui.sortable
 #= require bootstrap
 #= require hierapolis
@@ -25,12 +27,17 @@
 
 $(document).ready ->
   $('.best_in_place').best_in_place()
-  $.datepicker.setDefaults
-    showOn: "both"
-    buttonImageOnly: true
-    buttonImage: "calendar.gif"
-    buttonText: "Calendar"
-    dateFormat: "dd-mm-yy"
+#  $.datepicker.setDefaults
+#    showOn: "both"
+#    buttonImageOnly: true
+#    buttonImage: "calendar.gif"
+#    buttonText: "Calendar"
+#    dateFormat: "dd-mm-yy"
+
+
+  $('.toggle-card-form').click ->
+    target = $(this).data('target')
+    $("##{target}").toggle()
 
   $(".checklist_check").click ->
     if $(this).is(":checked")
@@ -129,3 +136,41 @@ $(document).ready ->
       $(this).toggleClass("ui-icon-minusthick").toggleClass "ui-icon-plusthick"
       $(this).parents(".card:first").find(".card-content").toggle()
     $(".project-list-item").disableSelection()
+
+    $ ->
+      droppable_image = ''
+      $(".draggable").draggable
+        containment: "#wrapper"
+        revert: "invalid"
+      $(".droppable").droppable
+        tolerance: "fit"
+        over: (event, ui) ->
+          $(".ui-dragable-dragging").addClass "hoverClass"
+
+        out: (event, ui) ->
+          $(".ui-dragable-dragging").removeClass "hoverClass"
+
+        drop: (event, ui) ->
+          new_user = ui.draggable
+          card_id = $(this).attr('id')
+          new_user_img = ui.draggable.attr('src')
+          assigned_id = ui.draggable.attr('id')
+          main_cont = $(this).find('.img-circle')
+          main_cont.attr('src', new_user_img)
+          new_user.attr('style', 'position: relative;')
+          ui.draggable.remove()
+
+          URL = "/cards/" + card_id + '.js'
+
+          card =
+            card:
+              assignment_id: assigned_id
+          $.ajax
+            url: URL
+            type: "PUT"
+            data: JSON.stringify(card)
+            contentType: "application/json"
+            success: (result) ->
+          $('#assign-project-collaborators').prepend($(new_user))
+
+

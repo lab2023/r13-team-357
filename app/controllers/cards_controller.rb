@@ -35,7 +35,10 @@ class CardsController < ApplicationController
 
   def update
     @card.update(card_params)
-    respond_with(@card)
+    respond_to do |format|
+      format.html { redirect_to(card_path(@card)) }
+      format.js
+    end
   end
 
   def destroy

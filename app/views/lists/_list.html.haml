@@ -3,14 +3,15 @@
     %strong= list.name
     .panel-tools
       .btn-group
-        %a.btn.add-card-btn{href: '#', data: {target: 'add-card-form-1'}}
+        %a.btn.toggle-card-form{href: '#', data: {target: "add-card-form-#{list.id}"}}
           %i.icon-plus
           Add a card
-    = simple_form_for list.cards.new, remote: true do |f|
-      = f.input :list_id, input_html: {value: list.id}, as: :hidden
-      = f.input :title, input_html: {id: "list-#{list.id}-title-input"}, as: :text, label: false
-      = f.submit 'Create', class: 'btn btn-success'
-      %a{href: '#'} Cancel
+    %div.add-card-form{id: "add-card-form-#{list.id}"}
+      = simple_form_for list.cards.new, remote: true do |f|
+        = f.input :list_id, input_html: {value: list.id}, as: :hidden
+        = f.input :title, input_html: {id: "list-#{list.id}-title-input"}, as: :text, label: false
+        = f.submit 'Create', class: 'btn btn-success'
+        %a.toggle-card-form{href: '#', data: {target: "add-card-form-#{list.id}"}} Cancel
 
     .clearfix
   .panel-body.project-list-item{id: "list-#{list.id}"}

@@ -10,14 +10,16 @@
     .row
       .col-md-10
         %p
-          %strong Title
+          %strong= best_in_place @card, :title, activator: '#card-title-edit-activator'
+          %a#card-title-edit-activator.inplace-edit-activator{href: '#'}
+            %i.icon-edit
+            Edit title ...
         %p
-          = best_in_place @card, :title
+          = best_in_place @card, :body, type: :textarea, activator: '#card-body-edit-activator'
+          %a#card-body-edit-activator.inplace-edit-activator{href: '#'}
+            %i.icon-edit
+            Edit description ...
 
-        %p
-          %strong Description
-        %p
-          = best_in_place @card, :body, type: :textarea, nil: 'Edit description ...'
 
         #checklist_form
           = render 'checklists/form'
