@@ -1,7 +1,7 @@
 %tr
   %td= project.id
   %td
-    = link_to(project.name, project_path(project))
+    =  link_to(project.name, project_path(project))
   %td.action
     = link_to(project, class: 'btn btn-success', toogle: 'tooltip', title: t('tooltips.zoom')) do
       %i.icon-zoom-in
