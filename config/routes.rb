@@ -31,7 +31,7 @@ Ganban::Application.routes.draw do
                           confirmation: 'verification'}
   devise_for :users,
              path: 'accounts',
-             controllers: {registrations: 'registrations'},
+             controllers: {registrations: 'registrations', sessions: 'sessions',},
              path_names: {sign_in: 'login', sign_up: 'new', sign_out: 'logout', password: 'secret',
                           confirmation: 'verification'}
   root to: 'welcome#index'
