@@ -68,7 +68,7 @@
 
             .card-stats.card-stats-lg
               %span.stat
-                %strong
+                %strong{class: @card.due_date < Date.current ? 'past_due_text' : ''}
                   %i.icon-time
                   = best_in_place @card, :due_date, type: :date, activator: '.card-due_date-edit-activator'
                 %a.pull-right.card-due_date-edit-activator.inplace-edit-activator{href: '#'}
