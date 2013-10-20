@@ -1,0 +1,3 @@
+<% if @comment.destroyed? %>
+    $("#comment-<%= @comment_id %>").remove();
+<% end %>
