@@ -32,6 +32,11 @@ $(document).ready ->
     buttonText: "Calendar"
     dateFormat: "dd-mm-yy"
 
+
+  $('.toggle-card-form').click ->
+    target = $(this).data('target')
+    $("##{target}").toggle()
+
   $(".checklist_check").click ->
     if $(this).is(":checked")
       $.ajax
