@@ -1,1 +1,4 @@
 default_lists: [ 'To-do', 'In-progress', 'Done' ]
+end_point: s3-us-west-2.amazonaws.com
+access_key_id: XXXXX
+secret_access_key: XXXXXX

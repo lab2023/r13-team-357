@@ -1,5 +1,49 @@
 
 #### [Current]
+ * [9f30ec0](../../commit/9f30ec0) - __(Tayfun Öziş ERİKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+ * [4dde1d0](../../commit/4dde1d0) - __(Tayfun Öziş ERİKAN)__ [#78](../../issues/78) Card list info was added to card details
+ * [d89e803](../../commit/d89e803) - __(Onur Ozgur OZKAN)__ [#92](../../issues/92) update home page title
+ * [140cb8a](../../commit/140cb8a) - __(Onur Ozgur OZKAN)__ [#92](../../issues/92) add title
+ * [a638351](../../commit/a638351) - __(Onur Ozgur OZKAN)__ [#94](../../issues/94) Remove unnecessary rails logger
+ * [d223404](../../commit/d223404) - __(Tayfun Öziş ERİKAN)__ [#79](../../issues/79) Submit card title with enter at Kanban done
+ * [cf28588](../../commit/cf28588) - __(Muhammet DİLEK)__ [#91](../../issues/91) so result search added
+ * [7ef4e38](../../commit/7ef4e38) - __(Muhammet DİLEK)__ [#90](../../issues/90) assignment_id validation added to card
+ * [87e59bc](../../commit/87e59bc) - __(hamitturkukaya)__ [#87](../../issues/87) Card detail checklist infos updated with xhr
+ * [8b5df3c](../../commit/8b5df3c) - __(hamitturkukaya)__ [#89](../../issues/89) Card detail comment infos updated with xhr
+ * [9ba3fb7](../../commit/9ba3fb7) - __(hamitturkukaya)__ [#87](../../issues/87) Card detail checklist infos updated with xh
+ * [6239fc3](../../commit/6239fc3) - __(hamitturkukaya)__ [#87](../../issues/87) Card detail checklist infos updated with xh
+ * [367792d](../../commit/367792d) - __(Onur Ozgur OZKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+ * [7d73f2a](../../commit/7d73f2a) - __(Onur Ozgur OZKAN)__ [#83](../../issues/83) Add video titles
+
+Conflicts:
+	app/assets/stylesheets/application.css.sass
+
+ * [9a0b171](../../commit/9a0b171) - __(Muhammet DİLEK)__ [#76](../../issues/76) projectcs size control added toapplication controller
+ * [fa5fdfb](../../commit/fa5fdfb) - __(Onur Ozgur OZKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+ * [f59e28d](../../commit/f59e28d) - __(Onur Ozgur OZKAN)__ [#83](../../issues/83) Add video titles
+ * [3f1efde](../../commit/3f1efde) - __(Tayfun Öziş ERİKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+
+Conflicts:
+	app/controllers/cards_controller.rb
+
+ * [8bae516](../../commit/8bae516) - __(Tayfun Öziş ERİKAN)__ [#73](../../issues/73) Checklist progressbar design was done
+ * [471172d](../../commit/471172d) - __(Muhammet DİLEK)__ [#72](../../issues/72) remove user from assgined card
+ * [b5f678a](../../commit/b5f678a) - __(hamitturkukaya)__ [#86](../../issues/86) List removed from project edit
+ * [ba5cbad](../../commit/ba5cbad) - __(Tayfun Öziş ERİKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+ * [1e4fac3](../../commit/1e4fac3) - __(Tayfun Öziş ERİKAN)__ [#83](../../issues/83) Design how it works in home page was done
+ * [afe1446](../../commit/afe1446) - __(Onur Ozgur OZKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+ * [6834e39](../../commit/6834e39) - __(Onur Ozgur OZKAN)__ [#85](../../issues/85) add link to project name
+ * [ef10d2a](../../commit/ef10d2a) - __(Onur Ozgur OZKAN)__ Merge remote-tracking branch 'origin/develop' into develop
+ * [5f2012f](../../commit/5f2012f) - __(Onur Ozgur OZKAN)__ [#86](../../issues/86) add link to project name
+ * [1836924](../../commit/1836924) - __(hamitturkukaya)__ [#81](../../issues/81) images linked with image_url
+ * [2561a71](../../commit/2561a71) - __(Tayfun Öziş ERİKAN)__ [#78](../../issues/78) Improve card detail - checklist remove button was improved
+ * [b021971](../../commit/b021971) - __(Muhammet DİLEK)__ [#75](../../issues/75) Delete action added to comment
+ * [e8353f9](../../commit/e8353f9) - __(Onur Ozgur OZKAN)__ [#84](../../issues/84) Reassign user from card after remove from project.
+ * [3caa4a5](../../commit/3caa4a5) - __(Muhammet DİLEK)__ [#77](../../issues/77) Delete checklist
+ * [1da9364](../../commit/1da9364) - __(Muhammet DİLEK)__ [#80](../../issues/80) undo done checklist
+
+#### 1.0.0
+ * [38dc367](../../commit/38dc367) - __(hamitturkukaya)__ Version bumped to 1.0.0
  * [b73f853](../../commit/b73f853) - __(hamitturkukaya)__ [#74](../../issues/74) Assignment error after creating cards fixed
  * [806cf70](../../commit/806cf70) - __(Tayfun Öziş ERİKAN)__ Card breadcrumb was fixed.
  * [5ecaccf](../../commit/5ecaccf) - __(Muhammet DİLEK)__ [#56](../../issues/56) card routing fixed
@@ -56,6 +100,8 @@ Conflicts:
  * [0ae1995](../../commit/0ae1995) - __(Onur Ozgur OZKAN)__ Merge remote-tracking branch 'origin/develop' into develop
  * [875c1d7](../../commit/875c1d7) - __(Onur Ozgur OZKAN)__ [#54](../../issues/54) refactor .ruby-version file name
  * [17027b8](../../commit/17027b8) - __(Muhammet DİLEK)__ [#19](../../issues/19) comment resource added to card
+
+#### 0.3.0
  * [1af1523](../../commit/1af1523) - __(Muhammet DİLEK)__ bump version 0.3.0
  * [cefe67f](../../commit/cefe67f) - __(Muhammet DİLEK)__ dashboard link fixed
  * [5a34886](../../commit/5a34886) - __(hamitturkukaya)__ [#44](../../issues/44) Move card in kanban completed

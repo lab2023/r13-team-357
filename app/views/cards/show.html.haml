@@ -52,8 +52,14 @@
                   %i.icon-edit
                   Change collaborator...
                 %br/
-                = link_to 'Clear assigned', card_path(@card, card: {assignment_id: nil}), class: 'btn btn-default btn-sm', method: :put, remote: true
+                = link_to card_path(@card, card: {assignment_id: nil}), class: 'inplace-edit-activator', method: :put, remote: true do
+                  %i.icon-remove-circle
+                  Remove assigned...
             %hr/
+
+            %span.label.label-default.card-list{data: {toggle: 'tooltip'}, title: 'Current list'}
+              = @card.list.name
+
 
             .card-stats.card-stats-lg
               %span#checklist_stat.stat
@@ -74,3 +80,9 @@
               %span.stat.card-due_date-edit-activator{href: '#'}
                 %i.icon-time
                 = best_in_place @card, :due_date, type: :date, activator: '.card-due_date-edit-activator'
+
+
+
+= form_for Document.new, multipart: true, html: {class: :dropzone, id: 'photo-dropzone'} do |f|
+  = f.hidden_field :file
+  = f.hidden_field :card_id, value: @card.id

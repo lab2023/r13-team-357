@@ -14,15 +14,16 @@
 #= require jquery_ujs
 #= require jquery.purr
 #= require best_in_place
-#= require jquery_ujs
 #= require jquery.ui.autocomplete
 #= require jquery.ui.draggable
 #= require jquery.ui.droppable
+#= require jquery.ui.effect-highlight
 #= require jquery.ui.sortable
 #= require jquery.ui.datepicker
 #= require bootstrap
 #= require hierapolis
 #= require cocoon
+#= require dropzone
 
 $.datepicker.setDefaults
   showOn: "both"
@@ -32,8 +33,19 @@ $.datepicker.setDefaults
   dateFormat: "dd-mm-yy"
 
 $(document).ready ->
+  Dropzone.options.photoDropzone =
+    paramName: "file"
+    maxFilesize: 5 #mb
+
   $('.best_in_place').best_in_place()
 
+
+  $(".add-card-form textarea").keypress (e) ->
+    if e.keyCode is 13
+      e.preventDefault()
+      $(this).closest("form").submit()
+      target = $(this).closest("div.add-card-form").attr('id')
+      $("##{target}").hide()
 
   $('.toggle-card-form').click ->
     target = $(this).data('target')

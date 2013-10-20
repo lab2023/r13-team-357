@@ -1,4 +1,6 @@
 Ganban::Application.routes.draw do
+  resources :documents
+
   resources :profiles
 
   resources :checklists do

@@ -22,6 +22,6 @@
 en:
   hello: "Hello world"
   search: Search with name or email
-  welcome: "Welcome"
+  welcome: "Ganban is simple Kanban."
   app_title: "Ganban"
 
