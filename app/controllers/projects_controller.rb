@@ -38,9 +38,10 @@ class ProjectsController < ApplicationController
   def create
     @project = current_user.own_projects.new(project_params)
     @project.owner = current_user
-    @project.save
-    @project.users << current_user
-    @current_project = @project
+    if @project.save
+      @project.users << current_user
+      @current_project = @project
+    end
     session[:project_id] = @current_project.id
     respond_with(@project)
   end
@@ -52,6 +53,7 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
+    @current_project = current_user.own_project.last if @current_project == @project
     @project = current_user.own_projects.find(params[:id])
     @project.users.clear
     @project.destroy
