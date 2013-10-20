@@ -8,5 +8,5 @@
     - if project.owner_id == current_user.id
       = link_to(edit_project_path(project) , class: 'btn btn-info') do
         %i.icon-edit
-      = link_to(project, class: 'btn btn-danger', method: :delete) do
+      = link_to(project, class: 'btn btn-danger', method: :delete, confirm: 'Are you sure?') do
         %i.icon-trash

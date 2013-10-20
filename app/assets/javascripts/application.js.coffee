@@ -74,14 +74,23 @@ $(document).ready ->
 
   #Card drag & drop
   $ ->
+    item = document
     arr = []
     $(".project-list-item").sortable
 
+      start: (event, ui) ->
+        item = ui.item.attr('id')
+        arr.push(event.target)
+        arr.push(event.target)
+
       change: (event, ui) ->
+        arr.pop()
         arr.push(event.target)
 
       stop: (event, ui) ->
-        if arr.length == 1
+        from_list = $(arr[0]).parent().attr('id')
+        to_list = $(arr[arr.length-1]).parent().attr('id')
+        if from_list == to_list
           item = ui.item.attr('id')
           list = $(this).parent().attr('id')
           sort = $(this).sortable('toArray')
