@@ -1,4 +1,8 @@
 Ganban::Application.routes.draw do
+  resources :checklists do
+    put :done, on: :member
+  end
+
   resources :comments
 
   resources :cards do

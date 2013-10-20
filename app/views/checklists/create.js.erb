@@ -1,0 +1,15 @@
+$("#checklist_title").val('')
+$("#checklists").prepend("<%= escape_javascript( render @checklist ) %>");
+
+
+$(".checklist_check").click(function() {
+    if ($(this).is(":checked")) {
+        return $.ajax({
+            url: "/checklists/" + $(this).val() + '/done',
+            type: "PUT",
+            data: {},
+            contentType: "application/json",
+            success: function(result) {}
+        });
+    }
+});
