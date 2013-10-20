@@ -6,7 +6,7 @@
     .card-stats.card-stats-inline
       %span.stat{data: {toggle: 'tooltip'}, title: 'Checklists'}
         %i.icon-list
-        = card.try(:checklist_total_count).to_s + '/' + card.try(:checklist_done_count).to_s
+        = card.try(:checklist_done_count).to_s + '/' + card.try(:checklist_total_count).to_s
       %span.stat{data: {toggle: 'tooltip'}, title: 'Comments'}
         %i.icon-comments-alt
         = card.try(:comment_count)
@@ -14,7 +14,7 @@
         %i.icon-file-alt
         = card.try(:document_count)
       - if card.due_date.present?
-        %span.stat{data: {toggle: 'tooltip'}, title: 'Due date'}
+        %span.stat{data: {toggle: 'tooltip'}, title: 'Due date', class: card.due_date < Date.current ? 'past_due' : ''}
           %i.icon-time
           = card.due_date.to_formatted_s(:short)
     .user

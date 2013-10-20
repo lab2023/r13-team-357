@@ -88,7 +88,7 @@
                 Comment(s)
 
               %span.stat
-                %strong
+                %strong#document-count
                   %i.icon-file-alt
                   = @card.try(:document_count)
                 Document(s)
@@ -96,28 +96,15 @@
                   %i.icon-plus-sign
                   Add...
                 %table#documents-list-table.table.table-condensed
-                  %tbody
-                    %tr
-                      %td= truncate 'Lorem ipsum'
-                      %td 12 kb
-                      %td
-                        = link_to '#', method: :delete, remote: true, confirm: 'Are you sure?',
-                         class: 'inplace-edit-activator', data: {toggle: 'tooltip'}, title: 'Remove' do
-                          %i.icon-remove-circle
-                    %tr
-                      %td= truncate 'Lorem ipsum'
-                      %td 12 kb
-                      %td
-                        = link_to '#', method: :delete, remote: true, confirm: 'Are you sure?',
-                         class: 'inplace-edit-activator', data: {toggle: 'tooltip'}, title: 'Remove' do
-                          %i.icon-remove-circle
-                    %tr
-                      %td= truncate 'Lorem ipsum'
-                      %td 12 kb
-                      %td
-                        = link_to '#', method: :delete, remote: true, confirm: 'Are you sure?',
-                         class: 'inplace-edit-activator', data: {toggle: 'tooltip'}, title: 'Remove' do
-                          %i.icon-remove-circle
+                  %tbody#documents-list-table-body
+                    - @card.documents.each do |attachment|
+                      %tr{id: "document-#{attachment.id}"}
+                        %td= link_to attachment.file_file_name, attachment.file.url, target: '_blank'
+                        %td= attachment.file_file_size
+                        %td
+                          = link_to document_path(attachment), method: :delete, remote: true, confirm: 'Are you sure?',
+                            class: 'inplace-edit-activator', data: {toggle: 'tooltip'}, title: 'Remove' do
+                            %i.icon-remove-circle
 
 
 
@@ -132,4 +119,4 @@
           = f.hidden_field :file
           = f.hidden_field :card_id, value: @card.id
       .modal-footer
-        %button.btn.btn-default{'data-dismiss' => 'modal', type: 'button'} Close
+        %button#btn-close.btn.btn-default{'data-dismiss' => 'modal', type: 'button'} Close
