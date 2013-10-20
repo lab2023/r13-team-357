@@ -3,7 +3,7 @@
     = link_to '×', card_path(card), method: :delete, class: 'close', data: { toggle: 'tooltip' }, title: 'Remove Card', remote: true, confirm: 'Are you sure?'
     %p.title
       =link_to(truncate(card.title), card)
-    .card-stats.card-stats-inline{class: card.assigned.present? ? 'card-stats-default' : 'card-stats-extended'}
+    .card-stats.card-stats-inline
       %span.stat{data: {toggle: 'tooltip'}, title: 'Checklists'}
         %i.icon-list
         = card.try(:checklist_total_count).to_s + '/' + card.try(:checklist_done_count).to_s
@@ -21,4 +21,4 @@
       - if card.assigned.present?
         = image_tag avatar_url(card.assigned), class: 'img-circle avatar-image avatar-image-md', data: {toggle: 'tooltip'}, title: card.try(:assigned).try(:name)
       - else
-        = image_tag 'http://placehold.it/50x50', class: 'img-circle avatar-image avatar-image-md'
+        = image_tag 'empty-collaborator.png', class: 'img-circle avatar-image avatar-image-md avatar-image-empty'
