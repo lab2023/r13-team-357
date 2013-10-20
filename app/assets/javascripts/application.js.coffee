@@ -19,6 +19,15 @@
 #= require cocoon
 
 $(document).ready ->
+  $(".checklist_check").click ->
+    if $(this).is(":checked")
+      $.ajax
+        url: "/checklists/" + $(this).val() + '/done'
+        type: "PUT"
+        data: {}
+        contentType: "application/json"
+        success: (result) ->
+
   $("#collaborator_user_id").autocomplete
       source: $('#collaborator_user_id').data('autocomplete-source')
       autoFocus: true

@@ -7,20 +7,28 @@
     %i.icon-edit.icon-large
     = t('tt.show', resource_name: Card.model_name.human)
   .panel-body
-    = show_for @card do |s|
-      = s.attribute :owner_id
-      = s.attribute :assignment_id
-      = s.association :list
-      = s.attribute :title
-      = s.attribute :body
-      = s.attribute :due_date
-      = s.attribute :done
-      = s.attribute :comment_count
-      = s.attribute :document_count
-      = s.attribute :checklist_total_count
-      = s.attribute :checklist_done_count
-      = s.attribute :private
-      = s.attribute :sort
+    .row
+      .col-md-6
+        = show_for @card do |s|
+          = s.attribute :owner_id
+          = s.attribute :assignment_id
+          = s.association :list
+          = s.attribute :title
+          = s.attribute :body
+          = s.attribute :due_date
+          = s.attribute :done
+          = s.attribute :comment_count
+          = s.attribute :document_count
+          = s.attribute :checklist_total_count
+          = s.attribute :checklist_done_count
+          = s.attribute :private
+          = s.attribute :sort
+      .col-md-6
+        #checklist_form
+          = render 'checklists/form'
+        #checklists
+          = render @card.checklists
+
 
 #comments
   = render @card.comments
