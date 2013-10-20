@@ -2,7 +2,7 @@
   .card.droppable{id: "#{card.id}-card"}
     = link_to '×', card_path(card), method: :delete, class: 'close', data: { toggle: 'tooltip' }, title: 'Remove Card', remote: true, confirm: 'Are you sure?'
     %p.title
-      =link_to(truncate(card.title), card)
+      =link_to("##{card.id} - #{truncate(card.title, length: 25)}", card)
     .card-stats.card-stats-inline
       %span.stat{data: {toggle: 'tooltip'}, title: 'Checklists'}
         %i.icon-list
