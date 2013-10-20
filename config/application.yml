@@ -3,12 +3,14 @@
 # this file will be deleted.
 #
 defaults: &defaults
-
+  end_point: s3-us-west-2.amazonaws.com
+  access_key_id: xx
+  secret_access_key: xxx
 
 production:
   <<: *defaults
   bucket: ganban-production
-  aws_url: http://ganban-staging.s3.amazonaws.com/
+  aws_url: http://ganban-production.s3.amazonaws.com/
   aws_raw_url: ganban-production.s3.amazonaws.com
 
 development:
