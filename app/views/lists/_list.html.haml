@@ -8,7 +8,7 @@
           Add a card
     = simple_form_for list.cards.new, remote: true do |f|
       = f.input :list_id, input_html: {value: list.id}, as: :hidden
-      = f.input :title, input_html: {id: "list-#{list.id}-title-input"}, as: :text, label: false, placeholder: 'Type card details...'
+      = f.input :title, input_html: {id: "list-#{list.id}-title-input"}, as: :text, label: false
       = f.submit 'Create', class: 'btn btn-success'
       %a{href: '#'} Cancel
 
