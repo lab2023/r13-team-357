@@ -6,6 +6,14 @@ class Card < ActiveRecord::Base
   has_many :checklists
   has_many :documents
 
+  scope :by_assigned, lambda {|user_id|
+    where(assignment_id: user_id)
+  }
+
+  scope :by_created, lambda {|user_id|
+    where(owner_id: user_id)
+  }
+
   validates :title, presence: true
   validates :list_id, presence: true
   validates :sort, uniqueness: {scope: :list_id}
