@@ -25,9 +25,10 @@ class DocumentsController < ApplicationController
   end
 
   def create
-    @document = Document.create(file: params[:file], card_id: params[:document][:card_id])
-    @document.user = current_user
-    @document.save
+    @document = Document.create(file: params[:file], card_id: params[:document][:card_id], user_id: current_user.id)
+    card = @document.card
+    card.document_count = card.documents.count
+    card.save
     render json: @document
     #respond_with(@document)
   end
@@ -39,7 +40,14 @@ class DocumentsController < ApplicationController
 
   def destroy
     @document.destroy
-    respond_with(@document)
+    card = @document.card
+    card.document_count = card.documents.count
+    card.save
+    respond_to do |format|
+      format.html { redirect_to(card_path(@document.cart)) }
+      format.js
+      format.json{ render json: @document}
+    end
   end
 
   private

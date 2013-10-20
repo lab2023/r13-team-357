@@ -1,0 +1,2 @@
+$("#document-count").html("<%= escape_javascript( render 'stat', card: @document.card) %>");
+$("#document-<%= @document.id %>").remove();
